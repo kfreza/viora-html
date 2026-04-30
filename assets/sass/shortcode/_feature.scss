@@ -26,10 +26,14 @@
     align-items: center;
     justify-content: center;
   }
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-bottom: 40px;
   }
   &:hover {
     box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+    .cs_btn_sm.cs_type_2 {
+      color: var(--white);
+      background-color: var(--black);
+    }
   }
 }

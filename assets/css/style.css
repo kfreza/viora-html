@@ -3718,6 +3718,10 @@ hr {
 .cs_project_style_1:hover {
   box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
 }
+.cs_project_style_1:hover .cs_btn_sm.cs_type_2 {
+  color: var(--white);
+  background-color: var(--black);
+}
 
 /*===============================================
  Pricing
@@ -3786,7 +3790,7 @@ hr {
   font-weight: 500;
   line-height: 1em;
   text-wrap: nowrap;
-  transition: all 0.8s ease;
+  transition: all 0.4s ease;
 }
 .cs_btn_lg.cs_type_1,
 .cs_btn_md.cs_type_1,
