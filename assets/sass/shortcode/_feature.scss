@@ -1,3 +1,35 @@
 /*=======================================================
   Feature
 =========================================================*/
+.cs_featured_project_section_1 {
+  .cs_heading_style_1 {
+    align-items: flex-end;
+    .cs_heading {
+      letter-spacing: -1.6px;
+    }
+  }
+}
+.cs_project_style_1 {
+  padding: 32px 40px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 24px;
+  background-color: var(--bg-grey);
+  transition: all 0.4s ease;
+  .cs_icon_arrow {
+    height: 12px;
+    width: 12px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &:not(:last-child){
+    margin-bottom: 40px;
+  }
+  &:hover {
+    box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+  }
+}

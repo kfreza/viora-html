@@ -2193,13 +2193,10 @@ hr {
 }
 .cs_site_header.cs_style_1 .cs_top_header_right .cs_btn_md,
 .cs_site_header.cs_style_1 .cs_main_header_right .cs_btn_md {
-  background-color: var(--white);
-  color: var(--black);
-  transition: all 0.8s ease;
+  transition: color 0.8s ease;
 }
 .cs_site_header.cs_style_1 .cs_top_header_right .cs_btn_md:hover,
 .cs_site_header.cs_style_1 .cs_main_header_right .cs_btn_md:hover {
-  transition: all 0.8s ease;
   color: var(--white);
   background: var(--radial-gradient);
 }
@@ -3690,6 +3687,38 @@ hr {
 /*=======================================================
   Feature
 =========================================================*/
+.cs_featured_project_section_1 .cs_heading_style_1 {
+  align-items: flex-end;
+}
+.cs_featured_project_section_1 .cs_heading_style_1 .cs_heading {
+  letter-spacing: -1.6px;
+}
+
+.cs_project_style_1 {
+  padding: 32px 40px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 24px;
+  background-color: var(--bg-grey);
+  transition: all 0.4s ease;
+}
+.cs_project_style_1 .cs_icon_arrow {
+  height: 12px;
+  width: 12px;
+  margin-left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs_project_style_1:not(:last-child) {
+  margin-bottom: 40px;
+}
+.cs_project_style_1:hover {
+  box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+}
+
 /*===============================================
  Pricing
  ================================================*/
@@ -3759,11 +3788,28 @@ hr {
   text-wrap: nowrap;
   transition: all 0.8s ease;
 }
+.cs_btn_lg.cs_type_1,
+.cs_btn_md.cs_type_1,
+.cs_btn_sm.cs_type_1 {
+  background-color: var(--white);
+  color: var(--black);
+}
+.cs_btn_lg.cs_type_2,
+.cs_btn_md.cs_type_2,
+.cs_btn_sm.cs_type_2 {
+  padding: 18px 19px;
+  color: var(--black);
+  background-color: transparent;
+  border: 1px solid var(--black);
+}
 .cs_btn_md {
   padding: 17px 16px;
   justify-content: center;
   gap: 4px;
   font-size: 16px;
+}
+.cs_btn_md.cs_type_2 {
+  padding: 16px 15px;
 }
 
 .cs_btn_sm {
@@ -3772,6 +3818,9 @@ hr {
   gap: 2px;
   font-size: 14px;
   border-radius: 6px;
+}
+.cs_btn_sm.cs_type_2 {
+  padding: 14px 13px;
 }
 
 .cs_social_btns {
@@ -3825,10 +3874,6 @@ hr {
 }
 .cs_heading_style_1 .cs_heading_meta_des {
   text-align: end;
-}
-.cs_heading_style_1 .cs_btn_lg {
-  background-color: var(--white);
-  color: var(--black);
 }
 
 .cs_heading_style_2 .cs_title {
@@ -3913,12 +3958,50 @@ hr {
 }
 .cs_about_style_1 .cs_about_image svg {
   position: absolute;
-  bottom: 29px;
+  top: -220px;
   left: -90px;
 }
+
 /*=======================================================
   Work
 =========================================================*/
+.cs_work_style_1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cs_textbox_style_1 {
+  width: min(100%, 370px);
+  display: flex;
+  gap: 0 24px;
+}
+.cs_textbox_style_1 .cs_number {
+  height: 91px;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.cs_textbox_style_1 .cs_number span {
+  background: var(--radial-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cs_textbox_style_1 .cs_textbox {
+  padding: 18px 0;
+}
+.cs_textbox_style_1 .cs_description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
 /*=======================================================
   Form
 =========================================================*/

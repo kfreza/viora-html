@@ -16,22 +16,8 @@
     overflow: hidden;
     svg {
       position: absolute;
-      bottom: 29px;
-      // right: 38px;
-      // top: 0;
+      top: -220px;
       left: -90px;
     }
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   inset: 0;
-    //   background: var(--radial-gradient);
-    //   border-radius: 16px;
-    //   // filter: blur(6.35px);
-    //   opacity: 0.2;
-    //   z-index: 1;
-    // }
-  }
-  .cs_about_content {
   }
 }

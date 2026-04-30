@@ -81,11 +81,8 @@
       // gap: 30px;
       z-index: 888;
       .cs_btn_md {
-        background-color: var(--white);
-        color: var(--black);
-        transition: all 0.8s ease;
+        transition: color 0.8s ease;
         &:hover {
-          transition: all 0.8s ease;
           color: var(--white);
           background: var(--radial-gradient);
         }

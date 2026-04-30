@@ -1,7 +1,6 @@
 /*=======================================================
   Heading
 =========================================================*/
-
 // Caption Style
 .cs_caption {
   font-size: 14px;
@@ -30,16 +29,8 @@
   .cs_heading_meta_des {
     text-align: end;
   }
-  .cs_btn_lg {
-    background-color: var(--white);
-    color: var(--black);
-    // &:hover{
-    //   background-color: transparent;
-    //   border: 1px solid ;
-    // }
-  }
 }
-
+// Heading Style
 .cs_heading_style_2 {
   .cs_title {
     letter-spacing: -1.6px;

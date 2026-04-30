@@ -49,14 +49,22 @@
   gap: 6px;
   padding: 19px 20px;
   border-radius: 8px;
-  // border: 1px solid var(--accent-color);
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: 1em;
-  // outline: none;
   text-wrap: nowrap;
   transition: all 0.8s ease;
+  &.cs_type_1 {
+    background-color: var(--white);
+    color: var(--black);
+  }
+  &.cs_type_2 {
+    padding: 18px 19px;
+    color: var(--black);
+    background-color: transparent;
+    border: 1px solid var(--black);
+  }
   &:hover {
     // color: var(--heading-color);
     // background-color: transparent;
@@ -68,6 +76,9 @@
   justify-content: center;
   gap: 4px;
   font-size: 16px;
+  &.cs_type_2 {
+    padding: 16px 15px;
+  }
 }
 .cs_btn_sm {
   padding: 15px 14px;
@@ -75,6 +86,9 @@
   gap: 2px;
   font-size: 14px;
   border-radius: 6px;
+  &.cs_type_2 {
+    padding: 14px 13px;
+  }
 }
 // End of Button Component
 
