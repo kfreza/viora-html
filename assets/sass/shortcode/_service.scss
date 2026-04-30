@@ -1,0 +1,88 @@
+/*=======================================================
+  Service
+=========================================================*/
+.cs_services_section_1 {
+  margin-top: -254px;
+}
+
+.cs_service_card_style_1 {
+  background-color: var(--bg-grey);
+  border-radius: 16px;
+  mask-image: url(/assets/img/service_layer_mask.svg);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  width: 298px;
+  height: 434px;
+  .cs_card_thumb {
+    position: absolute;
+    top: 0;
+    right: -1px;
+  }
+  .cs_card_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0 24px 24px;
+    // transition: all 0.4s ease;
+  }
+  // .cs_title,
+  // .cs_description{
+  //   transition: all 0.4s ease;
+  // }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--white);
+    background-image: url(/assets/img/service_arrow_up_right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+}
+
+.cs_service_card_wrapper_1 {
+  // transition: all 0.4s ease;
+  &::after {
+    content: "";
+    background: var(--radial-gradient);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    filter: blur(49px);
+  }
+  &:hover {
+    // transform: scale(1.01);
+    &::after {
+      visibility: visible;
+      opacity: 0.4;
+    }
+    .cs_service_card_style_1 {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .cs_title {
+      background: var(--radial-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+//

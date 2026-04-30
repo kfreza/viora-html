@@ -1,0 +1,27 @@
+/*==========================================================
+ Animation Keyframes
+============================================================*/
+@keyframes border-scale {
+  50% {
+    transform: translate(-50%, -50%) scale(1.33);
+  }
+}
+
+/*==========================================================
+ Zoom Effects
+============================================================*/
+.cs_zoom {
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  .cs_zoom_in {
+    transition: all 1s ease;
+  }
+
+  &:hover {
+    .cs_zoom_in {
+      transform: scale(1.06);
+    }
+  }
+}

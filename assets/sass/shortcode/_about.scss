@@ -1,0 +1,29 @@
+/*=======================================================
+  About
+=========================================================*/
+.cs_about_style_1 {
+  display: flex;
+  gap: 0 80px;
+  align-items: center;
+  .cs_about_image {
+    height: 372px;
+    width: 488px;
+    flex: none;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--radial-gradient);
+      border-radius: 16px;
+      // filter: blur(6.35px);
+      opacity: 0.2;
+      z-index: 1;
+    }
+  }
+  .cs_about_content {
+  }
+}

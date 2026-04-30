@@ -1,0 +1,175 @@
+/*===========================================================
+  Sleek Slider
+=============================================================*/
+// Slider Design Starts from here
+.cs_slider {
+  position: relative;
+}
+
+//Slide From Right Side
+.cs_full_screen_right {
+  width: calc(60vw + 663px);
+}
+
+// Remove Overflow for Shadow Effect
+.cs_remove_overflow {
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+    &.slick-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// Draggable & Arrow Cursor For Slider
+.slick-arrow {
+  cursor: pointer;
+}
+
+// .draggable {
+//   cursor:
+//     url(../img/drag.png) 16 9,
+//     ew-resize !important;
+// }
+
+// Default For Backup (Not To Break Design)
+.slick-slide > div {
+  display: flex;
+  flex-direction: column;
+}
+//End of Default Peoperties
+
+// Slider Gap
+.cs_slider_gap_24 {
+  .slick-slide {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .slick-list {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+.cs_slider_gap_36 {
+  .slick-slide {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .slick-list {
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+}
+
+.cs_slider_gap_112 {
+  .slick-slide {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  .slick-list {
+    margin-left: -56px;
+    margin-right: -56px;
+  }
+}
+
+.cs_slider_gap_166 {
+  .slick-slide {
+    padding-left: 83px;
+    padding-right: 83px;
+  }
+  .slick-list {
+    margin-left: -83px;
+    margin-right: -83px;
+  }
+}
+// End of Slider Gap
+
+// Slider Pagination
+.cs_pagination.cs_style_1 {
+  display: flex;
+  justify-content: center;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    gap: 12px;
+  }
+  li {
+    display: flex;
+    flex: 1;
+    button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-color);
+      font-size: 0;
+      color: transparent;
+      padding: 0;
+      outline: none;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      &::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: var(--accent-color);
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        display: none;
+        opacity: 0;
+      }
+    }
+    &:hover button {
+      &::before {
+        display: block;
+        transition: all 0.3s ease;
+        opacity: 0.7;
+      }
+    }
+    &.slick-active {
+      button {
+        &::before {
+          transition: all 0.3s ease;
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+// End of Slider Pagination
+
+// Slider Arrows
+.cs_slider_arrows.cs_style_1 {
+  display: flex;
+  gap: 20px;
+  .slick-arrow {
+    height: 50px;
+    width: 50px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    color: var(--white-color);
+    background-color: var(--accent-color);
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: transparent;
+      color: var(--accent-color);
+    }
+  }
+}
+// End of Slider Arrows

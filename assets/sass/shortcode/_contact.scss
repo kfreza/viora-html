@@ -1,0 +1,114 @@
+/*=======================================================
+  Contact Page
+=========================================================*/
+// Blog Details Reply Form
+.cs_reply_form {
+  .cs_form_field {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 14px 17px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: none;
+    background-color: #f8f8f8;
+    resize: none;
+    transition: all 0.3s ease;
+    // &:focus,
+    // &:valid {
+    //   border-color: var(--accent-color);
+    //   background-color: transparent;
+    //   + label {
+    //     transform: translate(0, -30px) scale(0.9);
+    //     color: var(--accent-color);
+    //   }
+    // }
+  }
+  // label {
+  //   position: absolute;
+  //   left: 29px;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   color: var(--body-color);
+  //   z-index: 1;
+  //   transition: all 0.3s ease;
+  //   pointer-events: none;
+  // }
+  textarea {
+    resize: none;
+    // &:focus,
+    // &:valid {
+    //   + label {
+    //     transform: translate(0, -95px) scale(0.9) !important;
+    //   }
+    // }
+  }
+  .cs_btn_style_1 {
+    margin-top: 6px;
+    border-radius: 4px;
+    padding: 17px 25px 17px 30px;
+    @media (max-width: 767px) {
+      margin-top: 0px;
+    }
+  }
+}
+
+// Contact Page Contact Form
+.cs_contact_form_section_1 {
+  background: #f7f8fd;
+}
+.cs_contact_form_style_1 {
+  .cs_input_label {
+    margin-bottom: 9px;
+  }
+  .cs_form_field {
+    padding: 16px 19px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  select {
+    appearance: none;
+    width: 100%;
+  }
+  .cs_form_field_wrapper {
+    position: relative;
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 20px;
+      color: var(--accent-color);
+    }
+  }
+}
+
+/*===========================================
+ Google Map
+ ============================================*/
+.cs_map {
+  position: relative;
+  height: 654px;
+  @media (max-width: 767px) {
+    height: 580px;
+  }
+  @media (max-width: 575px) {
+    height: 480px;
+  }
+  @media (max-width: 480px) {
+    height: 380px;
+  }
+
+  .cs_map_overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 41, 53, 0.35);
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+.cs_map iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}

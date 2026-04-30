@@ -1,0 +1,50 @@
+/*=======================================================
+  Heading
+=========================================================*/
+
+// Caption Style
+.cs_caption {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+// Heading Style
+.cs_heading_style_1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  .cs_heading_column_1 {
+    width: min(700px, 100%);
+    letter-spacing: -3.04px;
+  }
+  .cs_heading_column_2 {
+    width: min(382px, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  .cs_heading_meta_des {
+    text-align: end;
+  }
+  .cs_btn_lg {
+    background-color: var(--white);
+    color: var(--black);
+    // &:hover{
+    //   background-color: transparent;
+    //   border: 1px solid ;
+    // }
+  }
+}
+
+.cs_heading_style_2 {
+  .cs_title {
+    letter-spacing: -1.6px;
+  }
+  .cs_description {
+    width: min(100%, 356px);
+  }
+}

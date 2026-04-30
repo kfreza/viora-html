@@ -1,0 +1,105 @@
+/*=======================================================
+  Components
+=========================================================*/
+
+// Rating Component
+.cs_rating_percentage,
+.cs_rating {
+  overflow: hidden;
+  &::before {
+    content: "\f005\f005\f005\f005\f005";
+    font-family: "Font Awesome 7 Free";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.cs_rating {
+  width: 120px;
+  flex: none;
+  height: 24px;
+  position: relative;
+  color: var(--rating-color);
+  font-size: 16px;
+  letter-spacing: 7px;
+  &::before {
+    font-weight: 400;
+  }
+}
+.cs_rating_percentage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  &::before {
+    font-weight: 900;
+  }
+}
+// End of Rating Component
+
+// Button Component
+.cs_btn_lg,
+.cs_btn_md,
+.cs_btn_sm {
+  background-color: var(--black);
+  color: var(--white);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  padding: 19px 20px;
+  border-radius: 8px;
+  // border: 1px solid var(--accent-color);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1em;
+  // outline: none;
+  text-wrap: nowrap;
+  transition: all 0.8s ease;
+  &:hover {
+    // color: var(--heading-color);
+    // background-color: transparent;
+    // border: 1px solid var(--heading-color);
+  }
+}
+.cs_btn_md {
+  padding: 17px 16px;
+  justify-content: center;
+  gap: 4px;
+  font-size: 16px;
+}
+.cs_btn_sm {
+  padding: 15px 14px;
+  justify-content: center;
+  gap: 2px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+// End of Button Component
+
+// Social Iconbox
+.cs_social_btns {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  gap: 10px;
+  // padding: 10px;
+  a {
+    background: var(--bg-grey);
+    height: 42px;
+    width: 42px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 1em;
+    color: var(--black);
+    &:hover {
+      background-color: var(--accent-color);
+      color: var(--white-color);
+    }
+  }
+}
+// End of Social Iconbox

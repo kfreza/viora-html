@@ -1,0 +1,344 @@
+/*===========================================================
+  General
+=============================================================*/
+/* Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* End of Global Reset */
+
+// Bootstrap Container Resize
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1264px;
+  }
+}
+
+// Font Size
+// .cs_fs_12 {
+//   font-size: 12px;
+//   line-height: 2.16em;
+// }
+
+.cs_fs_14 {
+  font-size: 14px;
+  line-height: 1.54em;
+}
+
+// .cs_fs_15 {
+//   font-size: 15px;
+//   line-height: 1.6666em;
+// }
+
+.cs_fs_16 {
+  font-size: 16px;
+  line-height: 1.48em;
+}
+
+// .cs_fs_17 {
+//   font-size: 17px;
+//   line-height: 2.12em;
+// }
+
+.cs_fs_18 {
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+.cs_fs_20 {
+  font-size: 20px;
+  line-height: 1.4em;
+  // 1.2,
+}
+
+// .cs_fs_22 {
+//   font-size: 22px;
+//   line-height: 1.5em;
+// }
+
+.cs_fs_24 {
+  font-size: 24px;
+  line-height: 1.2em;
+}
+
+// .cs_fs_25 {
+//   font-size: 25px;
+//   line-height: 1.4em;
+// }
+
+// .cs_fs_26 {
+//   font-size: 26px;
+//   line-height: 1.3076em;
+// }
+
+// .cs_fs_30 {
+//   font-size: 30px;
+//   line-height: 1.4em;
+// }
+
+.cs_fs_32 {
+  font-size: 32px;
+  line-height: 1.2em;
+}
+
+// .cs_fs_35 {
+//   font-size: 35px;
+//   line-height: 1.2em;
+// }
+
+// .cs_fs_36 {
+//   font-size: 36px;
+//   line-height: 1.25em;
+// }
+
+.cs_fs_40 {
+  font-size: 40px;
+  line-height: 1.2em;
+}
+
+// .cs_fs_42 {
+//   font-size: 42px;
+//   line-height: 1.34em;
+// }
+
+// .cs_fs_45 {
+//   font-size: 45px;
+//   line-height: 1.4445em;
+// }
+
+.cs_fs_48 {
+  font-size: 48px;
+  line-height: 1.2em;
+}
+
+// .cs_fs_54 {
+//   font-size: 54px;
+//   line-height: 1.185em;
+// }
+
+// .cs_fs_55 {
+//   font-size: 55px;
+//   line-height: 1.18em;
+// }
+
+.cs_fs_62 {
+  font-size: 65px;
+  line-height: 1.2em;
+}
+// .cs_fs_65 {
+//   font-size: 65px;
+//   line-height: 1.154em;
+// }
+
+// .cs_fs_72 {
+//   font-size: 72px;
+//   line-height: 1.139em;
+// }
+
+.cs_fs_76 {
+  font-size: 76px;
+  line-height: 1.2em;
+}
+
+// Font Weight
+.cs_light {
+  font-weight: 300;
+}
+.cs_normal {
+  font-weight: 400;
+}
+.cs_medium {
+  font-weight: 500;
+}
+.cs_semibold {
+  font-weight: 600;
+}
+.cs_bold {
+  font-weight: 700;
+}
+.cs_extra_bold {
+  font-weight: 800;
+}
+
+// Margin, Padding, List Style Reset
+.cs_mp_0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Gap Y Axis
+.cs_gap_y_17 {
+  gap: 17px 0;
+}
+.cs_gap_y_24 {
+  gap: 24px 0;
+}
+.cs_gap_y_30 {
+  gap: 30px 0;
+}
+.cs_gap_y_40 {
+  gap: 40px 0;
+}
+.cs_gap_y_50 {
+  gap: 50px 0;
+}
+
+// Horizontal Line Default Reset
+hr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-top: 1px solid currentColor;
+  opacity: 1;
+}
+
+// Background Filled
+.cs_bg_filed {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Center With Flex
+.cs_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Center Column With Flex
+.cs_center_column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// CSS Variables
+.cs_bg_grey {
+  background-color: var(--bg-grey);
+}
+.cs_bg_dark_grey {
+  background-color: var(--bg-dark-grey);
+}
+
+.cs_black {
+  color: var(--black);
+}
+.cs_black_bg {
+  background-color: var(--black);
+}
+
+.cs_white {
+  color: var(--white);
+}
+.cs_white_bg {
+  background-color: var(--white);
+}
+
+.cs_text_grey {
+  color: var(--text-grey);
+}
+.cs_text_grey_light {
+  color: var(--text-grey-light);
+}
+
+.cs_line_grey {
+  color: var(--line-grey);
+}
+
+.cs_radial_gradient {
+  background: var(--radial-gradient);
+}
+.cs_linear_gradient {
+  background: var(--linear-gradient);
+}
+
+// Opacity
+.cs_op10 {
+  opacity: 0.1;
+}
+.cs_op20 {
+  opacity: 0.2;
+}
+.cs_op30 {
+  opacity: 0.3;
+}
+.cs_op40 {
+  opacity: 0.4;
+}
+.cs_op50 {
+  opacity: 0.5;
+}
+.cs_op60 {
+  opacity: 0.6;
+}
+.cs_op70 {
+  opacity: 0.7;
+}
+.cs_op80 {
+  opacity: 0.8;
+}
+.cs_op90 {
+  opacity: 0.9;
+}
+
+// Letter Spacing
+.cs_ls_2x7 {
+  letter-spacing: 2.7px;
+}
+
+// Border Radius
+.cs_radius_1 {
+  border-radius: 1px;
+}
+.cs_radius_2 {
+  border-radius: 2px;
+}
+.cs_radius_3 {
+  border-radius: 3px;
+}
+.cs_radius_4 {
+  border-radius: 4px;
+}
+.cs_radius_5 {
+  border-radius: 5px;
+}
+.cs_radius_6 {
+  border-radius: 6px;
+}
+.cs_radius_7 {
+  border-radius: 7px;
+}
+.cs_radius_8 {
+  border-radius: 8px;
+}
+.cs_radius_9 {
+  border-radius: 9px;
+}
+.cs_radius_10 {
+  border-radius: 10px;
+}
+
+//  Global Break Tag Remove
+@media (max-width: 991px) {
+  br {
+    display: none;
+  }
+}
+
+// CSS/JS Tab Required Function
+.cs_tab_body {
+  position: relative;
+  .cs_tab {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+//
