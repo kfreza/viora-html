@@ -6,23 +6,31 @@
   gap: 0 80px;
   align-items: center;
   .cs_about_image {
+    flex: none;
     height: 372px;
     width: 488px;
-    flex: none;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    border-radius: 16px;
+    background: var(--radial-gradient);
+    opacity: 0.2;
     position: relative;
-    &::before {
-      content: "";
+    overflow: hidden;
+    svg {
       position: absolute;
-      inset: 0;
-      background: var(--radial-gradient);
-      border-radius: 16px;
-      // filter: blur(6.35px);
-      opacity: 0.2;
-      z-index: 1;
+      bottom: 29px;
+      // right: 38px;
+      // top: 0;
+      left: -90px;
     }
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   background: var(--radial-gradient);
+    //   border-radius: 16px;
+    //   // filter: blur(6.35px);
+    //   opacity: 0.2;
+    //   z-index: 1;
+    // }
   }
   .cs_about_content {
   }

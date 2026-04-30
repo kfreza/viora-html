@@ -3902,19 +3902,19 @@ hr {
   align-items: center;
 }
 .cs_about_style_1 .cs_about_image {
+  flex: none;
   height: 372px;
   width: 488px;
-  flex: none;
-  position: relative;
-}
-.cs_about_style_1 .cs_about_image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--radial-gradient);
   border-radius: 16px;
+  background: var(--radial-gradient);
   opacity: 0.2;
-  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.cs_about_style_1 .cs_about_image svg {
+  position: absolute;
+  bottom: 29px;
+  left: -90px;
 }
 /*=======================================================
   Work
