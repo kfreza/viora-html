@@ -3518,8 +3518,8 @@ hr {
 .cs_service_card_style_1 {
   background-color: var(--bg-grey);
   border-radius: 16px;
-  -webkit-mask-image: url(/assets/img/service_layer_mask.svg);
-          mask-image: url(/assets/img/service_layer_mask.svg);
+  -webkit-mask-image: url(../img/service_layer_mask.svg);
+          mask-image: url(../img/service_layer_mask.svg);
   -webkit-mask-size: cover;
           mask-size: cover;
   -webkit-mask-repeat: no-repeat;
@@ -3548,7 +3548,7 @@ hr {
   width: 40px;
   border-radius: 50%;
   background-color: var(--white);
-  background-image: url(/assets/img/service_arrow_up_right.svg);
+  background-image: url(../img/service_arrow_up_right.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 24px;
@@ -3703,6 +3703,23 @@ hr {
   gap: 0 24px;
   background-color: var(--bg-grey);
   transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+.cs_project_style_1 .cs_bg_image {
+  border-radius: 16px;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+.cs_project_style_1 .cs_project_column_1,
+.cs_project_style_1 .cs_project_column_2 {
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
 }
 .cs_project_style_1 .cs_icon_arrow {
   height: 12px;
@@ -3715,8 +3732,27 @@ hr {
 .cs_project_style_1:not(:last-child) {
   margin-bottom: 40px;
 }
+.cs_project_style_1.active {
+  box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+}
+.cs_project_style_1.active .cs_bg_image {
+  opacity: 1;
+  visibility: visible;
+}
+.cs_project_style_1.active .cs_project_column_1,
+.cs_project_style_1.active .cs_project_column_2 {
+  margin-bottom: 112px;
+}
 .cs_project_style_1:hover {
   box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+}
+.cs_project_style_1:hover .cs_bg_image {
+  opacity: 1;
+  visibility: visible;
+}
+.cs_project_style_1:hover .cs_project_column_1,
+.cs_project_style_1:hover .cs_project_column_2 {
+  margin-bottom: 112px;
 }
 .cs_project_style_1:hover .cs_btn_sm.cs_type_2 {
   color: var(--white);

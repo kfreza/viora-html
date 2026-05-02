@@ -8,7 +8,7 @@
 .cs_service_card_style_1 {
   background-color: var(--bg-grey);
   border-radius: 16px;
-  mask-image: url(/assets/img/service_layer_mask.svg);
+  mask-image: url(../img/service_layer_mask.svg);
   mask-size: cover;
   mask-repeat: no-repeat;
   width: 298px;
@@ -39,7 +39,7 @@
     width: 40px;
     border-radius: 50%;
     background-color: var(--white);
-    background-image: url(/assets/img/service_arrow_up_right.svg);
+    background-image: url(../img/service_arrow_up_right.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px;

@@ -18,6 +18,23 @@
   gap: 0 24px;
   background-color: var(--bg-grey);
   transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+  .cs_bg_image {
+    border-radius: 16px;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  .cs_project_column_1,
+  .cs_project_column_2 {
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s ease;
+  }
   .cs_icon_arrow {
     height: 12px;
     width: 12px;
@@ -29,8 +46,27 @@
   &:not(:last-child) {
     margin-bottom: 40px;
   }
+  &.active {
+    box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+    .cs_bg_image {
+      opacity: 1;
+      visibility: visible;
+    }
+    .cs_project_column_1,
+    .cs_project_column_2 {
+      margin-bottom: 112px;
+    }
+  }
   &:hover {
     box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+    .cs_bg_image {
+      opacity: 1;
+      visibility: visible;
+    }
+    .cs_project_column_1,
+    .cs_project_column_2 {
+      margin-bottom: 112px;
+    }
     .cs_btn_sm.cs_type_2 {
       color: var(--white);
       background-color: var(--black);

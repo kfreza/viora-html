@@ -27,6 +27,7 @@
   | 14. Language Select
   | 15. Social Toggle Button
   | 16. Heart toggle
+  | 17. Project Cards
   |
   */
 
@@ -57,6 +58,7 @@
     languageSwitch();
     socialButtonToggle();
     elementToggle();
+    initProjectCards();
     if ($.exists(".wow")) {
       new WOW().init();
     }
@@ -580,6 +582,26 @@
     // 3. Dashboard Nav (Existing)
     $(".cs_dashboard_nav li").on("click", function () {
       $(this).addClass("active").siblings().slideToggle().removeClass("active");
+    });
+  }
+
+
+  //
+
+  function initProjectCards() {
+    const projects = document.querySelectorAll('.cs_project_style_1');
+    const defaultActive = document.querySelector('.cs_project_style_1.active');
+
+    projects.forEach(project => {
+      project.addEventListener('mouseenter', function () {
+        projects.forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+      });
+
+      project.addEventListener('mouseleave', function () {
+        projects.forEach(p => p.classList.remove('active'));
+        defaultActive.classList.add('active');
+      });
     });
   }
 
