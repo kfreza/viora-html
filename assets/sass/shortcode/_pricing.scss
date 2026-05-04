@@ -1,23 +1,94 @@
 /*===============================================
  Pricing
  ================================================*/
-.cs_pricing_section_1{
-    .cs_heading_style_3{
-        width: min(100%, 1000px);
-        margin: 0 auto;
-        .cs_title{
-            letter-spacing: -1.6px;
-        }
+.cs_pricing_section_1 {
+  .cs_heading_style_3 {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    .cs_title {
+      letter-spacing: -1.6px;
     }
+  }
 }
-.cs_pricing_wrapper_1{
-    padding: 20px;
-    border-radius: 16px;
+.cs_pricing_wrapper_1 {
+  padding: 20px;
+  border-radius: 16px;
 }
-.cs_pricing_style_1{
-    padding: 32px;
-    background-color: var(--white);
-    &.cs_active{
-        background-color: transparent;
+
+.cs_pricing_style_1 {
+  padding: 32px;
+  height: 100%;
+  background-color: var(--white);
+  // box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.1);
+  &.cs_active {
+    background-color: transparent;
+  }
+  .cs_pricing_table {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cs_pricing_value {
+    position: relative;
+  }
+
+  .cs_value_option {
+    color: var(--heading-color);
+    // line-height: 1.45em;
+  }
+
+  .cs_pricing_option {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 7px;
+  }
+
+  .cs_pricing_list {
+    li {
+      line-height: 1.437;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 33px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
     }
+  }
+
+  .cs_pricing_icon {
+    color: var(--accent-color);
+    font-size: 18px;
+    line-height: 1em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+  }
+
+  .cs_pricing_btn {
+    margin-top: auto;
+    .cs_btn_style_1 {
+      background-color: var(--heading-color);
+      border-color: var(--heading-color);
+      width: 100%;
+      margin-top: auto;
+      padding: 11px 24px;
+      line-height: 1.454em;
+      transition: all 0.4s ease;
+    }
+    .cs_btn_arrow {
+      font-size: 20px;
+      line-height: 1em;
+      margin-left: 10px;
+      transform: rotate(315deg);
+    }
+    &:hover .cs_btn_style_1 {
+      border-color: var(--accent-color);
+      background-color: var(--accent-color);
+      color: var(--white-color);
+    }
+  }
 }
