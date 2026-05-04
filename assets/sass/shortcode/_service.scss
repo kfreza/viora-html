@@ -13,6 +13,7 @@
   mask-repeat: no-repeat;
   width: 298px;
   height: 434px;
+  transition: all 0.4s ease;
   .cs_card_thumb {
     position: absolute;
     top: 0;
@@ -50,7 +51,7 @@
 }
 
 .cs_service_card_wrapper_1 {
-  // transition: all 0.4s ease;
+  transition: all 0.4s ease;
   &::after {
     content: "";
     background: var(--radial-gradient);

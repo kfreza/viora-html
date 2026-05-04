@@ -3526,7 +3526,6 @@ hr {
           mask-repeat: no-repeat;
   width: 298px;
   height: 434px;
-  transition: all 0.4s ease;
 }
 .cs_service_card_style_1 .cs_card_thumb {
   position: absolute;
@@ -3558,9 +3557,6 @@ hr {
   transition: all 0.4s ease;
 }
 
-.cs_service_card_wrapper_1 {
-  transition: all 0.4s ease;
-}
 .cs_service_card_wrapper_1::after {
   content: "";
   background: var(--radial-gradient);
@@ -3766,27 +3762,6 @@ hr {
 /*===============================================
  Pricing
  ================================================*/
-.cs_pricing_section_1 .cs_heading_style_3 {
-  width: min(100%, 1000px);
-  margin: 0 auto;
-}
-.cs_pricing_section_1 .cs_heading_style_3 .cs_title {
-  letter-spacing: -1.6px;
-}
-
-.cs_pricing_wrapper_1 {
-  padding: 20px;
-  border-radius: 16px;
-}
-
-.cs_pricing_style_1 {
-  padding: 32px;
-  background-color: var(--white);
-}
-.cs_pricing_style_1.cs_active {
-  background-color: transparent;
-}
-
 /*==========================================================
  22. Video
 ============================================================*/
