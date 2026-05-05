@@ -3775,19 +3775,39 @@ hr {
 }
 
 .cs_pricing_wrapper_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 0;
   padding: 20px;
   border-radius: 16px;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px 16px;
 }
 
 .cs_pricing_style_1 {
-  padding: 32px;
+  padding: 32px 48px 32px 32px;
   height: 100%;
   background-color: var(--white);
-  border-radius: 16px;
-  width: 33.333%;
+  transition: all 0.4s ease;
+}
+.cs_pricing_style_1:first-child {
+  background-color: transparent;
+}
+.cs_pricing_style_1:first-child .cs_plan_title,
+.cs_pricing_style_1:first-child .monthlyPrice,
+.cs_pricing_style_1:first-child .cs_pricing_list {
+  color: var(--white);
+}
+.cs_pricing_style_1:first-child .cs_description {
+  color: var(--line-grey);
+}
+.cs_pricing_style_1:first-child .cs_btn_lg {
+  background-color: var(--white);
+  color: var(--black);
+}
+.cs_pricing_style_1:nth-child(2) {
+  border-radius: 16px 0 0 16px;
+}
+.cs_pricing_style_1:nth-child(3) {
+  border-radius: 0 16px 16px 0;
 }
 .cs_pricing_style_1 .cs_pricing_table {
   width: 100%;
@@ -3852,21 +3872,6 @@ hr {
 }
 .cs_pricing_style_1 .cs_pricing_btn .cs_btn_lg {
   margin-top: auto;
-}
-.cs_pricing_style_1.cs_active {
-  background-color: transparent;
-}
-.cs_pricing_style_1.cs_active .cs_plan_title,
-.cs_pricing_style_1.cs_active .monthlyPrice,
-.cs_pricing_style_1.cs_active .cs_pricing_list {
-  color: var(--white);
-}
-.cs_pricing_style_1.cs_active .cs_description {
-  color: var(--line-grey);
-}
-.cs_pricing_style_1.cs_active .cs_btn_lg {
-  background-color: var(--white);
-  color: var(--black);
 }
 
 /*==========================================================
