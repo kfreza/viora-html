@@ -1,3 +1,23 @@
 /*=======================================================
   Testimonial
 =========================================================*/
+.cs_testimonial_section_1 {
+  .cs_heading_style_2 {
+    .cs_description {
+      width: 100%;
+    }
+  }
+
+  .col-lg-8 {
+    .row {
+      padding-left: 74px;
+      justify-content: space-between;
+      .col-6 {
+        width: min(100%, 346px) !important;
+      }
+      @media (max-width: 991px) {
+        padding-left: 0;
+      }
+    }
+  }
+}

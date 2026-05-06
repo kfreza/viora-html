@@ -1,3 +1,36 @@
 /*=======================================================
   Post
 =========================================================*/
+.cs_blog_section_1 {
+  .cs_heading_style_1 {
+    align-items: flex-end;
+    .cs_heading_column_1 {
+      .cs_heading {
+        letter-spacing: -1.6px;
+      }
+      .cs_description {
+        letter-spacing: normal;
+      }
+    }
+  }
+}
+
+.cs_post_wrapper_1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 40px;
+}
+
+.cs_post_style_1 {
+  height: 100%;
+  .cs_post_thumb {
+    background-color: var(--bg-grey);
+    border-radius: 16px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  }
+}
