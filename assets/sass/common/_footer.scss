@@ -6,154 +6,69 @@
     max-width: 1344px;
   }
 
-  .cs_footer_row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 91px;
-    padding: 104px 0 110px;
-
+  .col-2 {
     .cs_footer_col {
-      flex: none;
-      max-width: 150px;
-      &:first-child {
-        // flex: 1;
-        max-width: 526px;
-        // padding-right: 12px;
-        // @media (max-width: 991px) {
-        //   width: 100%;
-        //   flex: none;
-        // }
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .cs_footer_widget_menu {
+    li {
+      padding: 16px 0;
+      font-size: 18px;
+      line-height: 1em;
+      font-weight: 500;
+      &:not(:last-child) {
+        margin-bottom: 6px;
       }
     }
-
-    .cs_footer_widget_title {
-      // font-size: 24px;
-      // margin-bottom: 30px;
-      // font-weight: 500;
-    }
-
-    .cs_footer_text_widget {
-      img {
-        max-width: 200px;
+    a {
+      background-repeat: no-repeat;
+      background-image: linear-gradient(
+        90deg,
+        currentColor 0,
+        currentColor 100%
+      );
+      transition:
+        background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+        color 0.27s ease-out;
+      background-position: 100% calc(100% - 0px);
+      background-size: 0 1px;
+      &:hover {
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
       }
-
-      p {
-        // line-height: 1.625em;
-        // margin-top: 40px;
-        // margin-bottom: 0;
-      }
-
-      &:last-child {
-        p {
-          margin-top: 0;
-        }
-      }
-    }
-
-    .cs_footer_widget_menu {
-      li {
-        &:not(:last-child) {
-          margin-bottom: 0px;
-        }
-
-        .cs_footer_widget_menu_icon_style_1 {
-          i {
-            vertical-align: middle;
-            font-size: 18px;
-            line-height: 1em;
-            margin-right: 1px;
-          }
-        }
-
-        .cs_footer_widget_menu_icon_style_2 {
-          width: 25px;
-          flex: none;
-          display: flex;
-          justify-content: center;
-          margin-top: 10px;
-
-          i {
-            vertical-align: middle;
-            font-size: 25px;
-            color: var(--accent-color);
-          }
-        }
-
-        &:hover {
-          .cs_footer_widget_menu_icon_style_1 {
-            transition: all 0.4s ease;
-            color: var(--accent-color);
-          }
-        }
-      }
-
-      a {
-        font-size: 17px;
-        line-height: 2.118em;
-        background-repeat: no-repeat;
-        background-image: linear-gradient(
-          90deg,
-          currentColor 0,
-          currentColor 100%
-        );
-        transition:
-          background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
-          color 0.27s ease-out;
-        background-position: 100% calc(100% - 0px);
-        background-size: 0 1px;
-
-        &:hover {
-          color: var(--white-color);
-          background-size: 100% 1px;
-          background-position: 0 calc(100% - 0px);
-        }
-      }
-    }
-
-    .cs_footer_widget + .cs_footer_widget {
-      margin-top: 21px;
     }
   }
 
   // Newsletter
-
   .cs_newsletter.cs_style_1 {
-    display: flex;
-    flex-direction: column;
-    gap: 17px;
-
+    width: min(439px, 100%);
+    position: relative;
     .cs_newsletter_input {
-      border: 1px solid var(--accent-color);
       outline: none;
-      background-color: #0e1013;
-      color: var(--body-color);
-      line-height: 1.625em;
+      border: 1px solid var(--bg-grey);
+      border-radius: 12px;
       width: 100%;
-      padding: 13px 20px;
-      // &::placeholder {
-      // }
+      padding: 17px 112px 17px 20px;
+      background-color: var(--bg-grey);
+      &::placeholder {
+        color: var(--text-grey);
+      }
     }
-
-    .cs_newsletter_btn {
-      width: 180px;
-      background-color: var(--accent-color);
-      color: var(--white-color);
-      padding: 13px 25px;
+    .cs_btn_md {
       outline: none;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid var(--accent-color);
-
-      .cs_btn_right_arrow {
-        margin-left: 16px;
-      }
-
-      &:hover {
-        background: transparent;
-        border: 1px solid var(--accent-color);
-      }
+      border: 1px solid var(--black);
+      padding: 16px 20px;
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      // &:hover {
+      //   background: transparent;
+      //   border: 1px solid var(--accent-color);
+      // }
     }
   }
 

@@ -2493,99 +2493,56 @@ hr {
 .cs_footer_section_1 .container {
   max-width: 1344px;
 }
-.cs_footer_section_1 .cs_footer_row {
+.cs_footer_section_1 .col-2 .cs_footer_col {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 91px;
-  padding: 104px 0 110px;
+  justify-content: flex-end;
 }
-.cs_footer_section_1 .cs_footer_row .cs_footer_col {
-  flex: none;
-  max-width: 150px;
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_col:first-child {
-  max-width: 526px;
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_text_widget img {
-  max-width: 200px;
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_text_widget:last-child p {
-  margin-top: 0;
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu li:not(:last-child) {
-  margin-bottom: 0px;
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu li .cs_footer_widget_menu_icon_style_1 i {
-  vertical-align: middle;
+.cs_footer_section_1 .cs_footer_widget_menu li {
+  padding: 16px 0;
   font-size: 18px;
   line-height: 1em;
-  margin-right: 1px;
+  font-weight: 500;
 }
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu li .cs_footer_widget_menu_icon_style_2 {
-  width: 25px;
-  flex: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.cs_footer_section_1 .cs_footer_widget_menu li:not(:last-child) {
+  margin-bottom: 6px;
 }
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu li .cs_footer_widget_menu_icon_style_2 i {
-  vertical-align: middle;
-  font-size: 25px;
-  color: var(--accent-color);
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu li:hover .cs_footer_widget_menu_icon_style_1 {
-  transition: all 0.4s ease;
-  color: var(--accent-color);
-}
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu a {
-  font-size: 17px;
-  line-height: 2.118em;
+.cs_footer_section_1 .cs_footer_widget_menu a {
   background-repeat: no-repeat;
   background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
   transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1), color 0.27s ease-out;
   background-position: 100% calc(100% - 0px);
   background-size: 0 1px;
 }
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget_menu a:hover {
-  color: var(--white-color);
+.cs_footer_section_1 .cs_footer_widget_menu a:hover {
   background-size: 100% 1px;
   background-position: 0 calc(100% - 0px);
 }
-.cs_footer_section_1 .cs_footer_row .cs_footer_widget + .cs_footer_widget {
-  margin-top: 21px;
-}
 .cs_footer_section_1 .cs_newsletter.cs_style_1 {
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
+  width: min(439px, 100%);
+  position: relative;
 }
 .cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_input {
-  border: 1px solid var(--accent-color);
   outline: none;
-  background-color: #0e1013;
-  color: var(--body-color);
-  line-height: 1.625em;
+  border: 1px solid var(--bg-grey);
+  border-radius: 12px;
   width: 100%;
-  padding: 13px 20px;
+  padding: 17px 112px 17px 20px;
+  background-color: var(--bg-grey);
 }
-.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_btn {
-  width: 180px;
-  background-color: var(--accent-color);
-  color: var(--white-color);
-  padding: 13px 25px;
+.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_input::-moz-placeholder {
+  color: var(--text-grey);
+}
+.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_input::placeholder {
+  color: var(--text-grey);
+}
+.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_btn_md {
   outline: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid var(--accent-color);
-}
-.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_btn .cs_btn_right_arrow {
-  margin-left: 16px;
-}
-.cs_footer_section_1 .cs_newsletter.cs_style_1 .cs_newsletter_btn:hover {
-  background: transparent;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--black);
+  padding: 16px 20px;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .cs_footer_section_1 {
   /*==========================================
