@@ -1889,70 +1889,50 @@ hr {
   padding: 0;
   margin: 0;
   display: flex !important;
-  gap: 12px;
+  gap: 8px;
 }
 .cs_pagination.cs_style_1 li {
   display: flex;
   flex: 1;
 }
 .cs_pagination.cs_style_1 li button {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 1px solid var(--accent-color);
-  font-size: 0;
-  color: transparent;
-  padding: 0;
-  outline: none;
-  background-color: transparent;
   cursor: pointer;
+  outline: none;
+  font-size: 0;
+  width: 12px;
+  height: 6px;
+  padding: 0;
+  color: transparent;
+  background-color: var(--line-grey);
+  opacity: 0.3;
+  border: 1px solid var(--line-grey);
+  border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
 }
-.cs_pagination.cs_style_1 li button::before {
-  content: "";
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
-  display: none;
-  opacity: 0;
+.cs_pagination.cs_style_1 li:hover button {
+  background-color: var(--white);
+  border-color: var(--white);
 }
-.cs_pagination.cs_style_1 li:hover button::before {
-  display: block;
-  transition: all 0.3s ease;
-  opacity: 0.7;
-}
-.cs_pagination.cs_style_1 li.slick-active button::before {
-  transition: all 0.3s ease;
-  display: block;
+.cs_pagination.cs_style_1 li.slick-active button {
+  width: 38px;
+  background-color: var(--white);
   opacity: 1;
 }
 
 .cs_slider_arrows.cs_style_1 {
   display: flex;
-  gap: 20px;
+  gap: 8px;
 }
 .cs_slider_arrows.cs_style_1 .slick-arrow {
-  height: 50px;
-  width: 50px;
-  border: 1px solid var(--accent-color);
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--bg-grey);
   border-radius: 50%;
-  color: var(--white-color);
-  background-color: var(--accent-color);
+  color: var(--black);
+  background-color: var(--bg-grey);
   transition: all 0.4s ease;
 }
-.cs_slider_arrows.cs_style_1 .slick-arrow:hover {
-  background-color: transparent;
-  color: var(--accent-color);
-}
-
 /*===========================================================
   Video Modal
 =============================================================*/
@@ -2962,17 +2942,64 @@ hr {
 .cs_testimonial_section_1 .cs_heading_style_2 .cs_description {
   width: 100%;
 }
-.cs_testimonial_section_1 .col-lg-8 .row {
+.cs_testimonial_section_1 .col-lg-8 {
   padding-left: 74px;
-  justify-content: space-between;
-}
-.cs_testimonial_section_1 .col-lg-8 .row .col-6 {
-  width: min(100%, 346px) !important;
 }
 @media (max-width: 991px) {
-  .cs_testimonial_section_1 .col-lg-8 .row {
+  .cs_testimonial_section_1 .col-lg-8 {
     padding-left: 0;
   }
+}
+.cs_testimonial_section_1 .cs_slider_arrows.cs_style_1 {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+}
+
+.cs_testimonial_wrapper_1 {
+  background: url(../img/testimonial_bg.svg);
+  background-size: cover;
+  border-radius: 20px;
+  -webkit-mask-image: url(../img/testimonial_mask_1.svg);
+          mask-image: url(../img/testimonial_mask_1.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+.cs_testimonial_wrapper_1 .cs_pagination.cs_style_1 {
+  position: absolute;
+  left: 32px;
+  bottom: 24px;
+}
+
+.cs_testimonial_style_1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px 0;
+  padding: 24px 0 60px 32px;
+  transition: all 0.4s ease;
+}
+.cs_testimonial_style_1 .cs_testimonial_thumb {
+  flex: none;
+  align-self: flex-end;
+  width: 38.227%;
+  overflow: hidden;
+  margin-bottom: -60px;
+}
+.cs_testimonial_style_1 .cs_testimonial_thumb img {
+  border-radius: 0 0 20px 0;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cs_testimonial_style_1 .cs_author_title {
+  line-height: 1.2em;
+}
+.cs_testimonial_style_1 .cs_author_designation {
+  line-height: 1.54em;
 }
 
 /*=======================================================
