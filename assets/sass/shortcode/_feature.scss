@@ -56,6 +56,10 @@
     .cs_project_column_2 {
       margin-bottom: 112px;
     }
+    .cs_btn_sm.cs_type_2 {
+      color: var(--white);
+      background-color: var(--black);
+    }
   }
   &:hover {
     box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);

@@ -2521,8 +2521,7 @@ hr {
   padding: 16px 20px;
   position: absolute;
   right: 4px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 4px;
 }
 .cs_footer_section_1 {
   /*==========================================
@@ -3278,6 +3277,10 @@ hr {
 .cs_project_style_1.active .cs_project_column_2 {
   margin-bottom: 112px;
 }
+.cs_project_style_1.active .cs_btn_sm.cs_type_2 {
+  color: var(--white);
+  background-color: var(--black);
+}
 .cs_project_style_1:hover {
   box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
 }
@@ -3703,6 +3706,20 @@ hr {
   transform: scale(1.06);
 }
 
+/*==========================================================
+ Animated BG Effects
+============================================================*/
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /*=======================================================
   Gallery
 =========================================================*//*# sourceMappingURL=style.css.map */
