@@ -7,10 +7,13 @@
       padding-left: 74px;
       justify-content: space-between;
       .col-6 {
-        width: min(100%, 346px) !important;
+        width: min(50%, 346px) !important;
+      }
+      @media (max-width: 1399px) {
+        padding-left: 0;
       }
       @media (max-width: 991px) {
-        padding-left: 0;
+        gap: 50px 0;
       }
     }
   }

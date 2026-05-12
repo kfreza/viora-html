@@ -35,6 +35,9 @@
 .cs_fs_16 {
   font-size: 16px;
   line-height: 1.48em;
+  @media (max-width: 991px) {
+    font-size: 14px;
+  }
 }
 
 // .cs_fs_17 {
@@ -63,6 +66,9 @@
 .cs_fs_24 {
   font-size: 24px;
   line-height: 1.2em;
+  @media (max-width: 991px) {
+    font-size: 22px;
+  }
 }
 
 // .cs_fs_25 {
@@ -98,6 +104,9 @@
 .cs_fs_40 {
   font-size: 40px;
   line-height: 1.2em;
+  @media (max-width: 1399px) {
+    font-size: 32px;
+  }
 }
 
 // .cs_fs_42 {
@@ -195,6 +204,9 @@
 }
 .cs_gap_y_50 {
   gap: 50px 0;
+}
+.cs_gap_y_60 {
+  gap: 60px 0;
 }
 
 // Horizontal Line Default Reset

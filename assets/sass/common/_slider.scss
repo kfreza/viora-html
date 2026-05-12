@@ -46,6 +46,16 @@
 //End of Default Peoperties
 
 // Slider Gap
+.cs_slider_gap_16 {
+  .slick-slide {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .slick-list {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
 .cs_slider_gap_24 {
   .slick-slide {
     padding-left: 12px;
