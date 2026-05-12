@@ -50,7 +50,9 @@
 .cs_fs_20 {
   font-size: 20px;
   line-height: 1.4em;
-  // 1.2,
+  @media (max-width: 1199px) {
+    font-size: 18px;
+  }
 }
 
 // .cs_fs_22 {
@@ -140,6 +142,15 @@
 .cs_fs_76 {
   font-size: 76px;
   line-height: 1.2em;
+  @media (max-width: 1199px) {
+    font-size: 65px;
+  }
+  @media (max-width: 767px) {
+    font-size: 58px;
+  }
+  @media (max-width: 575px) {
+    font-size: 48px;
+  }
 }
 
 // Font Weight

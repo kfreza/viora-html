@@ -65,6 +65,8 @@
   });
 
   $(window).on("scroll", function () {
+
+    // Use Only in Regular Sticky Header
     // stickyHeader();
   });
 
@@ -87,44 +89,59 @@
   2. Mobile Menu
   --------------------------------------------------------------*/
   function mainNav() {
-    $('.cs_nav').append('<span class="cs_menu_toggle"><span></span></span>');
-    $('.menu-item-has-children').append(
+    $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
+    $(".menu-item-has-children").append(
       '<span class="cs_menu_dropdown_toggle"><span></span></span>',
     );
-    $('.cs_menu_toggle').on('click', function () {
-      $(this).toggleClass('cs_toggle_active').siblings('.cs_nav_list_wrap').toggleClass('cs_active');
+    $(".cs_menu_toggle").on("click", function () {
+      $(this)
+        .toggleClass("cs_toggle_active")
+        .siblings(".cs_nav_list_wrap")
+        .toggleClass("cs_active");
     });
-    $('.cs_menu_dropdown_toggle').on('click', function () {
-      $(this).toggleClass('active').siblings('ul').slideToggle();
-      $(this).parent().toggleClass('active');
+    $(".cs_menu_dropdown_toggle").on("click", function () {
+      $(this).toggleClass("active").siblings("ul").slideToggle();
+      $(this).parent().toggleClass("active");
     });
   }
 
+  /*=============================================================
+   03. Sticky Header
+  ===============================================================*/
+  // function stickyHeader() {
+  //   var scroll = $(window).scrollTop();
+  //   if (scroll >= 10) {
+  //     $(".cs_sticky_header").addClass("cs_sticky_active");
+  //   } else {
+  //     $(".cs_sticky_header").removeClass("cs_sticky_active");
+  //   }
+  // }
+
   /*--------------------------------------------------------------
-  3. Sticky Header
+  03. Gescout Sticky Header
   --------------------------------------------------------------*/
   function stickyHeader() {
     var $window = $(window);
     var lastScrollTop = 0;
-    var $header = $('.cs_sticky_header');
+    var $header = $(".cs_sticky_header");
     var headerHeight = $header.outerHeight() + 20;
 
     $window.scroll(function () {
       var windowTop = $window.scrollTop();
 
       if (windowTop >= headerHeight) {
-        console.log($window)
-        $header.addClass('cs_gescout_sticky');
+        // console.log($window)
+        $header.addClass("cs_gescout_sticky");
       } else {
-        $header.removeClass('cs_gescout_sticky');
-        $header.removeClass('cs_gescout_show');
+        $header.removeClass("cs_gescout_sticky");
+        $header.removeClass("cs_gescout_show");
       }
 
-      if ($header.hasClass('cs_gescout_sticky')) {
+      if ($header.hasClass("cs_gescout_sticky")) {
         if (windowTop < lastScrollTop) {
-          $header.addClass('cs_gescout_show');
+          $header.addClass("cs_gescout_show");
         } else {
-          $header.removeClass('cs_gescout_show');
+          $header.removeClass("cs_gescout_show");
         }
       }
       lastScrollTop = windowTop;
@@ -169,7 +186,7 @@
         var centerVar = Boolean(parseInt($ts.attr("data-center"), 10));
         // Variable Width
         var variableWidthVar = Boolean(
-          parseInt($ts.attr("data-variable-width"), 10)
+          parseInt($ts.attr("data-variable-width"), 10),
         );
         // Pagination
         var paginaiton = $(this)
@@ -196,9 +213,9 @@
           function (event, slick, currentSlide, nextSlide) {
             var i = (currentSlide ? currentSlide : 0) + 1;
             $status.html(
-              `<span class="cs_current_number" data-number="${i}"><span>${i}</span></span> <span class="cs_slider_number_seperator">/</span> <span class="cs_total_numbers"  data-number="${slick.slideCount}"><span>${slick.slideCount}</span></span>`
+              `<span class="cs_current_number" data-number="${i}"><span>${i}</span></span> <span class="cs_slider_number_seperator">/</span> <span class="cs_total_numbers"  data-number="${slick.slideCount}"><span>${slick.slideCount}</span></span>`,
             );
-          }
+          },
         );
         /* End Count Slide Number */
         // Slick Active Code
@@ -284,7 +301,7 @@
           $("html").removeClass("overflow-hidden");
           $(".cs_video_popup-container iframe").attr("src", "about:blank");
           e.preventDefault();
-        }
+        },
       );
     }
   }
@@ -307,25 +324,25 @@
     8. Isotop
   --------------------------------------------------------------*/
   function isotopInit() {
-    if ($.exists('.cs_isotop')) {
-      $('.cs_isotop').isotope({
-        itemSelector: '.cs_isotop_item',
-        transitionDuration: '0.60s',
+    if ($.exists(".cs_isotop")) {
+      $(".cs_isotop").isotope({
+        itemSelector: ".cs_isotop_item",
+        transitionDuration: "0.60s",
         percentPosition: true,
         masonry: {
-          columnWidth: '.cs_grid_sizer',
+          columnWidth: ".cs_grid_sizer",
         },
       });
       /* Active Class of Portfolio*/
-      $('.cs_isotop_filter ul li').on('click', function (event) {
-        $(this).siblings('.active').removeClass('active');
-        $(this).addClass('active');
+      $(".cs_isotop_filter ul li").on("click", function (event) {
+        $(this).siblings(".active").removeClass("active");
+        $(this).addClass("active");
         event.preventDefault();
       });
       /*=== Portfolio filtering ===*/
-      $('.cs_isotop_filter ul').on('click', 'a', function () {
-        var filterElement = $(this).attr('data-filter');
-        $('.cs_isotop').isotope({
+      $(".cs_isotop_filter ul").on("click", "a", function () {
+        var filterElement = $(this).attr("data-filter");
+        $(".cs_isotop").isotope({
           filter: filterElement,
         });
       });
@@ -389,7 +406,7 @@
         .fadeIn(400)
         .siblings()
         .hide();
-      console.log(currentAttrValue)
+      console.log(currentAttrValue);
       $(this).closest(".cs_tab_links").find("li").removeClass("active");
       $(this).parents("li").addClass("active");
       e.preventDefault();
@@ -414,7 +431,7 @@
       },
       {
         threshold: 0.3,
-      }
+      },
     );
 
     $(".odometer").each(function () {
@@ -462,7 +479,6 @@
   14. Language Select
 ========================================================================*/
   function languageSwitch() {
-
     const languageItem = $(".cs_language_select");
 
     // Toggle dropdown
@@ -499,7 +515,6 @@
     $(document).on("click", function () {
       $(".cs_language_dropdown").slideUp(200);
     });
-
   }
 
   /*======================================================================
@@ -562,18 +577,19 @@
       const $this = $(this);
 
       // Toggle Active Class & Content
-      $this.toggleClass("active")
+      $this
+        .toggleClass("active")
         .siblings(".cs_sidebar_widget_content")
         .slideToggle()
         .parent(".cs_sidebar_widget")
         .toggleClass("active");
 
       // Icon Change Logic (Conflict-free)
-      const icon = $this.find('i');
+      const icon = $this.find("i");
 
       // Check for Plus/Minus (Nested Widget)
-      if (icon.hasClass('fa-plus') || icon.hasClass('fa-minus')) {
-        icon.toggleClass('fa-plus fa-minus');
+      if (icon.hasClass("fa-plus") || icon.hasClass("fa-minus")) {
+        icon.toggleClass("fa-plus fa-minus");
       }
 
       // Note: Chevron rotate-er logic CSS die handle kora bhalo (ja tumi already korcho)
@@ -585,25 +601,22 @@
     });
   }
 
-
   //
 
   function initProjectCards() {
-    const projects = document.querySelectorAll('.cs_project_style_1');
-    const defaultActive = document.querySelector('.cs_project_style_1.active');
+    const projects = document.querySelectorAll(".cs_project_style_1");
+    const defaultActive = document.querySelector(".cs_project_style_1.active");
 
-    projects.forEach(project => {
-      project.addEventListener('mouseenter', function () {
-        projects.forEach(p => p.classList.remove('active'));
-        this.classList.add('active');
+    projects.forEach((project) => {
+      project.addEventListener("mouseenter", function () {
+        projects.forEach((p) => p.classList.remove("active"));
+        this.classList.add("active");
       });
 
-      project.addEventListener('mouseleave', function () {
-        projects.forEach(p => p.classList.remove('active'));
-        defaultActive.classList.add('active');
+      project.addEventListener("mouseleave", function () {
+        projects.forEach((p) => p.classList.remove("active"));
+        defaultActive.classList.add("active");
       });
     });
   }
-
-
 })(jQuery); // End of use strict

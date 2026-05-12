@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viora — Button Hover Effects Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    :root {
+      --bg-grey: #f7f5f9;
+      --black: #222222;
+      --white: #ffffff;
+      --text-grey: #646464;
+      --text-grey-light: #a7a7a7;
+      --line-grey: #dbdbdb;
+      --pink: #ef4bcb;
+      --teal: #34897b;
+      --radial-gradient: radial-gradient(98.81% 98.81% at 0.35% 47.8%, #ef4bcb 0%, #34897b 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      background: var(--bg-grey);
+      color: var(--black);
+      padding: 60px 24px;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-head {
+      margin-bottom: 48px;
+    }
+
+    .page-head h1 {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .page-head p {
+      color: var(--text-grey);
+      font-size: 16px;
+    }
+
+    .page-head .swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+      background: var(--radial-gradient);
+      vertical-align: middle;
+      margin: 0 6px 2px 0;
+    }
+
+    .effect-card {
+      background: var(--white);
+      border: 1px solid var(--line-grey);
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 28px;
+    }
+
+    .effect-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .effect-head .tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--black);
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+
+    .effect-head h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .effect-card .desc {
+      color: var(--text-grey);
+      font-size: 14px;
+      margin-bottom: 28px;
+      max-width: 720px;
+      line-height: 1.55;
+    }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 720px) {
+      .btn-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .btn-cell {
+      border: 1px dashed var(--line-grey);
+      border-radius: 12px;
+      padding: 28px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-grey);
+    }
+
+    .btn-cell.dark {
+      background: #1a1a1a;
+      border-color: #2a2a2a;
+    }
+
+    .btn-cell .label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-grey-light);
+    }
+
+    .btn-cell.dark .label {
+      color: #777;
+    }
+
+    /* ============================================================
+     BASE BUTTON (mirrors cs_btn_lg from _button.scss)
+     ============================================================ */
+    .cs_btn_lg {
+      background-color: var(--black);
+      color: var(--white);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 19px 26px;
+      border-radius: 8px;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1em;
+      text-decoration: none;
+      text-wrap: nowrap;
+      border: 1px solid var(--black);
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .cs_btn_lg.cs_type_1 {
+      background-color: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .cs_btn_lg.cs_type_2 {
+      background-color: transparent;
+      color: var(--black);
+      border: 1px solid var(--black);
+    }
+
+    .cs_btn_lg .arrow {
+      display: inline-block;
+      transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* ============================================================
+     EFFECT A — Liquid Gradient Sweep
+     ============================================================ */
+    .fx-a::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--radial-gradient);
+      transform: translateX(-110%) skewX(-14deg);
+      transition: transform 0.6s cubic-bezier(.22, .61, .36, 1);
+      z-index: -1;
+    }
+
+    .fx-a:hover::before {
+      transform: translateX(0) skewX(-14deg);
+    }
+
+    .fx-a:hover {
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    .fx-a:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    /* ============================================================
+     EFFECT B — Halo Glow + Magnetic Lift
+     ============================================================ */
+    .fx-b {
+      transition: transform 0.4s cubic-bezier(.22, .61, .36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.3s ease;
+    }
+
+    .fx-b:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        -10px -10px 32px rgba(239, 75, 203, 0.38),
+        10px 10px 32px rgba(52, 137, 123, 0.38);
+    }
+
+    .fx-b.cs_type_2:hover {
+      border-color: transparent;
+      background-image: linear-gradient(var(--bg-grey), var(--bg-grey)),
+        var(--radial-gradient);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      border: 1.5px solid transparent;
+    }
+
+    /* ============================================================
+     EFFECT C — Conic Border Trace
+     ============================================================ */
+    .fx-c {
+      background-clip: padding-box;
+    }
+
+    .fx-c::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: conic-gradient(from var(--angle),
+          transparent 0%,
+          transparent 55%,
+          var(--pink) 75%,
+          var(--teal) 90%,
+          transparent 100%);
+      z-index: -2;
+      opacity: 0;
+      animation: fx-c-spin 2.4s linear infinite paused;
+      transition: opacity 0.3s ease;
+    }
+
+    .fx-c::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      background-color: var(--black);
+      border-radius: inherit;
+      z-index: -1;
+    }
+
+    .fx-c.cs_type_1::after {
+      background-color: var(--white);
+    }
+
+    .fx-c.cs_type_2::after {
+      background-color: var(--bg-grey);
+    }
+
+    .fx-c:hover::before {
+      opacity: 1;
+      animation-play-state: running;
+    }
+
+    @keyframes fx-c-spin {
+      to {
+        --angle: 360deg;
+      }
+    }
+
+    /* ============================================================
+     EFFECT D — Shimmer Sweep + Arrow Slide
+     ============================================================ */
+    .fx-d::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          transparent 0%,
+          rgba(239, 75, 203, 0.35) 35%,
+          rgba(52, 137, 123, 0.35) 65%,
+          transparent 100%);
+      transition: left 0.75s cubic-bezier(.22, .61, .36, 1);
+      z-index: -1;
+    }
+
+    .fx-d:hover::after {
+      left: 130%;
+    }
+
+    .fx-d:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    .fx-d.cs_type_2:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      padding: 20px;
+      font-size: 13px;
+      color: var(--text-grey);
+      text-align: center;
+      background: var(--white);
+      border: 1px dashed var(--line-grey);
+      border-radius: 12px;
+    }
+
+    /* ============================================================
+     SECTION DIVIDER (between buttons block and social icons block)
+     ============================================================ */
+    .section-divider {
+      margin: 56px 0 28px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--text-grey-light);
+      position: relative;
+    }
+
+    .section-divider span {
+      background: var(--bg-grey);
+      padding: 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-divider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--line-grey);
+    }
+
+    /* ============================================================
+     SOCIAL ICONS BASE (mirrors .cs_social_btns from _button.scss)
+     ============================================================ */
+    .cs_social_btns {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .cs_social_btns a {
+      background: var(--bg-grey);
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      position: relative;
+      isolation: isolate;
+      transition: all 0.4s ease;
+    }
+
+    .cs_social_btns a img {
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: filter 0.4s ease, transform 0.35s ease;
+    }
+
+    .effect-card .cs_social_btns {
+      padding: 28px 0 12px;
+    }
+
+    /* On dark cells, swap the icon-circle bg so they remain visible */
+    .btn-cell.dark .cs_social_btns a {
+      background: #2a2a2a;
+    }
+
+    .btn-cell.dark .fx-soc-c::after {
+      background: #2a2a2a;
+    }
+
+    /* ============================================================
+     SOCIAL EFFECT A — Gradient Lift + Icon Invert
+     ============================================================ */
+    .fx-soc-a:hover {
+      background: var(--radial-gradient);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(34, 34, 34, 0.18);
+    }
+
+    .fx-soc-a:hover img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* ============================================================
+     SOCIAL EFFECT B — Halo Glow + Float
+     ============================================================ */
+    .fx-soc-b:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        -6px -6px 22px rgba(239, 75, 203, 0.40),
+        6px 6px 22px rgba(52, 137, 123, 0.40);
+    }
+
+    /* ============================================================
+     SOCIAL EFFECT C — Conic Ring Trace
+     ============================================================ */
+    .fx-soc-c::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(from var(--angle),
+          transparent 0%,
+          transparent 55%,
+          var(--pink) 75%,
+          var(--teal) 90%,
+          transparent 100%);
+      z-index: -2;
+      opacity: 0;
+      animation: fx-soc-c-spin 2.4s linear infinite paused;
+      transition: opacity 0.3s ease;
+    }
+
+    .fx-soc-c::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--bg-grey);
+      z-index: -1;
+    }
+
+    .fx-soc-c:hover::before {
+      opacity: 1;
+      animation-play-state: running;
+    }
+
+    @keyframes fx-soc-c-spin {
+      to {
+        --angle: 360deg;
+      }
+    }
+
+    /* ============================================================
+     SOCIAL EFFECT D — Color Drop-Shadow + Magnetic Float
+     ============================================================ */
+    .fx-soc-d:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    .fx-soc-d:hover img {
+      filter: drop-shadow(0 6px 14px rgba(239, 75, 203, 0.55)) drop-shadow(0 6px 14px rgba(52, 137, 123, 0.40));
+    }
+
+    /* ============================================================
+     HEADER MOCK (dark hero-like context for nav + CTA preview)
+     ============================================================ */
+    .header-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border: 1px solid #2e2e2e;
+    }
+
+    .header-card .effect-head h2 {
+      color: var(--white);
+    }
+
+    .header-card .desc {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .header-card .effect-head .tag {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .header-variant+.header-variant {
+      margin-top: 18px;
+    }
+
+    .variant-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+      margin-bottom: 8px;
+    }
+
+    .mock-header {
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .mock-header .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .mock-header .nav {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mock-header .nav li {
+      position: relative;
+    }
+
+    .mock-header .nav li>a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      display: inline-block;
+      padding: 10px 2px;
+      transition: color 0.4s ease, transform 0.3s ease;
+    }
+
+    .mock-header .nav li::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0%;
+      transition: width 0.4s ease, background 0.3s ease;
+    }
+
+    .mock-header .nav li.active::after {
+      width: 100%;
+      background: var(--white);
+    }
+
+    .mock-header .nav li:hover::after {
+      width: 100%;
+      background: var(--radial-gradient);
+    }
+
+    /* ============================================================
+     NAV LINK EFFECTS
+     ============================================================ */
+    /* N1 — Gradient text fill */
+    .fx-nav-1 li:not(.active)>a:hover {
+      background: var(--radial-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* N2 — Pink solid shift */
+    .fx-nav-2 li:not(.active)>a:hover {
+      color: var(--pink);
+    }
+
+    /* N3 — Lift + pink */
+    .fx-nav-3 li:not(.active)>a:hover {
+      color: var(--pink);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+     HEADER BUTTON EFFECTS
+     ============================================================ */
+    /* B1 — Gradient fill override (kills shimmer in this context) */
+    .cs_btn_lg.fx-btn-1::after {
+      display: none;
+    }
+
+    .cs_btn_lg.fx-btn-1:hover {
+      background: var(--radial-gradient);
+      color: var(--white);
+      border-color: transparent;
+    }
+
+    /* B2 — Add lift to shimmer (button keeps .fx-d for shimmer) */
+    .cs_btn_lg.fx-btn-2:hover {
+      transform: translateY(-2px);
+    }
+
+    /* B3 — Shimmer only — no extra rule, just .fx-d on the button */
+
+    /* ============================================================
+     STICKY HEADER BACKGROUND — 4 brand-aligned options
+     ============================================================ */
+    .sticky-bg-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      border-color: #2e2e2e;
+    }
+
+    .sticky-bg-card .effect-head h2 {
+      color: var(--white);
+    }
+
+    .sticky-bg-card .desc {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .sticky-bg-card .effect-head .tag {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .sticky-option+.sticky-option {
+      margin-top: 22px;
+    }
+
+    .sticky-stage {
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 55% 80% at 18% 25%, rgba(239, 75, 203, 0.45), transparent 60%),
+        radial-gradient(ellipse 65% 80% at 82% 65%, rgba(52, 137, 123, 0.55), transparent 60%),
+        radial-gradient(ellipse 90% 50% at 50% 100%, rgba(96, 64, 168, 0.45), transparent 60%),
+        #14081c;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .sticky-mock {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 26px;
+      gap: 18px;
+      color: var(--white);
+    }
+
+    .sticky-mock .logo {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .sticky-mock .nav {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sticky-mock .nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .sticky-mock .cta {
+      background: var(--white);
+      color: var(--black);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .sticky-caption {
+      margin-top: 12px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0 4px;
+    }
+
+    .sticky-caption strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .sticky-caption code {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* A — Solid Deep Black */
+    .sh-1 {
+      background: #0d0d0d;
+    }
+
+    /* B — Solid Dark + Gradient Hairline */
+    .sh-2 {
+      background: #161616;
+      position: relative;
+    }
+
+    .sh-2::after {
+      content: "";
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 0;
+      height: 1.5px;
+      background: var(--radial-gradient);
+      border-radius: 2px;
+    }
+
+    /* C — Frosted Glass Dark */
+    .sh-3 {
+      background: rgba(20, 20, 20, 0.62);
+      backdrop-filter: blur(18px) saturate(180%);
+      -webkit-backdrop-filter: blur(18px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* D — Brand-Tinted Frosted Glass */
+    .sh-4 {
+      background:
+        radial-gradient(ellipse at 0% 50%, rgba(239, 75, 203, 0.20), transparent 65%),
+        radial-gradient(ellipse at 100% 50%, rgba(52, 137, 123, 0.24), transparent 65%),
+        rgba(22, 18, 26, 0.55);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="page-head">
+      <h1>Viora — Button Hover Effects</h1>
+      <p><span class="swatch"></span> Hover each button. All four effects use the brand <code>--radial-gradient</code>
+        (#ef4bcb → #34897b).</p>
+    </div>
+
+    <!-- A -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">A</span>
+        <h2>Liquid Gradient Sweep</h2>
+      </div>
+      <p class="desc">Brand radial gradient wipes diagonally across the button face from left to right, skewed 14°. Text
+        inverts to white as the gradient covers it. Arrow nudges 3px right.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">Default · cs_btn_lg</span>
+          <a href="#" class="cs_btn_lg fx-a">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">cs_type_1</span>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-a">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell">
+          <span class="label">cs_type_2 · outlined</span>
+          <a href="#" class="cs_btn_lg cs_type_2 fx-a">Get Started <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- B -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">B</span>
+        <h2>Halo Glow + Magnetic Lift</h2>
+      </div>
+      <p class="desc">Subtle 4px lift with offset pink and teal glows underneath (32px blur). Outlined button
+        additionally gains a gradient border. Premium, restrained, no fill change.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">Default · cs_btn_lg</span>
+          <a href="#" class="cs_btn_lg fx-b">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">cs_type_1</span>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-b">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell">
+          <span class="label">cs_type_2 · outlined</span>
+          <a href="#" class="cs_btn_lg cs_type_2 fx-b">Get Started <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- C -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">C</span>
+        <h2>Conic Border Trace</h2>
+      </div>
+      <p class="desc">A pink→teal arc rotates around the button perimeter (2.4s loop) on hover. Background and text stay
+        locked. Cyber/sci-fi AI dashboard feel. Uses CSS @property for smooth angle animation.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">Default · cs_btn_lg</span>
+          <a href="#" class="cs_btn_lg fx-c">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">cs_type_1</span>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-c">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell">
+          <span class="label">cs_type_2 · outlined</span>
+          <a href="#" class="cs_btn_lg cs_type_2 fx-c">Get Started <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- D -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">D</span>
+        <h2>Shimmer Sweep + Arrow Slide</h2>
+      </div>
+      <p class="desc">A soft pink-to-teal shimmer band (60% width, 120° angle) sweeps across once on hover (~750ms).
+        Arrow nudges 5px right. Outlined button switches to pink. Polished, Linear/Vercel-style.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">Default · cs_btn_lg</span>
+          <a href="#" class="cs_btn_lg fx-d">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">cs_type_1</span>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d">Get Started <span class="arrow">→</span></a>
+        </div>
+        <div class="btn-cell">
+          <span class="label">cs_type_2 · outlined</span>
+          <a href="#" class="cs_btn_lg cs_type_2 fx-d">Get Started <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"><span>SOCIAL ICONS</span></div>
+
+    <!-- Social A -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">A</span>
+        <h2>Gradient Lift + Icon Invert</h2>
+      </div>
+      <p class="desc">Grey background morphs to brand radial gradient. Icon flips to white via
+        <code>filter: brightness(0) invert(1)</code>. Subtle 3px lift with soft shadow underneath. Most expressive of
+        the four — closest to "wear the brand."</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">On light bg (footer context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">On dark bg (alt context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-a" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social B -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">B</span>
+        <h2>Halo Glow + Float</h2>
+      </div>
+      <p class="desc">No background change. 4px lift with dual offset pink/teal box-shadow halos. Most restrained —
+        premium, brand-tinted "floating" feel. Mirrors Button Effect B for cross-component cohesion.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">On light bg (footer context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">On dark bg (alt context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-b" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social C -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">C</span>
+        <h2>Conic Ring Trace</h2>
+      </div>
+      <p class="desc">A pink→teal arc rotates around the circle's perimeter (2.4s loop). Background and icon stay
+        locked. Cyber/futuristic — more dynamic than minimal. Uses CSS @property for smooth angle animation.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">On light bg (footer context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">On dark bg (alt context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-c" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social D -->
+    <div class="effect-card">
+      <div class="effect-head">
+        <span class="tag">D</span>
+        <h2>Color Drop-Shadow + Magnetic Float</h2>
+      </div>
+      <p class="desc">4px lift with scale 1.05. The icon silhouette itself gets a layered pink + teal
+        <code>drop-shadow</code> filter (paints under the SVG shape, not the circle). Background unchanged. Most
+        icon-focused, very minimal.</p>
+      <div class="btn-row">
+        <div class="btn-cell">
+          <span class="label">On light bg (footer context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+        <div class="btn-cell dark">
+          <span class="label">On dark bg (alt context)</span>
+          <div class="cs_social_btns">
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/InstagramLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/XLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/LinkedinLogo.svg" alt=""></a>
+            <a href="#" class="fx-soc-d" aria-label="Social link"><img src="assets/img/YoutubeLogo.svg" alt=""></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"><span>HEADER — NAV LINKS &amp; CTA BUTTON</span></div>
+
+    <!-- Header Nav -->
+    <div class="effect-card header-card">
+      <div class="effect-head">
+        <span class="tag">N</span>
+        <h2>Nav Link Hover</h2>
+      </div>
+      <p class="desc">All three variants share the existing base behavior — a 2px gradient underline grows beneath the
+        hovered link (already wired in <code>_header.scss</code>). The variants below add a text-level treatment on top.
+        Hover a nav link in each row.</p>
+
+      <div class="header-variant">
+        <span class="variant-label">N1 — Gradient text fill (Recommended)</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-1">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d">Get Started</a>
+        </div>
+      </div>
+
+      <div class="header-variant">
+        <span class="variant-label">N2 — Pink solid shift</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-2">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d">Get Started</a>
+        </div>
+      </div>
+
+      <div class="header-variant">
+        <span class="variant-label">N3 — Lift + pink</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-3">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Button -->
+    <div class="effect-card header-card">
+      <div class="effect-head">
+        <span class="tag">B</span>
+        <h2>Header CTA Button Hover</h2>
+      </div>
+      <p class="desc">All three buttons inherit the global Effect D shimmer from <code>_button.scss</code>. The variants
+        below show how the header instance can layer on (or override) that base behavior. Hover the "Get Started" button
+        in each row.</p>
+
+      <div class="header-variant">
+        <span class="variant-label">B1 — Gradient fill override (Recommended) — shimmer is suppressed in header
+          context</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-1">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d fx-btn-1">Get Started</a>
+        </div>
+      </div>
+
+      <div class="header-variant">
+        <span class="variant-label">B2 — Add lift to shimmer</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-1">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d fx-btn-2">Get Started</a>
+        </div>
+      </div>
+
+      <div class="header-variant">
+        <span class="variant-label">B3 — Shimmer only (no header-specific override)</span>
+        <div class="mock-header">
+          <div class="logo">Viora</div>
+          <ul class="nav fx-nav-1">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+          </ul>
+          <a href="#" class="cs_btn_lg cs_type_1 fx-d">Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"><span>STICKY HEADER BACKGROUND</span></div>
+
+    <div class="effect-card sticky-bg-card">
+      <div class="effect-head">
+        <span class="tag">SH</span>
+        <h2>Sticky Header Background — 4 options</h2>
+      </div>
+      <p class="desc">Currently <code>_header.scss:18</code> references <code>--black-color</code> (which doesn't exist
+        in <code>_variable.scss</code>), so the sticky bg silently falls back to transparent. Below: 4 brand-aligned
+        dark alternatives. Each is shown over a busy gradient backdrop so that <code>backdrop-filter</code> blur effects
+        in C and D actually render.</p>
+
+      <div class="sticky-option">
+        <div class="sticky-stage">
+          <div class="sticky-mock sh-1">
+            <div class="logo">Viora</div>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <a href="#" class="cta">Get Started</a>
+          </div>
+        </div>
+        <div class="sticky-caption">
+          <strong>A — Solid Deep Black</strong> &mdash; <code>#0d0d0d</code>. Timeless, bulletproof, max contrast
+          against any hero. The safest pick that always reads cleanly.
+        </div>
+      </div>
+
+      <div class="sticky-option">
+        <div class="sticky-stage">
+          <div class="sticky-mock sh-2">
+            <div class="logo">Viora</div>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <a href="#" class="cta">Get Started</a>
+          </div>
+        </div>
+        <div class="sticky-caption">
+          <strong>B — Solid Dark + Gradient Hairline</strong> &mdash; <code>#161616</code> + a 1.5px pink&rarr;teal line
+          along the bottom edge. Minimal solid bg with a single signature brand cue. Good middle ground between A and
+          the glass options.
+        </div>
+      </div>
+
+      <div class="sticky-option">
+        <div class="sticky-stage">
+          <div class="sticky-mock sh-3">
+            <div class="logo">Viora</div>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <a href="#" class="cta">Get Started</a>
+          </div>
+        </div>
+        <div class="sticky-caption">
+          <strong>C — Frosted Glass Dark</strong> &mdash; <code>rgba(20,20,20,0.62)</code> +
+          <code>backdrop-filter: blur(18px) saturate(180%)</code>. Content underneath blurs through. Most-on-trend
+          modern web pattern (Apple, Linear, Vercel-style).
+        </div>
+      </div>
+
+      <div class="sticky-option">
+        <div class="sticky-stage">
+          <div class="sticky-mock sh-4">
+            <div class="logo">Viora</div>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <a href="#" class="cta">Get Started</a>
+          </div>
+        </div>
+        <div class="sticky-caption">
+          <strong>D — Brand-Tinted Frosted Glass</strong> &mdash; same blur as C but with faint pink/teal radial
+          overlays mixed into the base. Premium and most brand-forward &mdash; the brand colors live subtly in the bar
+          itself, not just the content underneath.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Preview file. Four open picks: <strong>(1)</strong> social-icon effect (A&ndash;D), <strong>(2)</strong> nav-link
+      effect (N1&ndash;N3), <strong>(3)</strong> header-button effect (B1&ndash;B3), <strong>(4)</strong> sticky-header
+      bg (A&ndash;D, this section). Tell me your picks and I'll wire each into its respective SCSS partial.
+    </div>
+
+  </div>
+</body>
+
+</html>

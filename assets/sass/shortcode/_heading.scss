@@ -29,6 +29,17 @@
   .cs_heading_meta_des {
     text-align: end;
   }
+
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+
+    .cs_heading_column_2 {
+      align-items: flex-start;
+    }
+    .cs_heading_meta_des {
+      text-align: start;
+    }
+  }
 }
 // Heading Style
 .cs_heading_style_2 {

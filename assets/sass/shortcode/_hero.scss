@@ -6,4 +6,8 @@
   .container {
     max-width: 1344px;
   }
+
+  @media (max-width: 1199px) {
+    padding: 128px 0 334px;
+  }
 }
