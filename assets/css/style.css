@@ -3245,6 +3245,15 @@ hr {
      object-fit: cover;
   border-radius: 16px;
 }
+.cs_post_style_1 .cs_post_title a {
+  transition: background 0.4s ease;
+}
+.cs_post_style_1 .cs_post_title a:hover {
+  background: var(--radial-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /*=======================================================
   Feature
