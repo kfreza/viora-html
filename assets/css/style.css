@@ -1589,6 +1589,11 @@ label {
   font-size: 32px;
   line-height: 1.2em;
 }
+@media (max-width: 991px) {
+  .cs_fs_32 {
+    font-size: 22px;
+  }
+}
 
 .cs_fs_40 {
   font-size: 40px;
@@ -3314,10 +3319,16 @@ hr {
   visibility: hidden;
   transition: all 0.4s ease;
 }
-.cs_project_style_1 .cs_project_column_1,
-.cs_project_style_1 .cs_project_column_2 {
+.cs_project_style_1 .cs_project_column_1 {
   position: relative;
   z-index: 1;
+  transition: all 0.4s ease;
+}
+.cs_project_style_1 .cs_project_column_2 {
+  position: absolute;
+  z-index: 1;
+  top: 70px;
+  right: 40px;
   transition: all 0.4s ease;
 }
 .cs_project_style_1 .cs_icon_arrow {
@@ -3331,35 +3342,70 @@ hr {
 .cs_project_style_1:not(:last-child) {
   margin-bottom: 40px;
 }
-.cs_project_style_1.active {
+@media (max-width: 991px) {
+  .cs_project_style_1:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+.cs_project_style_1.active, .cs_project_style_1:hover {
   box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
 }
-.cs_project_style_1.active .cs_bg_image {
+.cs_project_style_1.active .cs_bg_image, .cs_project_style_1:hover .cs_bg_image {
   opacity: 1;
   visibility: visible;
 }
 .cs_project_style_1.active .cs_project_column_1,
-.cs_project_style_1.active .cs_project_column_2 {
-  margin-bottom: 112px;
-}
-.cs_project_style_1.active .cs_btn_sm.cs_type_2 {
-  color: var(--white);
-  background-color: var(--black);
-}
-.cs_project_style_1:hover {
-  box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
-}
-.cs_project_style_1:hover .cs_bg_image {
-  opacity: 1;
-  visibility: visible;
-}
-.cs_project_style_1:hover .cs_project_column_1,
+.cs_project_style_1.active .cs_project_column_2, .cs_project_style_1:hover .cs_project_column_1,
 .cs_project_style_1:hover .cs_project_column_2 {
   margin-bottom: 112px;
 }
-.cs_project_style_1:hover .cs_btn_sm.cs_type_2 {
+@media (min-width: 768px) {
+  .cs_project_style_1.active .cs_description, .cs_project_style_1:hover .cs_description {
+    width: 330px;
+  }
+}
+.cs_project_style_1.active .cs_btn_sm.cs_type_2, .cs_project_style_1:hover .cs_btn_sm.cs_type_2 {
   color: var(--white);
   background-color: var(--black);
+}
+@media (max-width: 991px) {
+  .cs_project_style_1 .cs_project_column_2 {
+    top: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_project_style_1 {
+    padding: 20px;
+  }
+  .cs_project_style_1 .cs_project_column_2 {
+    top: 20px;
+    right: 20px;
+  }
+  .cs_project_style_1 .cs_bg_image {
+    display: none;
+  }
+  .cs_project_style_1.active .cs_project_column_1,
+  .cs_project_style_1.active .cs_project_column_2, .cs_project_style_1:hover .cs_project_column_1,
+  .cs_project_style_1:hover .cs_project_column_2 {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 575px) {
+  .cs_project_style_1 .cs_project_column_2 .cs_btn_sm.cs_type_2 {
+    display: block;
+    padding: 5.25px;
+    color: var(--black);
+    background: none;
+    border: none;
+  }
+  .cs_project_style_1 .cs_project_column_2 .cs_btn_sm.cs_type_2 .cs_btn_txt {
+    display: none;
+  }
+  .cs_project_style_1 .cs_project_column_2 .cs_btn_sm.cs_type_2 .cs_icon_arrow {
+    margin-left: 0;
+    height: 13.5px;
+    width: 13.5px;
+  }
 }
 
 /*===============================================
@@ -3760,21 +3806,46 @@ hr {
   top: -220px;
   left: -90px;
 }
+@media (max-width: 575px) {
+  .cs_about_style_1 .cs_about_image {
+    width: min(342px, 100%);
+    height: 255px;
+  }
+  .cs_about_style_1 .cs_about_image svg {
+    width: 435px;
+    height: 470px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_about_style_1 {
+    flex-wrap: wrap;
+    gap: 24px 0;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 /*=======================================================
   Work
 =========================================================*/
 .cs_work_style_1 {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 20px;
+}
+@media (max-width: 991px) {
+  .cs_work_style_1 {
+    flex-wrap: wrap;
+  }
 }
 
 .cs_textbox_style_1 {
-  width: min(100%, 370px);
   display: flex;
   gap: 0 24px;
+}
+@media (min-width: 992px) {
+  .cs_textbox_style_1 {
+    width: 370px;
+  }
 }
 .cs_textbox_style_1 .cs_number {
   height: 91px;

@@ -3,14 +3,21 @@
 =========================================================*/
 .cs_work_style_1 {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // align-items: center;
+  // justify-content: space-between;
   gap: 20px;
+
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+  }
 }
 .cs_textbox_style_1 {
-  width: min(100%, 370px);
+  // width: min(100%, 370px);
   display: flex;
   gap: 0 24px;
+  @media (min-width: 992px) {
+    width: 370px;
+  }
   .cs_number {
     height: 91px;
     width: 64px;
