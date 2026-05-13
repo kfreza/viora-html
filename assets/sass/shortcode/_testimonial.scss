@@ -10,7 +10,7 @@
 
   .col-lg-8 {
     padding-left: 74px;
-    @media (max-width: 991px) {
+    @media (max-width: 1399px) {
       padding-left: 0;
     }
   }
@@ -29,7 +29,7 @@
   mask-image: url(../img/testimonial_mask_1.svg);
   mask-size: cover;
   mask-repeat: no-repeat;
-
+  mask-position: right;
   .cs_pagination.cs_style_1 {
     position: absolute;
     left: 32px;
@@ -41,9 +41,12 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px 0;
+  gap: 4px 0;
   padding: 24px 0 60px 32px;
   transition: all 0.4s ease;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
   .cs_testimonial_thumb {
     flex: none;
     align-self: flex-end;
@@ -55,6 +58,9 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+    }
+    @media (max-width: 767px) {
+      width: auto;
     }
   }
   .cs_author_title {

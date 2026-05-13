@@ -13,16 +13,40 @@
 .cs_pricing_wrapper_1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px 0;
+  gap: 16px 0;
   padding: 20px;
   border-radius: 16px;
+  @media (max-width: 1199px) {
+    padding: 16px;
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .cs_pricing_style_1 {
-  padding: 32px 48px 32px 32px;
+  padding: 32px;
   height: 100%;
   background-color: var(--white);
   transition: all 0.4s ease;
+
+  @media (min-width: 1200px) {
+    &:not(:last-child) {
+      padding-right: 48px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    &:not(:last-child) {
+      padding-right: 32px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 16px;
+    &:not(:last-child) {
+      padding-right: 16px;
+    }
+  }
 
   &:first-child {
     background-color: transparent;
@@ -41,10 +65,16 @@
   }
   &:nth-child(2) {
     border-radius: 16px 0 0 16px;
+    @media (max-width: 991px) {
+      border-radius: 16px;
+    }
   }
 
   &:nth-child(3) {
     border-radius: 0 16px 16px 0;
+    @media (max-width: 991px) {
+      border-radius: 16px;
+    }
   }
 
   // &.cs_active {
@@ -112,6 +142,9 @@
       margin-bottom: 12px;
       &:last-child {
         margin-bottom: 56px;
+        @media (max-width: 991px) {
+          margin-bottom: 48px;
+        }
       }
     }
   }

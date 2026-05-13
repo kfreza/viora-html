@@ -3005,7 +3005,7 @@ hr {
 .cs_testimonial_section_1 .col-lg-8 {
   padding-left: 74px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1399px) {
   .cs_testimonial_section_1 .col-lg-8 {
     padding-left: 0;
   }
@@ -3026,6 +3026,8 @@ hr {
           mask-size: cover;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
+  -webkit-mask-position: right;
+          mask-position: right;
 }
 .cs_testimonial_wrapper_1 .cs_pagination.cs_style_1 {
   position: absolute;
@@ -3037,9 +3039,14 @@ hr {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px 0;
+  gap: 4px 0;
   padding: 24px 0 60px 32px;
   transition: all 0.4s ease;
+}
+@media (max-width: 767px) {
+  .cs_testimonial_style_1 {
+    flex-direction: column;
+  }
 }
 .cs_testimonial_style_1 .cs_testimonial_thumb {
   flex: none;
@@ -3054,6 +3061,11 @@ hr {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 767px) {
+  .cs_testimonial_style_1 .cs_testimonial_thumb {
+    width: auto;
+  }
 }
 .cs_testimonial_style_1 .cs_author_title {
   line-height: 1.2em;
@@ -3422,16 +3434,44 @@ hr {
 .cs_pricing_wrapper_1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px 0;
+  gap: 16px 0;
   padding: 20px;
   border-radius: 16px;
 }
+@media (max-width: 1199px) {
+  .cs_pricing_wrapper_1 {
+    padding: 16px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_pricing_wrapper_1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .cs_pricing_style_1 {
-  padding: 32px 48px 32px 32px;
+  padding: 32px;
   height: 100%;
   background-color: var(--white);
   transition: all 0.4s ease;
+}
+@media (min-width: 1200px) {
+  .cs_pricing_style_1:not(:last-child) {
+    padding-right: 48px;
+  }
+}
+@media (max-width: 1199px) {
+  .cs_pricing_style_1:not(:last-child) {
+    padding-right: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_pricing_style_1 {
+    padding: 16px;
+  }
+  .cs_pricing_style_1:not(:last-child) {
+    padding-right: 16px;
+  }
 }
 .cs_pricing_style_1:first-child {
   background-color: transparent;
@@ -3451,8 +3491,18 @@ hr {
 .cs_pricing_style_1:nth-child(2) {
   border-radius: 16px 0 0 16px;
 }
+@media (max-width: 991px) {
+  .cs_pricing_style_1:nth-child(2) {
+    border-radius: 16px;
+  }
+}
 .cs_pricing_style_1:nth-child(3) {
   border-radius: 0 16px 16px 0;
+}
+@media (max-width: 991px) {
+  .cs_pricing_style_1:nth-child(3) {
+    border-radius: 16px;
+  }
 }
 .cs_pricing_style_1 .cs_pricing_table {
   width: 100%;
@@ -3482,6 +3532,11 @@ hr {
 }
 .cs_pricing_style_1 .cs_pricing_list li:last-child {
   margin-bottom: 56px;
+}
+@media (max-width: 991px) {
+  .cs_pricing_style_1 .cs_pricing_list li:last-child {
+    margin-bottom: 48px;
+  }
 }
 .cs_pricing_style_1 .cs_icon {
   position: absolute;
