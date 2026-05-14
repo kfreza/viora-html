@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Thumbnail Hover — Demo</title>
+  <style>
+    :root {
+      --black: #0c0c0c;
+      --white: #fff;
+      --bg-grey: #f3f3f3;
+      --text-grey: #6b6b6b;
+      --radial-gradient: radial-gradient(98.81% 98.81% at 0.35% 47.8%, #ef4bcb 0%, #34897b 100%);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Manrope', -apple-system, Segoe UI, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      padding: 48px 32px 80px;
+    }
+    h1 { font-size: 32px; letter-spacing: -1px; margin-bottom: 6px; }
+    .sub { color: var(--text-grey); margin-bottom: 40px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 48px 40px;
+    }
+    .demo-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .demo-desc { font-size: 13px; color: var(--text-grey); margin-bottom: 16px; }
+
+    /* shared thumb base */
+    .thumb {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--bg-grey);
+      aspect-ratio: 4 / 3;
+    }
+    .thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+    }
+
+    /* 1 — Zoom + gradient overlay */
+    .fx-zoom img { transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+    .fx-zoom::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(12,12,12,.55), transparent 55%);
+      opacity: 0; transition: opacity .4s ease; border-radius: var(--radius);
+    }
+    .fx-zoom:hover img { transform: scale(1.08); }
+    .fx-zoom:hover::after { opacity: 1; }
+
+    /* 2 — Zoom + circular arrow reveal */
+    .fx-arrow img { transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+    .fx-arrow .arrow {
+      position: absolute; right: 16px; bottom: 16px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--white); color: var(--black);
+      display: grid; place-items: center;
+      transform: translateY(14px) scale(.6); opacity: 0;
+      transition: transform .45s cubic-bezier(.22,.61,.36,1), opacity .35s ease;
+    }
+    .fx-arrow .arrow svg { width: 18px; height: 18px; }
+    .fx-arrow:hover img { transform: scale(1.06); }
+    .fx-arrow:hover .arrow { transform: translateY(0) scale(1); opacity: 1; }
+
+    /* 3 — Diagonal light sweep */
+    .fx-sweep img { transition: transform .6s ease; }
+    .fx-sweep::before {
+      content: ""; position: absolute; top: 0; left: -75%;
+      width: 50%; height: 100%; z-index: 2;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+      transform: skewX(-22deg);
+      transition: left .7s ease;
+    }
+    .fx-sweep:hover::before { left: 130%; }
+    .fx-sweep:hover img { transform: scale(1.04); }
+
+    /* 4 — Gradient border glow + lift */
+    .fx-glow {
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+    .fx-glow::before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: var(--radius); padding: 2px;
+      background: var(--radial-gradient);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      opacity: 0; transition: opacity .4s ease; z-index: 3;
+    }
+    .fx-glow:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px -12px rgba(239,75,203,.35);
+    }
+    .fx-glow:hover::before { opacity: 1; }
+    .fx-glow img { transition: transform .5s ease; }
+    .fx-glow:hover img { transform: scale(1.03); }
+
+    /* 5 — Overlay slide-up with "Read article" */
+    .fx-reveal img { transition: transform .6s ease; }
+    .fx-reveal .veil {
+      position: absolute; inset: 0; z-index: 2;
+      background: var(--radial-gradient);
+      display: grid; place-items: center;
+      color: var(--white); font-weight: 700; font-size: 15px;
+      letter-spacing: .3px;
+      clip-path: inset(100% 0 0 0);
+      transition: clip-path .5s cubic-bezier(.22,.61,.36,1);
+    }
+    .fx-reveal .veil span {
+      transform: translateY(12px); opacity: 0;
+      transition: transform .45s ease .08s, opacity .4s ease .08s;
+    }
+    .fx-reveal:hover img { transform: scale(1.06); }
+    .fx-reveal:hover .veil { clip-path: inset(0 0 0 0); }
+    .fx-reveal:hover .veil span { transform: translateY(0); opacity: 1; }
+  </style>
+</head>
+<body>
+  <h1>Blog Thumbnail Hover Effects</h1>
+  <p class="sub">Hover each one. All use only the <code>.cs_post_thumb</code> element — nothing else in the card changes.</p>
+
+  <div class="grid">
+
+    <div>
+      <div class="demo-label">1 — Zoom + Gradient Overlay</div>
+      <div class="demo-desc">Subtle slow zoom, dark gradient fades up from the bottom. Safe, classic, editorial.</div>
+      <a class="thumb fx-zoom" href="#">
+        <img src="assets/img/post_thumb_1.jpg" alt="demo">
+      </a>
+    </div>
+
+    <div>
+      <div class="demo-label">2 — Zoom + Arrow Reveal</div>
+      <div class="demo-desc">Image zooms, a white circular arrow button springs up in the corner. Interactive, modern.</div>
+      <a class="thumb fx-arrow" href="#">
+        <img src="assets/img/post_thumb_2.jpg" alt="demo">
+        <span class="arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div>
+      <div class="demo-label">3 — Diagonal Light Sweep</div>
+      <div class="demo-desc">A glossy light streak sweeps across with a faint zoom. Sleek, "premium product" feel.</div>
+      <a class="thumb fx-sweep" href="#">
+        <img src="assets/img/post_thumb_3.jpg" alt="demo">
+      </a>
+    </div>
+
+    <div>
+      <div class="demo-label">4 — Gradient Border Glow + Lift</div>
+      <div class="demo-desc">Card lifts with a colored shadow, brand gradient border lights up. On-brand, eye-catching.</div>
+      <a class="thumb fx-glow" href="#">
+        <img src="assets/img/post_thumb_1.jpg" alt="demo">
+      </a>
+    </div>
+
+    <div>
+      <div class="demo-label">5 — Brand Veil Reveal</div>
+      <div class="demo-desc">Brand gradient wipes up over the image with a "Read article" label. Boldest option.</div>
+      <a class="thumb fx-reveal" href="#">
+        <img src="assets/img/post_thumb_2.jpg" alt="demo">
+        <span class="veil"><span>Read article &rarr;</span></span>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
