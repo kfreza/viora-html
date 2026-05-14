@@ -1,3 +1,89 @@
 /*=======================================================
   Team
 =========================================================*/
+.cs_team_section_1 {
+  .cs_heading_style_1 {
+    .cs_heading_column_1 {
+      letter-spacing: -1.6px;
+    }
+    .cs_heading_column_2 {
+      width: min(400px, 100%);
+    }
+  }
+}
+
+.cs_team_wrapper_1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 40px;
+  @media (max-width: 1199px) {
+    gap: 24px;
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+  }
+  @media (max-width: 767px) {
+    gap: 20px;
+  }
+}
+
+.cs_team_style_1 {
+  .cs_team_thumb {
+    background-color: var(--bg-grey);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+
+    mask-image: url(../img/testimonial_mask_1.svg);
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: right;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.6s ease;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+      );
+      transform: skewX(-22deg);
+      transition: left 0.7s ease;
+    }
+    &:hover {
+      img {
+        transform: scale(1.03);
+      }
+      &::before {
+        left: 130%;
+      }
+    }
+  }
+
+  .cs_title {
+    transition: background 0.4s ease;
+    &:hover {
+      background: var(--radial-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .cs_designation {
+    margin-top: auto;
+    text-transform: uppercase;
+  }
+}

@@ -54,6 +54,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 56px 80px;
+  @media (max-width: 991px) {
+    gap: 32px 60px;
+  }
+  @media (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .cs_iconbox_style_2 {
   display: flex;
@@ -81,6 +87,29 @@
       filter: blur(6.35px);
       opacity: 0.2;
       z-index: 1;
+    }
+  }
+  .cs_description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+  }
+  @media (max-width: 991px) {
+    gap: 0 24px;
+    .cs_icon {
+      height: 60px;
+      width: 60px;
+      img {
+        width: 32px;
+      }
+    }
+    .cs_fs_32 {
+      font-size: 24px;
+    }
+    .cs_fs_20 {
+      font-size: 14px;
     }
   }
 }
