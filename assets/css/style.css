@@ -1549,6 +1549,11 @@ label {
   font-size: 14px;
   line-height: 1.54em;
 }
+@media (max-width: 575px) {
+  .cs_fs_14 {
+    font-size: 12px;
+  }
+}
 
 .cs_fs_16 {
   font-size: 16px;
@@ -1613,6 +1618,11 @@ label {
 .cs_fs_62 {
   font-size: 62px;
   line-height: 1.2em;
+}
+@media (max-width: 1199px) {
+  .cs_fs_62 {
+    font-size: 48px;
+  }
 }
 
 .cs_fs_76 {
@@ -1906,6 +1916,15 @@ hr {
   margin-right: -12px;
 }
 
+.cs_slider_gap_30 .slick-slide {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cs_slider_gap_30 .slick-list {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
 .cs_slider_gap_36 .slick-slide {
   padding-left: 18px;
   padding-right: 18px;
@@ -1986,6 +2005,12 @@ hr {
   background-color: var(--bg-grey);
   transition: all 0.4s ease;
 }
+.cs_brands_style_1 {
+  display: flex;
+  height: 31px;
+  align-items: center;
+}
+
 /*===========================================================
   Video Modal
 =============================================================*/
@@ -2989,6 +3014,11 @@ hr {
   width: min(100%, 733px);
   margin: 0 auto;
 }
+@media (max-width: 1199px) {
+  .cs_cta_style_1 {
+    padding: 60px 24px;
+  }
+}
 
 /*=======================================================
   CTA Style 2
@@ -3002,14 +3032,6 @@ hr {
 .cs_testimonial_section_1 .cs_heading_style_2 .cs_description {
   width: 100%;
 }
-.cs_testimonial_section_1 .col-lg-8 {
-  padding-left: 74px;
-}
-@media (max-width: 1399px) {
-  .cs_testimonial_section_1 .col-lg-8 {
-    padding-left: 0;
-  }
-}
 .cs_testimonial_section_1 .cs_slider_arrows.cs_style_1 {
   position: absolute;
   bottom: 0;
@@ -3017,6 +3039,7 @@ hr {
 }
 
 .cs_testimonial_wrapper_1 {
+  margin-left: 74px;
   background: url(../img/testimonial_bg.svg);
   background-size: cover;
   border-radius: 20px;
@@ -3034,6 +3057,23 @@ hr {
   left: 32px;
   bottom: 24px;
 }
+@media (max-width: 1399px) {
+  .cs_testimonial_wrapper_1 {
+    margin-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  .cs_testimonial_wrapper_1 {
+    background: url(../img/testimonial_bg_mobile.svg);
+    background-size: cover;
+  }
+}
+@media (max-width: 390px) {
+  .cs_testimonial_wrapper_1 {
+    -webkit-mask-image: url(../img/testimonial_mobile_mask.svg);
+            mask-image: url(../img/testimonial_mobile_mask.svg);
+  }
+}
 
 .cs_testimonial_style_1 {
   display: flex;
@@ -3046,6 +3086,7 @@ hr {
 @media (max-width: 767px) {
   .cs_testimonial_style_1 {
     flex-direction: column;
+    padding-right: 32px;
   }
 }
 .cs_testimonial_style_1 .cs_testimonial_thumb {
@@ -3275,9 +3316,31 @@ hr {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px 40px;
 }
+@media (max-width: 1199px) {
+  .cs_post_wrapper_1 {
+    gap: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_post_wrapper_1 {
+    gap: 24px 18px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_post_wrapper_1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .cs_post_style_1 {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0 18px;
+}
+@media (max-width: 767px) {
+  .cs_post_style_1 {
+    flex-direction: row;
+  }
 }
 .cs_post_style_1 .cs_post_thumb {
   background-color: var(--bg-grey);
@@ -3285,10 +3348,32 @@ hr {
 }
 .cs_post_style_1 .cs_post_thumb img {
   width: 100%;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 16px;
+}
+@media (max-width: 767px) {
+  .cs_post_style_1 .cs_post_thumb {
+    align-self: center;
+    height: 90px;
+    width: 90px;
+  }
+  .cs_post_style_1 .cs_post_thumb.cs_mb_24 {
+    margin-bottom: 0;
+  }
+}
+.cs_post_style_1 .cs_post_info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cs_post_style_1 .cs_post_title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 .cs_post_style_1 .cs_post_title a {
   transition: background 0.4s ease;
@@ -3298,6 +3383,9 @@ hr {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.cs_post_style_1 .cs_post_date {
+  margin-top: auto;
 }
 
 /*=======================================================

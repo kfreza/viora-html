@@ -7,6 +7,9 @@
     width: min(100%, 733px);
     margin: 0 auto;
   }
+  @media (max-width:1199px) {
+    padding: 60px 24px;
+  }
 }
 /*=======================================================
   CTA Style 2

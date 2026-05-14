@@ -25,6 +25,9 @@
 .cs_fs_14 {
   font-size: 14px;
   line-height: 1.54em;
+  @media (max-width: 575px) {
+    font-size: 12px;
+  }
 }
 
 // .cs_fs_15 {
@@ -140,6 +143,9 @@
 .cs_fs_62 {
   font-size: 62px;
   line-height: 1.2em;
+  @media (max-width: 1199px) {
+    font-size: 48px;
+  }
 }
 // .cs_fs_65 {
 //   font-size: 65px;
