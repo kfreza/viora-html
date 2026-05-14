@@ -1,6 +1,8 @@
 /*===============================================
  Iconbox
  ================================================*/
+
+// Iconbox 1
 .cs_feature_section_1 {
   .col-lg-8 {
     .row {
@@ -19,9 +21,6 @@
   }
 }
 .cs_iconbox_style_1 {
-  @media (max-width: 991px) {
-    margin-left: 0;
-  }
   .cs_icon {
     height: 64px;
     width: 64px;
@@ -41,6 +40,44 @@
       inset: 0;
       background: var(--radial-gradient);
       border-radius: 16px;
+      filter: blur(6.35px);
+      opacity: 0.2;
+      z-index: 1;
+    }
+  }
+  @media (max-width: 991px) {
+    margin-left: 0;
+  }
+}
+// Iconbox 2
+.cs_iconbox_wrapper_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 80px;
+}
+.cs_iconbox_style_2 {
+  display: flex;
+  gap: 0 32px;
+  .cs_icon {
+    flex: none;
+    height: 96px;
+    width: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    img {
+      width: 40px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--radial-gradient);
+      border-radius: 50%;
       filter: blur(6.35px);
       opacity: 0.2;
       z-index: 1;

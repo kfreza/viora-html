@@ -1695,6 +1695,10 @@ label {
   gap: 50px 0;
 }
 
+.cs_gap_y_56 {
+  gap: 56px 0;
+}
+
 .cs_gap_y_60 {
   gap: 60px 0;
 }
@@ -3943,11 +3947,6 @@ hr {
   }
 }
 
-@media (max-width: 991px) {
-  .cs_iconbox_style_1 {
-    margin-left: 0;
-  }
-}
 .cs_iconbox_style_1 .cs_icon {
   height: 64px;
   width: 64px;
@@ -3968,6 +3967,47 @@ hr {
   inset: 0;
   background: var(--radial-gradient);
   border-radius: 16px;
+  filter: blur(6.35px);
+  opacity: 0.2;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .cs_iconbox_style_1 {
+    margin-left: 0;
+  }
+}
+
+.cs_iconbox_wrapper_2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 80px;
+}
+
+.cs_iconbox_style_2 {
+  display: flex;
+  gap: 0 32px;
+}
+.cs_iconbox_style_2 .cs_icon {
+  flex: none;
+  height: 96px;
+  width: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.cs_iconbox_style_2 .cs_icon img {
+  width: 40px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+.cs_iconbox_style_2 .cs_icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--radial-gradient);
+  border-radius: 50%;
   filter: blur(6.35px);
   opacity: 0.2;
   z-index: 1;
