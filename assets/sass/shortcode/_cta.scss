@@ -3,18 +3,40 @@
 =========================================================*/
 .cs_cta_style_1 {
   padding: 100px;
-  .cs_heading_style_3{
+  .cs_heading_style_3 {
     width: min(100%, 733px);
     margin: 0 auto;
   }
-  @media (max-width:1199px) {
+  @media (max-width: 1199px) {
     padding: 60px 24px;
   }
 }
 /*=======================================================
   CTA Style 2
 =========================================================*/
-
+.cs_cta_style_2 {
+  padding: 100px;
+  .cs_heading_style_3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cs_title {
+    width: min(100%, 571px);
+    letter-spacing: -3.04px;
+  }
+  .cs_cta_content {
+    width: min(100%, 377px);
+  }
+  @media (max-width: 1199px) {
+    padding: 60px 24px;
+  }
+  @media (max-width: 991px) {
+    .cs_title{
+      margin-bottom: 32px;
+    }
+  }
+}
 /*=======================================================
   CTA Style 3
 =========================================================*/

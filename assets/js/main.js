@@ -59,13 +59,13 @@
     socialButtonToggle();
     elementToggle();
     initProjectCards();
+    teamTiltCards();
     if ($.exists(".wow")) {
       new WOW().init();
     }
   });
 
   $(window).on("scroll", function () {
-
     // Use Only in Regular Sticky Header
     // stickyHeader();
   });
@@ -601,7 +601,9 @@
     });
   }
 
-  //
+  /*=====================================================================
+      Hover Active & Remove
+    =======================================================================*/
 
   function initProjectCards() {
     const projects = document.querySelectorAll(".cs_project_style_1");
@@ -616,6 +618,30 @@
       project.addEventListener("mouseleave", function () {
         projects.forEach((p) => p.classList.remove("active"));
         defaultActive.classList.add("active");
+      });
+    });
+  }
+  /*=====================================================================
+      Tilt Card
+    =======================================================================*/
+
+  function teamTiltCards() {
+    if (!$.exists(".cs_team_style_1 .cs_team_thumb")) return;
+    var MAX = 8; // max tilt in degrees
+    $(".cs_team_style_1 .cs_team_thumb").each(function () {
+      var $thumb = $(this);
+      $thumb.on("mousemove", function (e) {
+        var rect = this.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        var ry = (px - 0.5) * 2 * MAX;
+        var rx = (0.5 - py) * 2 * MAX;
+        this.style.setProperty("--cs-ry", ry.toFixed(2) + "deg");
+        this.style.setProperty("--cs-rx", rx.toFixed(2) + "deg");
+      });
+      $thumb.on("mouseleave", function () {
+        this.style.setProperty("--cs-ry", "0deg");
+        this.style.setProperty("--cs-rx", "0deg");
       });
     });
   }
