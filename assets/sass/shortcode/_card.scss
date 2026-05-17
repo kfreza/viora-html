@@ -6,6 +6,9 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px 32px;
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .cs_card_style_1 {
   background-color: var(--bg-grey);
@@ -20,6 +23,9 @@
     width: 65%;
     height: 100%;
   }
+  .cs_title {
+    z-index: 1;
+  }
   .cs_description {
     margin-top: auto;
   }
@@ -28,6 +34,8 @@
     top: 0;
     right: 0;
     bottom: 0;
+    width: 224px;
+    height: 288px;
     img {
       width: 100%;
       height: auto;
@@ -37,6 +45,24 @@
   }
   @media (max-width: 991px) {
     min-height: 216px;
+    .cs_fs_32 {
+      font-size: 28px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 24px 22px;
+    .cs_card_info {
+      width: 100%;
+    }
+    .cs_card_thumb {
+      top: -140px;
+      bottom: 140px;
+    }
+  }
+  @media (max-width: 480px) {
+    .cs_card_thumb {
+      right: -50px;
+    }
   }
 }
 
@@ -54,5 +80,7 @@
     display: flex;
     gap: 0 5px;
     line-height: 1.1em;
+  }
+  @media (max-width: 991px) {
   }
 }

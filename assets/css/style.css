@@ -3313,6 +3313,11 @@ hr {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px 32px;
 }
+@media (max-width: 991px) {
+  .cs_card_wrapper_1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .cs_card_style_1 {
   background-color: var(--bg-grey);
@@ -3328,6 +3333,9 @@ hr {
   width: 65%;
   height: 100%;
 }
+.cs_card_style_1 .cs_title {
+  z-index: 1;
+}
 .cs_card_style_1 .cs_description {
   margin-top: auto;
 }
@@ -3336,6 +3344,8 @@ hr {
   top: 0;
   right: 0;
   bottom: 0;
+  width: 224px;
+  height: 288px;
 }
 .cs_card_style_1 .cs_card_thumb img {
   width: 100%;
@@ -3347,6 +3357,26 @@ hr {
 @media (max-width: 991px) {
   .cs_card_style_1 {
     min-height: 216px;
+  }
+  .cs_card_style_1 .cs_fs_32 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_card_style_1 {
+    padding: 24px 22px;
+  }
+  .cs_card_style_1 .cs_card_info {
+    width: 100%;
+  }
+  .cs_card_style_1 .cs_card_thumb {
+    top: -140px;
+    bottom: 140px;
+  }
+}
+@media (max-width: 480px) {
+  .cs_card_style_1 .cs_card_thumb {
+    right: -50px;
   }
 }
 
@@ -3365,7 +3395,6 @@ hr {
   gap: 0 5px;
   line-height: 1.1em;
 }
-
 /*=======================================================
   Service
 =========================================================*/
