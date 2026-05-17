@@ -118,7 +118,8 @@ button {
 
 a:hover {
   text-decoration: none;
-  color: var(--black);
+  // color: var(--black);
+  color: inherit;
 }
 
 table {
