@@ -3042,6 +3042,21 @@ hr {
   }
 }
 
+.cs_page_header_section_1 {
+  padding: 182px 40px 120px;
+}
+.cs_page_header_section_1 .container {
+  max-width: 1344px;
+}
+.cs_page_header_section_1 .cs_title {
+  letter-spacing: -3.04px;
+}
+@media (max-width: 1199px) {
+  .cs_page_header_section_1 {
+    padding: 128px 20px 60px;
+  }
+}
+
 /*=======================================================
   CTA Style 1
 =========================================================*/
@@ -3289,6 +3304,64 @@ hr {
 /*===============================================
  Card Style
  ================================================*/
+.cs_card_wrapper_1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+}
+
+.cs_card_style_1 {
+  background-color: var(--bg-grey);
+  padding: 40px;
+  min-height: 288px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.cs_card_style_1 .cs_card_info {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+}
+.cs_card_style_1 .cs_description {
+  margin-top: auto;
+}
+.cs_card_style_1 .cs_card_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.cs_card_style_1 .cs_card_thumb img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0 20px 20px 0;
+}
+@media (max-width: 991px) {
+  .cs_card_style_1 {
+    min-height: 216px;
+  }
+}
+
+.cs_funfact_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 32px;
+}
+.cs_funfact_wrapper .cs_funfact_style_1 {
+  background-color: var(--bg-grey);
+  padding: 24px;
+  border-radius: 20px;
+}
+.cs_funfact_wrapper .cs_funfact_number {
+  display: flex;
+  gap: 0 5px;
+  line-height: 1.1em;
+}
+
 /*=======================================================
   Service
 =========================================================*/
@@ -3855,6 +3928,79 @@ hr {
 /*==========================================================
  22. Video
 ============================================================*/
+.cs_video_section_1 .cs_btn_lg.cs_type_1 {
+  position: absolute;
+  bottom: 0;
+  right: 12px;
+  padding: 18px 29px 18px 28px;
+  background: transparent;
+  gap: 12px;
+}
+.cs_video_section_1 .cs_btn_lg.cs_type_1::after {
+  display: none;
+}
+.cs_video_section_1 .cs_btn_icon {
+  height: 20px;
+  width: 20px;
+}
+
+.cs_video_style_1 {
+  background-color: rebeccapurple;
+  padding: 60px 270px 60px 80px;
+  border-radius: 20px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  position: relative;
+  -webkit-mask-image: url(../img/video_mask.svg);
+          mask-image: url(../img/video_mask.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: right;
+          mask-position: right;
+}
+.cs_video_style_1 .cs_play_btn {
+  height: 98px;
+  width: 98px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+}
+.cs_video_style_1 .cs_play_btn svg {
+  color: var(--white);
+  position: relative;
+  z-index: 999;
+}
+.cs_video_style_1 .cs_play_btn::before, .cs_video_style_1 .cs_play_btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cs_video_style_1 .cs_play_btn::before {
+  background-color: var(--white);
+  opacity: 0.2;
+  transform: translate(-50%, -50%);
+  z-index: 888;
+}
+.cs_video_style_1 .cs_play_btn:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.cs_video_style_1 .cs_play_btn:hover::before, .cs_video_style_1 .cs_play_btn:hover::after {
+  animation-play-state: paused;
+}
+
 /*=======================================================
   Gradients
 =========================================================*/

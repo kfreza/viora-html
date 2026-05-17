@@ -2,3 +2,57 @@
  Card Style
  ================================================*/
 
+.cs_card_wrapper_1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 32px;
+}
+.cs_card_style_1 {
+  background-color: var(--bg-grey);
+  padding: 40px;
+  min-height: 288px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  .cs_card_info {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+  }
+  .cs_description {
+    margin-top: auto;
+  }
+  .cs_card_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0 20px 20px 0;
+    }
+  }
+  @media (max-width: 991px) {
+    min-height: 216px;
+  }
+}
+
+// Funfact
+.cs_funfact_wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 32px;
+  .cs_funfact_style_1 {
+    background-color: var(--bg-grey);
+    padding: 24px;
+    border-radius: 20px;
+  }
+  .cs_funfact_number {
+    display: flex;
+    gap: 0 5px;
+    line-height: 1.1em;
+  }
+}

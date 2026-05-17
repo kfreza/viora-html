@@ -11,3 +11,18 @@
     padding: 128px 0 334px;
   }
 }
+
+// Page Header 1
+
+.cs_page_header_section_1 {
+  padding: 182px 40px 120px;
+  .container {
+    max-width: 1344px;
+  }
+  .cs_title {
+    letter-spacing: -3.04px;
+  }
+  @media (max-width: 1199px) {
+    padding: 128px 20px 60px;
+  }
+}

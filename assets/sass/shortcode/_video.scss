@@ -1,3 +1,84 @@
 /*==========================================================
  22. Video
 ============================================================*/
+.cs_video_section_1 {
+  .cs_btn_lg.cs_type_1 {
+    position: absolute;
+    bottom: 0;
+    right: 12px;
+    padding: 18px 29px 18px 28px;
+    background: transparent;
+    gap: 12px;
+    &::after {
+      display: none;
+    }
+  }
+  .cs_btn_icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.cs_video_style_1 {
+  background-color: rebeccapurple;
+  padding: 60px 270px 60px 80px;
+  border-radius: 20px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  position: relative;
+
+  mask-image: url(../img/video_mask.svg);
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: right;
+
+  .cs_play_btn {
+    height: 98px;
+    width: 98px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+    svg {
+      color: var(--white);
+      position: relative;
+      z-index: 999;
+    }
+    &::before,
+    &::after {
+      content: "";
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+    &::before {
+      background-color: var(--white);
+      opacity: 0.2;
+      transform: translate(-50%, -50%);
+      z-index: 888;
+    }
+    // &::after {
+    //   background: var(--linear-gradient);
+    //   opacity: 0.2;
+    //   transform: translate(-50%, -50%) scale(0.7);
+    //   z-index: 777;
+    //   animation: border-scale 3s cubic-bezier(0.29, 0.36, 0.13, 0.44) infinite;
+    // }
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.2);
+      &::before,
+      &::after {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
