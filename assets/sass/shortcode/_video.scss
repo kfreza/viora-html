@@ -17,6 +17,11 @@
     height: 20px;
     width: 20px;
   }
+  @media (max-width: 575px) {
+    .cs_btn_txt {
+      display: none;
+    }
+  }
 }
 
 .cs_video_style_1 {
@@ -79,6 +84,39 @@
       &::after {
         animation-play-state: paused;
       }
+    }
+  }
+  @media (max-width: 1399px) {
+    padding: 60px 220px 60px 80px;
+  }
+  @media (max-width: 991px) {
+    padding: 32px 200px 60px 24px;
+    .cs_fs_62 {
+      font-size: 36px;
+    }
+
+    .cs_play_btn {
+      height: 47px;
+      width: 47px;
+      svg {
+        height: 22px;
+        width: 18px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 32px 24px 60px;
+    .cs_fs_62 {
+      font-size: 28px;
+    }
+  }
+  @media (max-width: 575px) {
+    padding: 32px 24px;
+    min-height: 342px;
+    mask-image: url(../img/video_mobile_mask.svg);
+    .cs_description {
+      padding-right: 49px;
+      font-size: 12px;
     }
   }
 }
