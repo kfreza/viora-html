@@ -162,15 +162,15 @@
     .cs_social_share {
       padding: 4px;
       a {
-      padding: 4px;
-    }
+        padding: 4px;
+      }
     }
   }
   @media (max-width: 480px) {
     .cs_social_share {
       padding: 0;
       a {
-        padding: 6px;
+        padding: 8px 4px 4px 8px;
       }
     }
   }
