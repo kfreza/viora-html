@@ -10,6 +10,15 @@
       width: min(400px, 100%);
     }
   }
+  @media (max-width: 991px) {
+    .cs_heading_style_1 {
+      text-align: center;
+      .cs_heading_column_2 {
+        width: 100%;
+        align-items: center;
+      }
+    }
+  }
 }
 
 .cs_team_wrapper_1 {
@@ -62,7 +71,7 @@
       }
       img {
         height: auto;
-        width: auto;
+        width: 100%;
         border-radius: 0;
       }
     }

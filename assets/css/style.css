@@ -3081,6 +3081,12 @@ hr {
 .cs_cta_style_2 .cs_cta_content {
   width: min(100%, 377px);
 }
+.cs_cta_style_2 .cs_btn_lg.cs_type_1 {
+  padding: 17px 20px;
+  justify-content: center;
+  gap: 4px;
+  font-size: 16px;
+}
 @media (max-width: 1399px) {
   .cs_cta_style_2 {
     padding: 60px 32px;
@@ -3207,6 +3213,15 @@ hr {
 .cs_team_section_1 .cs_heading_style_1 .cs_heading_column_2 {
   width: min(400px, 100%);
 }
+@media (max-width: 991px) {
+  .cs_team_section_1 .cs_heading_style_1 {
+    text-align: center;
+  }
+  .cs_team_section_1 .cs_heading_style_1 .cs_heading_column_2 {
+    width: 100%;
+    align-items: center;
+  }
+}
 
 .cs_team_wrapper_1 {
   display: grid;
@@ -3269,7 +3284,7 @@ hr {
 }
 .cs_team_style_1 .cs_team_thumb .cs_social_btns img {
   height: auto;
-  width: auto;
+  width: 100%;
   border-radius: 0;
 }
 .cs_team_style_1 .cs_team_thumb::before {

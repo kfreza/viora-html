@@ -29,6 +29,14 @@
   .cs_cta_content {
     width: min(100%, 377px);
   }
+
+  .cs_btn_lg.cs_type_1 {
+    padding: 17px 20px;
+    justify-content: center;
+    gap: 4px;
+    font-size: 16px;
+  }
+
   @media (max-width: 1399px) {
     padding: 60px 32px;
   }
