@@ -25,14 +25,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px 40px;
+  @media (max-width: 1399px) {
+    gap: 24px 30px;
+  }
   @media (max-width: 1199px) {
     gap: 24px;
   }
   @media (max-width: 991px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 20px;
-  }
-  @media (max-width: 767px) {
     gap: 20px;
   }
 }
@@ -46,35 +46,6 @@
       rotateY(var(--cs-ry, 0deg));
     transform-style: preserve-3d;
     transition: transform 0.25s ease;
-    .cs_thumb_img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 16px;
-      transition: transform 0.6s ease;
-      mask-image: url(../img/team_mask.svg);
-      mask-size: cover;
-      mask-repeat: no-repeat;
-      mask-position: right;
-    }
-    .cs_social_btns {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      gap: 0;
-      padding: 2px 6px;
-      a {
-        height: 26px;
-        width: 26px;
-        background: transparent;
-        border-radius: 0;
-      }
-      img {
-        height: auto;
-        width: 100%;
-        border-radius: 0;
-      }
-    }
     &::before {
       content: "";
       position: absolute;
@@ -92,12 +63,7 @@
       transform: skewX(-22deg);
       transition: left 0.7s ease;
     }
-
     &:hover {
-      .cs_thumb_img {
-        // transform: scale(1.03);
-        // transform: scale(1.04) translateZ(40px);
-      }
       .cs_social_btns {
         a {
           transform: translateY(0);
@@ -107,6 +73,45 @@
       &::before {
         left: 130%;
       }
+    }
+  }
+
+  .cs_thumb_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.6s ease;
+    mask-image: url(../img/team_mask.svg);
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: right;
+  }
+
+  .cs_social_btns,
+  .cs_social_share {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    gap: 0;
+    padding: 2px 6px;
+    a {
+      height: 26px;
+      width: 26px;
+      background: transparent;
+      border-radius: 0;
+      padding: 4px;
+    }
+    img {
+      height: auto;
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  .cs_social_share {
+    display: none;
+    a {
+      padding: 6px;
     }
   }
 
@@ -122,5 +127,51 @@
   .cs_designation {
     margin-top: auto;
     text-transform: uppercase;
+  }
+
+  @media (max-width: 1399px) {
+    .cs_social_btns {
+      padding: 0;
+    }
+  }
+  @media (max-width: 1199px) {
+    .cs_team_thumb {
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+    .cs_thumb_img {
+      height: 100%;
+      mask-image: url(../img/team_mobile_mask.svg);
+    }
+    .cs_social_btns {
+      display: none;
+    }
+    .cs_social_share {
+      display: block;
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_social_share {
+      padding: 12px;
+      a {
+        padding: 0;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .cs_social_share {
+      padding: 4px;
+      a {
+      padding: 4px;
+    }
+    }
+  }
+  @media (max-width: 480px) {
+    .cs_social_share {
+      padding: 0;
+      a {
+        padding: 6px;
+      }
+    }
   }
 }
