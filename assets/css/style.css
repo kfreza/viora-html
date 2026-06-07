@@ -3031,17 +3031,33 @@ hr {
   }
 }
 
-.cs_page_header_section_1 {
+.cs_page_header_section_1,
+.cs_page_header_section_2 {
   padding: 182px 40px 120px;
 }
-.cs_page_header_section_1 .container {
-  max-width: 1344px;
-}
-.cs_page_header_section_1 .cs_title {
+.cs_page_header_section_1 .cs_title,
+.cs_page_header_section_2 .cs_title {
   letter-spacing: -3.04px;
 }
 @media (max-width: 1199px) {
-  .cs_page_header_section_1 {
+  .cs_page_header_section_1,
+  .cs_page_header_section_2 {
+    padding: 128px 0 60px;
+  }
+}
+
+.cs_page_header_section_2 {
+  padding-bottom: 80px;
+}
+.cs_page_header_section_2 .cs_heading_style_3 {
+  width: min(100%, 840px);
+  margin: 0 auto;
+}
+.cs_page_header_section_2 .cs_title {
+  letter-spacing: -3.04px;
+}
+@media (max-width: 1199px) {
+  .cs_page_header_section_2 {
     padding: 128px 0 60px;
   }
 }
@@ -3345,11 +3361,22 @@ hr {
             mask-image: url(../img/team_mobile_mask.svg);
   }
   .cs_team_style_1 .cs_social_btns {
-    display: none;
-    top: 10px;
-    right: 10px;
+    display: flex;
+    top: 15px;
+    right: 6px;
     bottom: initial;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  .cs_team_style_1 .cs_team_thumb.cs_socials_open .cs_social_btns {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
   .cs_team_style_1 .cs_social_share {
     display: block;

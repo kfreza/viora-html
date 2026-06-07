@@ -28,6 +28,7 @@
   | 15. Social Toggle Button
   | 16. Heart toggle
   | 17. Project Cards
+  | 18. Team Share Toggle
   |
   */
 
@@ -60,6 +61,7 @@
     elementToggle();
     initProjectCards();
     teamTiltCards();
+    teamShareToggle();
     if ($.exists(".wow")) {
       new WOW().init();
     }
@@ -643,6 +645,22 @@
         this.style.setProperty("--cs-ry", "0deg");
         this.style.setProperty("--cs-rx", "0deg");
       });
+    });
+  }
+
+  /*--------------------------------------------------------------
+  18. Team Share Toggle
+  --------------------------------------------------------------*/
+  function teamShareToggle() {
+    if (!$.exists(".cs_share_icon")) return;
+    $(".cs_share_icon").on("click", function (e) {
+      e.preventDefault();
+      var $thumb = $(this).closest(".cs_team_thumb");
+      var isOpen = $thumb.hasClass("cs_socials_open");
+      $(".cs_team_thumb").removeClass("cs_socials_open");
+      if (!isOpen) {
+        $thumb.addClass("cs_socials_open");
+      }
     });
   }
 })(jQuery); // End of use strict

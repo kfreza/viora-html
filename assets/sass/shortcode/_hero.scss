@@ -13,11 +13,23 @@
 }
 
 // Page Header 1
-
-.cs_page_header_section_1 {
+.cs_page_header_section_1,
+.cs_page_header_section_2 {
   padding: 182px 40px 120px;
-  .container {
-    max-width: 1344px;
+  .cs_title {
+    letter-spacing: -3.04px;
+  }
+  @media (max-width: 1199px) {
+    padding: 128px 0 60px;
+  }
+}
+
+// Page Header 2
+.cs_page_header_section_2 {
+  padding-bottom: 80px;
+  .cs_heading_style_3{
+    width: min(100%, 840px);
+    margin: 0 auto;
   }
   .cs_title {
     letter-spacing: -3.04px;
