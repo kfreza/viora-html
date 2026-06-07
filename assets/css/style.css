@@ -3346,6 +3346,10 @@ hr {
   }
   .cs_team_style_1 .cs_social_btns {
     display: none;
+    top: 10px;
+    right: 10px;
+    bottom: initial;
+    flex-direction: column;
   }
   .cs_team_style_1 .cs_social_share {
     display: block;
