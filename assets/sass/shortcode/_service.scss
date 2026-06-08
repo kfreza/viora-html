@@ -5,7 +5,45 @@
   margin-top: -254px;
 }
 
-.cs_service_card_style_1 {
+.cs_service_card_wrapper_1,
+.cs_service_card_wrapper_2 {
+  transition: all 0.4s ease;
+  &::after {
+    content: "";
+    background: var(--radial-gradient);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    filter: blur(49px);
+  }
+  &:hover {
+    &::after {
+      visibility: visible;
+      opacity: 0.4;
+    }
+    .cs_service_card_style_1 {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    .cs_title {
+      background: var(--radial-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.cs_service_card_style_1,
+.cs_service_card_style_2 {
   background-color: var(--bg-grey);
   border-radius: 16px;
   mask-image: url(../img/service_layer_mask.svg);
@@ -51,40 +89,54 @@
   }
 }
 
-.cs_service_card_wrapper_1 {
-  transition: all 0.4s ease;
+//
+.cs_service_card_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.cs_service_card_wrapper_2 {
   &::after {
-    content: "";
-    background: var(--radial-gradient);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-    filter: blur(49px);
+    filter: blur(60px);
   }
   &:hover {
-    // transform: scale(1.01);
     &::after {
-      visibility: visible;
-      opacity: 0.4;
+      opacity: 0.2;
     }
-    .cs_service_card_style_1 {
-      &::before {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-    .cs_title {
-      background: var(--radial-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .cs_service_card_style_2 {
+      background-color: var(--white);
+      mask-size: 100%;
+      mask-position: right 0;
+
+      // &::before {
+      //   opacity: 1;
+      //   visibility: visible;
+      // }
     }
   }
 }
-//
+
+.cs_service_card_style_2 {
+  border-radius: 20px;
+  width: 100%;
+  height: 400px;
+
+  mask-image: url(../img/service_layer_mask_2.svg);
+  mask-repeat: no-repeat;
+  mask-size: calc(100% + 47px);
+  mask-position: right -47px;
+
+  // transition:
+  //   mask-position 0.4s ease,
+  //   background-color 0.4s ease;
+  .cs_card_thumb {
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .cs_card_info {
+    padding: 0 32px 32px;
+  }
+}
