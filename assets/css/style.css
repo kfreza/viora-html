@@ -3223,6 +3223,9 @@ hr {
 /*=======================================================
   Team
 =========================================================*/
+.cs_team_section_1 .cs_heading_style_1 {
+  align-items: flex-end;
+}
 .cs_team_section_1 .cs_heading_style_1 .cs_heading_column_1 {
   letter-spacing: -1.6px;
 }
@@ -3563,30 +3566,37 @@ hr {
 
 .cs_service_card_style_1,
 .cs_service_card_style_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--bg-grey);
   border-radius: 16px;
+  width: 298px;
+  height: 100%;
+  min-height: 434px;
   -webkit-mask-image: url(../img/service_layer_mask.svg);
           mask-image: url(../img/service_layer_mask.svg);
   -webkit-mask-size: cover;
           mask-size: cover;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  width: 298px;
-  height: 434px;
   transition: all 0.4s ease;
 }
 .cs_service_card_style_1 .cs_card_thumb,
 .cs_service_card_style_2 .cs_card_thumb {
-  position: absolute;
-  top: 0;
-  right: -1px;
+  margin-right: -1px;
 }
 .cs_service_card_style_1 .cs_card_info,
 .cs_service_card_style_2 .cs_card_info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   padding: 0 24px 24px;
+}
+.cs_service_card_style_1 .cs_description,
+.cs_service_card_style_2 .cs_description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 .cs_service_card_style_1::before,
 .cs_service_card_style_2::before {
@@ -3648,20 +3658,18 @@ hr {
 }
 
 .cs_service_card_style_2 {
+  gap: 15px;
   border-radius: 20px;
   width: 100%;
-  height: 400px;
+  min-height: 400px;
   -webkit-mask-image: url(../img/service_layer_mask_2.svg);
           mask-image: url(../img/service_layer_mask_2.svg);
-  -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
   -webkit-mask-size: calc(100% + 47px);
           mask-size: calc(100% + 47px);
   -webkit-mask-position: right -47px;
           mask-position: right -47px;
 }
 .cs_service_card_style_2 .cs_card_thumb {
-  right: 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -4607,6 +4615,26 @@ hr {
   .cs_iconbox_style_2 .cs_fs_20 {
     font-size: 14px;
   }
+}
+
+.cs_feature_section_2 .cs_heading_style_1 {
+  align-items: flex-start;
+}
+
+.cs_iconbox_wrapper_3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+.cs_iconbox_style_3 {
+  height: 100%;
+  min-height: 230px;
+  padding: 24px 6px 0;
+}
+.cs_iconbox_style_3 .cs_icon {
+  height: 40px;
+  width: 40px;
 }
 
 /*=======================================================

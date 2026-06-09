@@ -113,3 +113,23 @@
     }
   }
 }
+//Iconbox 3
+.cs_feature_section_2 {
+  .cs_heading_style_1 {
+    align-items: flex-start;
+  }
+}
+.cs_iconbox_wrapper_3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+.cs_iconbox_style_3 {
+  height: 100%;
+  min-height: 230px;
+  padding: 24px 6px 0;
+  .cs_icon {
+    height: 40px;
+    width: 40px;
+  }
+}
