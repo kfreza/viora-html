@@ -4015,7 +4015,8 @@ hr {
   letter-spacing: -1.6px;
 }
 
-.cs_pricing_wrapper_1 {
+.cs_pricing_wrapper_1,
+.cs_pricing_wrapper_2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px 0;
@@ -4023,106 +4024,132 @@ hr {
   border-radius: 16px;
 }
 @media (max-width: 1199px) {
-  .cs_pricing_wrapper_1 {
+  .cs_pricing_wrapper_1,
+  .cs_pricing_wrapper_2 {
     padding: 16px;
   }
 }
 @media (max-width: 991px) {
-  .cs_pricing_wrapper_1 {
+  .cs_pricing_wrapper_1,
+  .cs_pricing_wrapper_2 {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-.cs_pricing_style_1 {
+.cs_pricing_style_1,
+.cs_pricing_style_2 {
   padding: 32px;
   height: 100%;
   background-color: var(--white);
   transition: all 0.4s ease;
 }
 @media (min-width: 1200px) {
-  .cs_pricing_style_1:not(:last-child) {
+  .cs_pricing_style_1:not(:last-child),
+  .cs_pricing_style_2:not(:last-child) {
     padding-right: 48px;
   }
 }
 @media (max-width: 1199px) {
-  .cs_pricing_style_1:not(:last-child) {
+  .cs_pricing_style_1:not(:last-child),
+  .cs_pricing_style_2:not(:last-child) {
     padding-right: 32px;
   }
 }
 @media (max-width: 767px) {
-  .cs_pricing_style_1 {
+  .cs_pricing_style_1,
+  .cs_pricing_style_2 {
     padding: 16px;
   }
-  .cs_pricing_style_1:not(:last-child) {
+  .cs_pricing_style_1:not(:last-child),
+  .cs_pricing_style_2:not(:last-child) {
     padding-right: 16px;
   }
 }
-.cs_pricing_style_1:first-child {
+.cs_pricing_style_1:first-child,
+.cs_pricing_style_2:first-child {
   background-color: transparent;
 }
 .cs_pricing_style_1:first-child .cs_plan_title,
 .cs_pricing_style_1:first-child .monthlyPrice,
-.cs_pricing_style_1:first-child .cs_pricing_list {
+.cs_pricing_style_1:first-child .cs_pricing_list,
+.cs_pricing_style_2:first-child .cs_plan_title,
+.cs_pricing_style_2:first-child .monthlyPrice,
+.cs_pricing_style_2:first-child .cs_pricing_list {
   color: var(--white);
 }
-.cs_pricing_style_1:first-child .cs_description {
+.cs_pricing_style_1:first-child .cs_description,
+.cs_pricing_style_2:first-child .cs_description {
   color: var(--line-grey);
 }
-.cs_pricing_style_1:first-child .cs_btn_lg {
+.cs_pricing_style_1:first-child .cs_btn_lg,
+.cs_pricing_style_2:first-child .cs_btn_lg {
   background-color: var(--white);
   color: var(--black);
 }
-.cs_pricing_style_1:nth-child(2) {
+.cs_pricing_style_1:nth-child(2),
+.cs_pricing_style_2:nth-child(2) {
   border-radius: 16px 0 0 16px;
 }
 @media (max-width: 991px) {
-  .cs_pricing_style_1:nth-child(2) {
+  .cs_pricing_style_1:nth-child(2),
+  .cs_pricing_style_2:nth-child(2) {
     border-radius: 16px;
   }
 }
-.cs_pricing_style_1:nth-child(3) {
+.cs_pricing_style_1:nth-child(3),
+.cs_pricing_style_2:nth-child(3) {
   border-radius: 0 16px 16px 0;
 }
 @media (max-width: 991px) {
-  .cs_pricing_style_1:nth-child(3) {
+  .cs_pricing_style_1:nth-child(3),
+  .cs_pricing_style_2:nth-child(3) {
     border-radius: 16px;
   }
 }
-.cs_pricing_style_1 .cs_pricing_table {
+.cs_pricing_style_1 .cs_pricing_table,
+.cs_pricing_style_2 .cs_pricing_table {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-.cs_pricing_style_1 .cs_price {
+.cs_pricing_style_1 .cs_price,
+.cs_pricing_style_2 .cs_price {
   display: flex;
   align-items: center;
   gap: 0 5px;
 }
-.cs_pricing_style_1 .monthlyPrice {
+.cs_pricing_style_1 .monthlyPrice,
+.cs_pricing_style_2 .monthlyPrice {
   color: var(--black);
   letter-spacing: -1.6px;
 }
-.cs_pricing_style_1 .monthlyText {
+.cs_pricing_style_1 .monthlyText,
+.cs_pricing_style_2 .monthlyText {
   align-self: flex-end;
 }
-.cs_pricing_style_1 .cs_pricing_list {
+.cs_pricing_style_1 .cs_pricing_list,
+.cs_pricing_style_2 .cs_pricing_list {
   color: var(--black);
 }
-.cs_pricing_style_1 .cs_pricing_list li {
+.cs_pricing_style_1 .cs_pricing_list li,
+.cs_pricing_style_2 .cs_pricing_list li {
   position: relative;
   padding-left: 32px;
   margin-bottom: 12px;
 }
-.cs_pricing_style_1 .cs_pricing_list li:last-child {
+.cs_pricing_style_1 .cs_pricing_list li:last-child,
+.cs_pricing_style_2 .cs_pricing_list li:last-child {
   margin-bottom: 56px;
 }
 @media (max-width: 991px) {
-  .cs_pricing_style_1 .cs_pricing_list li:last-child {
+  .cs_pricing_style_1 .cs_pricing_list li:last-child,
+  .cs_pricing_style_2 .cs_pricing_list li:last-child {
     margin-bottom: 48px;
   }
 }
-.cs_pricing_style_1 .cs_icon {
+.cs_pricing_style_1 .cs_icon,
+.cs_pricing_style_2 .cs_icon {
   position: absolute;
   left: 0;
   top: 0;
@@ -4132,7 +4159,8 @@ hr {
   align-items: center;
   justify-content: center;
 }
-.cs_pricing_style_1 .cs_icon::before {
+.cs_pricing_style_1 .cs_icon::before,
+.cs_pricing_style_2 .cs_icon::before {
   content: "";
   height: 18px;
   width: 18px;
@@ -4145,17 +4173,51 @@ hr {
   opacity: 0.56;
   border-radius: 50%;
 }
-.cs_pricing_style_1 .cs_icon .img {
+.cs_pricing_style_1 .cs_icon .img,
+.cs_pricing_style_2 .cs_icon .img {
   position: relative;
   z-index: 2;
   width: 100%;
   height: auto;
 }
-.cs_pricing_style_1 .cs_pricing_btn {
+.cs_pricing_style_1 .cs_pricing_btn,
+.cs_pricing_style_2 .cs_pricing_btn {
   margin-top: auto;
 }
-.cs_pricing_style_1 .cs_pricing_btn .cs_btn_lg {
+.cs_pricing_style_1 .cs_pricing_btn .cs_btn_lg,
+.cs_pricing_style_2 .cs_pricing_btn .cs_btn_lg {
   margin-top: auto;
+}
+
+.cs_pricing_wrapper_2 {
+  gap: 24px 32px;
+  padding: 0;
+}
+
+.cs_pricing_style_2 {
+  padding: 40px 32px !important;
+  background-color: var(--bg-grey) !important;
+  border-radius: 16px !important;
+}
+@media (min-width: 1200px) {
+  .cs_pricing_style_2:not(:last-child) {
+    padding-right: 32px;
+  }
+}
+.cs_pricing_style_2:first-child .cs_plan_title,
+.cs_pricing_style_2:first-child .monthlyPrice,
+.cs_pricing_style_2:first-child .cs_pricing_list {
+  color: var(--black);
+}
+.cs_pricing_style_2:first-child .cs_description {
+  color: var(--text-grey);
+}
+.cs_pricing_style_2:first-child .cs_btn_lg {
+  background-color: var(--black);
+  color: var(--white);
+}
+.cs_pricing_style_2:hover, .cs_pricing_style_2.cs_active {
+  background-color: var(--white) !important;
 }
 
 /*==========================================================

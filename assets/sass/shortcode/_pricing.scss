@@ -10,7 +10,8 @@
     }
   }
 }
-.cs_pricing_wrapper_1 {
+.cs_pricing_wrapper_1,
+.cs_pricing_wrapper_2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px 0;
@@ -24,7 +25,8 @@
   }
 }
 
-.cs_pricing_style_1 {
+.cs_pricing_style_1,
+.cs_pricing_style_2 {
   padding: 32px;
   height: 100%;
   background-color: var(--white);
@@ -184,5 +186,60 @@
     .cs_btn_lg {
       margin-top: auto;
     }
+  }
+}
+//
+.cs_pricing_wrapper_2 {
+  gap: 24px 32px;
+  padding: 0;
+  // @media (max-width: 1199px) {
+  //   padding: 16px;
+  // }
+  // @media (max-width: 991px) {
+  //   grid-template-columns: repeat(1, 1fr);
+  // }
+}
+
+.cs_pricing_style_2 {
+  padding: 40px 32px !important;
+  background-color: var(--bg-grey) !important;
+  border-radius: 16px !important;
+  @media (min-width: 1200px) {
+    &:not(:last-child) {
+      padding-right: 32px;
+    }
+  }
+  //
+  // @media (max-width: 1199px) {
+  //   &:not(:last-child) {
+  //     padding-right: 32px;
+  //   }
+  // }
+  //
+  // @media (max-width: 767px) {
+  //   padding: 16px;
+  //   &:not(:last-child) {
+  //     padding-right: 16px;
+  //   }
+  // }
+
+  &:first-child {
+    .cs_plan_title,
+    .monthlyPrice,
+    .cs_pricing_list {
+      color: var(--black);
+    }
+    .cs_description {
+      color: var(--text-grey);
+    }
+    .cs_btn_lg {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+
+  &:hover,
+  &.cs_active {
+    background-color: var(--white) !important;
   }
 }
