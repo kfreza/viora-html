@@ -100,9 +100,27 @@
   &::after {
     filter: blur(60px);
   }
+  .cs_btn_sm.cs_type_2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-color: transparent;
+    padding: 11px 17px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    &::after {
+      content: none;
+    }
+  }
   &:hover {
     &::after {
       opacity: 0.2;
+    }
+    .cs_btn_sm.cs_type_2 {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
     }
     .cs_service_card_style_2 {
       background-color: var(--white);

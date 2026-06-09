@@ -3618,8 +3618,26 @@ hr {
 .cs_service_card_wrapper_2::after {
   filter: blur(60px);
 }
+.cs_service_card_wrapper_2 .cs_btn_sm.cs_type_2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-color: transparent;
+  padding: 11px 17px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.cs_service_card_wrapper_2 .cs_btn_sm.cs_type_2::after {
+  content: none;
+}
 .cs_service_card_wrapper_2:hover::after {
   opacity: 0.2;
+}
+.cs_service_card_wrapper_2:hover .cs_btn_sm.cs_type_2 {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 .cs_service_card_wrapper_2:hover .cs_service_card_style_2 {
   background-color: var(--white);
