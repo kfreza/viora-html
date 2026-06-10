@@ -148,6 +148,9 @@
           margin-bottom: 48px;
         }
       }
+      span {
+        display: flex;
+      }
     }
   }
 
@@ -201,14 +204,10 @@
 }
 
 .cs_pricing_style_2 {
-  padding: 40px 32px !important;
+  padding: 40px 32px 32px !important;
   background-color: var(--bg-grey) !important;
   border-radius: 16px !important;
-  @media (min-width: 1200px) {
-    &:not(:last-child) {
-      padding-right: 32px;
-    }
-  }
+  position: relative;
   //
   // @media (max-width: 1199px) {
   //   &:not(:last-child) {
@@ -222,6 +221,21 @@
   //     padding-right: 16px;
   //   }
   // }
+
+  &::after {
+    content: "";
+    background: var(--radial-gradient);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    filter: blur(40px);
+  }
 
   &:first-child {
     .cs_plan_title,
@@ -238,8 +252,30 @@
     }
   }
 
+  .cs_plan_title {
+    transition: background 0.4s ease;
+  }
+
+  .cs_price {
+    margin-top: auto;
+  }
+  .cs_pricing_btn {
+    margin-top: 0;
+  }
+
   &:hover,
   &.cs_active {
     background-color: var(--white) !important;
+    &::after {
+      opacity: 0.3;
+      visibility: visible;
+    }
+    .cs_plan_title,
+    .monthlyPrice {
+      background: var(--radial-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
