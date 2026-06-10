@@ -3065,15 +3065,18 @@ hr {
 /*=======================================================
   CTA Style 1
 =========================================================*/
-.cs_cta_style_1 {
-  padding: 100px;
+.cs_cta_style_1,
+.cs_cta_style_3 {
+  padding: 100px 0;
 }
-.cs_cta_style_1 .cs_heading_style_3 {
+.cs_cta_style_1 .cs_heading_style_3,
+.cs_cta_style_3 .cs_heading_style_3 {
   width: min(100%, 733px);
   margin: 0 auto;
 }
 @media (max-width: 1199px) {
-  .cs_cta_style_1 {
+  .cs_cta_style_1,
+  .cs_cta_style_3 {
     padding: 60px 24px;
   }
 }
@@ -3082,7 +3085,7 @@ hr {
   CTA Style 2
 =========================================================*/
 .cs_cta_style_2 {
-  padding: 100px;
+  padding: 100px 0;
 }
 .cs_cta_style_2 .cs_heading_style_3 {
   display: flex;
@@ -3131,6 +3134,13 @@ hr {
 /*=======================================================
   CTA Style 3
 =========================================================*/
+.cs_cta_style_3 .cs_heading_style_3 {
+  width: min(100%, 1120px);
+}
+.cs_cta_style_3 .cs_title {
+  letter-spacing: -3.04px;
+}
+
 /*=======================================================
   Testimonial
 =========================================================*/
