@@ -4265,6 +4265,11 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+.cs_comparison_style_1 {
+  background-color: rosybrown;
+  padding: 16px 0;
+}
+
 /*==========================================================
  22. Video
 ============================================================*/
