@@ -4265,18 +4265,8 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 991px) {
-  .cs_comparison_style_1 {
-    overflow-x: auto;
-  }
-}
 .cs_comparison_style_1 .cs_comparison_table {
   padding: 16px 0;
-}
-@media (max-width: 991px) {
-  .cs_comparison_style_1 .cs_comparison_table {
-    min-width: 760px;
-  }
 }
 .cs_comparison_style_1 .cs_comparison_head {
   display: flex;

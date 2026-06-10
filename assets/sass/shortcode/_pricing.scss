@@ -282,14 +282,14 @@
 
 //Comparison Style
 .cs_comparison_style_1 {
-  @media (max-width: 991px) {
-    overflow-x: auto;
-  }
+  // @media (max-width: 991px) {
+  //   overflow-x: auto;
+  // }
   .cs_comparison_table {
     padding: 16px 0;
-    @media (max-width: 991px) {
-      min-width: 760px;
-    }
+    // @media (max-width: 991px) {
+    //   min-width: 760px;
+    // }
   }
 
   .cs_comparison_head {
