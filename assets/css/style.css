@@ -4800,10 +4800,16 @@ hr {
     gap: 40px 24px;
   }
 }
+@media (max-width: 380px) {
+  .cs_iconbox_wrapper_3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .cs_iconbox_style_3 {
   height: 100%;
   padding: 24px 6px 0;
+  margin: 0 auto;
 }
 .cs_iconbox_style_3 .cs_icon {
   height: 40px;
@@ -4820,7 +4826,19 @@ hr {
   }
   .cs_iconbox_style_3:nth-child(5) {
     grid-column: auto/span 2;
-    margin: 0 auto;
+  }
+}
+@media (max-width: 575px) {
+  .cs_iconbox_style_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 380px) {
+  .cs_iconbox_style_3:nth-child(5) {
+    grid-column: 1;
   }
 }
 
