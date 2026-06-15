@@ -3633,8 +3633,17 @@ hr {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  background-color: cadetblue;
+}
+@media (max-width: 991px) {
+  .cs_service_card_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+.cs_service_card_wrapper_2 {
+  background-color: rebeccapurple;
+}
 .cs_service_card_wrapper_2::after {
   filter: blur(60px);
 }
@@ -3661,13 +3670,12 @@ hr {
 }
 .cs_service_card_wrapper_2:hover .cs_service_card_style_2 {
   background-color: var(--white);
-  -webkit-mask-size: 100%;
-          mask-size: 100%;
   -webkit-mask-position: right 0;
           mask-position: right 0;
 }
 
 .cs_service_card_style_2 {
+  background-color: yellowgreen;
   gap: 15px;
   border-radius: 20px;
   width: 100%;

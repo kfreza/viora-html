@@ -97,9 +97,14 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  background-color: cadetblue;
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .cs_service_card_wrapper_2 {
+  background-color: rebeccapurple;
   &::after {
     filter: blur(60px);
   }
@@ -127,13 +132,18 @@
     }
     .cs_service_card_style_2 {
       background-color: var(--white);
-      mask-size: 100%;
+      // mask-size: 100%;
+      // mask-size: auto;
       mask-position: right 0;
+      // @media (max-width: 1199px) {
+      //   mask-size: calc(100% + 52px);
+      // }
     }
   }
 }
 
 .cs_service_card_style_2 {
+  background-color: yellowgreen;
   gap: 15px;
   border-radius: 20px;
   width: 100%;
@@ -141,6 +151,7 @@
   mask-image: url(../img/service_layer_mask_2.svg);
   mask-size: calc(100% + 47px);
   mask-position: right -47px;
+
   .cs_card_thumb {
     width: 100%;
     display: flex;
@@ -149,6 +160,15 @@
   .cs_card_info {
     padding: 0 32px 32px;
   }
+  // @media (max-width: 1399px) {
+  //   mask-image: url(../img/service_layer_mask_2_mobile.svg);
+  // }
+  // @media (max-width: 1199px) {
+  //   mask-size: calc(100% + 94px);
+  // }
+  // @media (max-width: 991px) {
+  //   mask-size: calc(100% + 52px);
+  // }
 }
 
 //
