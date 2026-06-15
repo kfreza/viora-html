@@ -195,6 +195,9 @@
 .cs_pricing_wrapper_2 {
   gap: 24px 32px;
   padding: 0;
+  @media (max-width: 1399px) {
+    gap: 24px;
+  }
   // @media (max-width: 1199px) {
   //   padding: 16px;
   // }
@@ -208,6 +211,10 @@
   background-color: var(--bg-grey) !important;
   border-radius: 16px !important;
   position: relative;
+
+  @media (max-width: 1399px) {
+    padding: 32px 24px 24px !important;
+  }
   //
   // @media (max-width: 1199px) {
   //   &:not(:last-child) {
@@ -259,6 +266,25 @@
   .cs_price {
     margin-top: auto;
   }
+
+  .cs_pricing_list {
+    // color: var(--black);
+    li {
+      // position: relative;
+      // padding-left: 32px;
+      // margin-bottom: 12px;
+      &:last-child {
+        // margin-bottom: 56px;
+        @media (max-width: 1399px) {
+          margin-bottom: 32px;
+        }
+      }
+      span {
+        // display: flex;
+      }
+    }
+  }
+
   .cs_pricing_btn {
     margin-top: 0;
   }
