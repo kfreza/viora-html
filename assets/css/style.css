@@ -3077,7 +3077,7 @@ hr {
 @media (max-width: 1199px) {
   .cs_cta_style_1,
   .cs_cta_style_3 {
-    padding: 60px 24px;
+    padding: 60px 0;
   }
 }
 

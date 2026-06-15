@@ -9,7 +9,7 @@
     margin: 0 auto;
   }
   @media (max-width: 1199px) {
-    padding: 60px 24px;
+    padding: 60px 0;
   }
 }
 /*=======================================================
@@ -30,7 +30,6 @@
   .cs_cta_content {
     width: min(100%, 377px);
   }
-
   .cs_btn_lg.cs_type_1 {
     padding: 17px 20px;
     justify-content: center;
