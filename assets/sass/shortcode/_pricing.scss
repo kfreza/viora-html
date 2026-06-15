@@ -1,6 +1,7 @@
 /*===============================================
  Pricing
  ================================================*/
+// Pricing Style 1
 .cs_pricing_section_1 {
   .cs_heading_style_3 {
     width: min(100%, 1000px);
@@ -191,7 +192,7 @@
     }
   }
 }
-//
+// Pricing Style 2
 .cs_pricing_wrapper_2 {
   gap: 24px 32px;
   padding: 0;
@@ -306,13 +307,14 @@
   }
 }
 
-//Comparison Style
+//Comparison Table
 .cs_comparison_style_1 {
   // @media (max-width: 991px) {
-  //   overflow-x: auto;
+  overflow-x: auto;
   // }
   .cs_comparison_table {
     padding: 16px 0;
+    min-width: 1240px;
     // @media (max-width: 991px) {
     //   min-width: 760px;
     // }
@@ -325,10 +327,12 @@
     padding: 0 8px 40px;
     gap: 0 15px;
   }
+
   .cs_comparison_feature {
     width: 380px;
     line-height: 1.48;
   }
+
   .cs_comparison_plan {
     width: 260px;
     display: flex;
@@ -337,6 +341,7 @@
     text-align: center;
     gap: 8px 0;
   }
+
   .cs_comparison_row {
     display: flex;
     align-items: center;
@@ -345,6 +350,7 @@
     gap: 0 15px;
     border-bottom: 1px solid var(--line-grey);
   }
+
   .cs_comparison_cell {
     width: 260px;
     display: flex;
@@ -352,11 +358,13 @@
     justify-content: center;
     gap: 6px;
   }
+
   .cs_check_circle,
   .cs_x_circle {
     width: 24px;
     height: 24px;
   }
+
   .cs_comparison_text {
     color: var(--black);
     line-height: 1.48;

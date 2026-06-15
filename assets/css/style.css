@@ -4280,8 +4280,12 @@ hr {
   -webkit-text-fill-color: transparent;
 }
 
+.cs_comparison_style_1 {
+  overflow-x: auto;
+}
 .cs_comparison_style_1 .cs_comparison_table {
   padding: 16px 0;
+  min-width: 1240px;
 }
 .cs_comparison_style_1 .cs_comparison_head {
   display: flex;
