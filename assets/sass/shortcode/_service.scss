@@ -93,13 +93,28 @@
 }
 
 // Service Page
+.cs_services_section_2 {
+  background-color: red;
+  .container {
+    background-color: yellow;
+  }
+}
 .cs_service_card_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   background-color: cadetblue;
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   @media (max-width: 991px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 767px) {
+    gap: 32px 18px;
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -132,13 +147,29 @@
     }
     .cs_service_card_style_2 {
       background-color: var(--white);
-      // mask-size: 100%;
+      mask-size: calc(100% + 1px);
       // mask-size: auto;
-      mask-position: right 0;
+      // mask-position: right 0;
+      mask-position: 0 0;
+      // @media (max-width: 1399px) {
+      //   mask-size: 100%;
+      // }
       // @media (max-width: 1199px) {
       //   mask-size: calc(100% + 52px);
       // }
+      @media (max-width: 991px) {
+        mask-size: calc(100% + 109px);
+        mask-position: -108px 0px;
+      }
+      @media (max-width: 767px) {
+        mask-size: calc(100% + 151px);
+        mask-position: -150px 0px;
+      }
     }
+  }
+  @media (max-width: 575px) {
+    max-width: 332px;
+    margin: 0 auto;
   }
 }
 
@@ -150,7 +181,14 @@
   min-height: 400px;
   mask-image: url(../img/service_layer_mask_2.svg);
   mask-size: calc(100% + 47px);
-  mask-position: right -47px;
+  // mask-position: right -47px;
+  mask-position: 0 -47px;
+
+  // mask:
+  //   linear-gradient(#000, #000),
+  //   url(../img/service_layer_mask_shape_dxtp.svg) top right / 150px 62px
+  //     no-repeat;
+  // mask-composite: exclude;
 
   .cs_card_thumb {
     width: 100%;
@@ -160,15 +198,22 @@
   .cs_card_info {
     padding: 0 32px 32px;
   }
-  // @media (max-width: 1399px) {
-  //   mask-image: url(../img/service_layer_mask_2_mobile.svg);
-  // }
-  // @media (max-width: 1199px) {
-  //   mask-size: calc(100% + 94px);
-  // }
-  // @media (max-width: 991px) {
-  //   mask-size: calc(100% + 52px);
-  // }
+  @media (max-width: 1399px) {
+    mask-image: url(../img/service_layer_mask_2_mobile.svg);
+    mask-size: calc(100% + 36px);
+  }
+  @media (max-width: 1199px) {
+    mask-image: url(../img/service_layer_mask_2.svg);
+    mask-size: calc(100% + 10px);
+    mask-position: 0 -49px;
+  }
+  @media (max-width: 991px) {
+    mask-size: calc(100% + 109px);
+  }
+  @media (max-width: 767px) {
+    mask-size: calc(100% + 199px);
+    // mask-position: -150px 0px;
+  }
 }
 
 //
