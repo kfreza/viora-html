@@ -63,11 +63,113 @@
 /*=======================================================
   CTA Style 3
 =========================================================*/
-.cs_cta_style_3{
-  .cs_heading_style_3{
+.cs_cta_style_3 {
+  .cs_heading_style_3 {
     width: min(100%, 1120px);
   }
-  .cs_title{
+  .cs_title {
     letter-spacing: -3.04px;
+  }
+}
+/*=======================================================
+  CTA Style 4
+=========================================================*/
+.cs_cta_style_4 {
+  .cs_cta_4_wrap {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 20px;
+    background-color: var(--black);
+    min-height: 538px;
+    display: flex;
+    align-items: center;
+    padding: 64px;
+  }
+  // Decorative brand-gradient glow ellipses
+  .cs_cta_4_wrap::before,
+  .cs_cta_4_wrap::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: var(--radial-gradient);
+    filter: blur(90px);
+    opacity: 0.45;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .cs_cta_4_wrap::before {
+    width: 300px;
+    height: 560px;
+    top: -90px;
+    left: 38%;
+    transform: rotate(80deg);
+  }
+  .cs_cta_4_wrap::after {
+    width: 150px;
+    height: 400px;
+    top: -100px;
+    left: 6%;
+    transform: rotate(80deg);
+  }
+  .cs_cta_4_content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 560px);
+  }
+  .cs_cta_4_thumb {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+    img {
+      height: 100%;
+      width: auto;
+      max-width: none;
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .cs_cta_4_wrap {
+      padding: 48px;
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_cta_4_wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 24px;
+      min-height: 0;
+    }
+    .cs_cta_4_content {
+      width: 100%;
+    }
+    .cs_cta_4_thumb {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 100%;
+      margin-top: 40px;
+      justify-content: center;
+      img {
+        height: auto;
+        width: 100%;
+        max-width: 360px;
+        border-radius: 12px;
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_cta_4_title {
+      font-size: 28px;
+    }
   }
 }
