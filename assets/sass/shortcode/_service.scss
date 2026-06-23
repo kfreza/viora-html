@@ -64,12 +64,17 @@
   .cs_card_info {
     padding: 0 24px 24px;
   }
+  .cs_title,
   .cs_description {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     overflow: hidden;
+  }
+  .cs_title {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
   }
   &::before {
     content: "";

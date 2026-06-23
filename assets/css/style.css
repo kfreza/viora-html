@@ -3600,13 +3600,20 @@ hr {
 .cs_service_card_style_2 .cs_card_info {
   padding: 0 24px 24px;
 }
+.cs_service_card_style_1 .cs_title,
 .cs_service_card_style_1 .cs_description,
+.cs_service_card_style_2 .cs_title,
 .cs_service_card_style_2 .cs_description {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
   overflow: hidden;
+}
+.cs_service_card_style_1 .cs_title,
+.cs_service_card_style_2 .cs_title {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 .cs_service_card_style_1::before,
 .cs_service_card_style_2::before {
