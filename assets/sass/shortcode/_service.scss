@@ -98,17 +98,10 @@
 }
 
 // Service Page
-.cs_services_section_2 {
-  background-color: red;
-  .container {
-    background-color: yellow;
-  }
-}
 .cs_service_card_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  background-color: cadetblue;
   @media (max-width: 1199px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -124,7 +117,6 @@
 }
 
 .cs_service_card_wrapper_2 {
-  background-color: rebeccapurple;
   &::after {
     filter: blur(60px);
   }
@@ -179,7 +171,6 @@
 }
 
 .cs_service_card_style_2 {
-  background-color: yellowgreen;
   gap: 15px;
   border-radius: 20px;
   width: 100%;
@@ -188,12 +179,6 @@
   mask-size: calc(100% + 47px);
   // mask-position: right -47px;
   mask-position: 0 -47px;
-
-  // mask:
-  //   linear-gradient(#000, #000),
-  //   url(../img/service_layer_mask_shape_dxtp.svg) top right / 150px 62px
-  //     no-repeat;
-  // mask-composite: exclude;
 
   .cs_card_thumb {
     width: 100%;
