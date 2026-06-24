@@ -5073,6 +5073,7 @@ hr {
 =========================================================*/
 .cs_work_style_1 {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 @media (max-width: 991px) {
