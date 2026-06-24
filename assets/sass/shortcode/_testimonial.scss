@@ -75,3 +75,52 @@
     line-height: 1.54em;
   }
 }
+
+//
+
+.cs_testimonial_wrapper_2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cs_testimonial_style_2 {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  // justify-content: center;
+  height: 100%;
+  padding: 22px;
+  background-color: var(--bg-grey);
+  border-radius: 16px;
+  .cs_testimonial_meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+  }
+  .cs_testimonial_avatar {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    border-radius: 50%;
+    img {
+      width: 100%;
+      // height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .cs_testimonial_info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cs_author_title {
+    line-height: 1.2em;
+  }
+  .cs_author_designation {
+  }
+}
