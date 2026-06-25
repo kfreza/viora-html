@@ -5071,27 +5071,32 @@ hr {
 /*=======================================================
   Work
 =========================================================*/
-.cs_work_style_1 {
+.cs_work_style_1,
+.cs_work_style_2 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 @media (max-width: 991px) {
-  .cs_work_style_1 {
+  .cs_work_style_1,
+  .cs_work_style_2 {
     flex-wrap: wrap;
   }
 }
 
-.cs_textbox_style_1 {
+.cs_textbox_style_1,
+.cs_textbox_style_2 {
   display: flex;
   gap: 0 24px;
 }
 @media (min-width: 992px) {
-  .cs_textbox_style_1 {
+  .cs_textbox_style_1,
+  .cs_textbox_style_2 {
     width: 370px;
   }
 }
-.cs_textbox_style_1 .cs_number {
+.cs_textbox_style_1 .cs_number,
+.cs_textbox_style_2 .cs_number {
   height: 91px;
   width: 64px;
   display: flex;
@@ -5099,21 +5104,72 @@ hr {
   justify-content: center;
   flex: none;
 }
-.cs_textbox_style_1 .cs_number span {
+.cs_textbox_style_1 .cs_number span,
+.cs_textbox_style_2 .cs_number span {
   background: var(--radial-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.cs_textbox_style_1 .cs_textbox {
+.cs_textbox_style_1 .cs_textbox,
+.cs_textbox_style_2 .cs_textbox {
   padding: 18px 0;
 }
-.cs_textbox_style_1 .cs_description {
+.cs_textbox_style_1 .cs_description,
+.cs_textbox_style_2 .cs_description {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
+}
+
+.cs_work_wrapper_2 {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px 80px;
+  align-items: flex-start;
+}
+.cs_work_wrapper_2 .cs_work_title {
+  background-color: red;
+  flex: none;
+  width: min(100%, 80px);
+  padding: 8px 0;
+}
+@media (max-width: 1199px) {
+  .cs_work_wrapper_2 {
+    flex-wrap: wrap;
+  }
+  .cs_work_wrapper_2 .cs_work_title {
+    width: 100%;
+  }
+}
+
+.cs_work_style_2 {
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  gap: 32px;
+}
+
+.cs_textbox_style_2 {
+  background-color: rebeccapurple;
+}
+@media (min-width: 992px) {
+  .cs_textbox_style_2 {
+    width: 450px;
+  }
+}
+.cs_textbox_style_2 .cs_number {
+  width: 74px;
+}
+.cs_textbox_style_2 .cs_textbox {
+  padding: 0;
+}
+@media (max-width: 1199px) {
+  .cs_textbox_style_2 .cs_textbox {
+    padding: 10px;
+  }
 }
 
 /*=======================================================
