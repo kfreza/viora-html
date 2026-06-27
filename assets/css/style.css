@@ -5124,6 +5124,8 @@ hr {
   line-clamp: 3;
 }
 
+.cs_about_wrapper_2,
+.cs_feature_wrapper_3,
 .cs_work_wrapper_2 {
   max-width: 1140px;
   margin: 0 auto;
@@ -5131,16 +5133,33 @@ hr {
   gap: 20px 80px;
   align-items: flex-start;
 }
+.cs_about_wrapper_2 .cs_about_title,
+.cs_about_wrapper_2 .cs_feature_title,
+.cs_about_wrapper_2 .cs_work_title,
+.cs_feature_wrapper_3 .cs_about_title,
+.cs_feature_wrapper_3 .cs_feature_title,
+.cs_feature_wrapper_3 .cs_work_title,
+.cs_work_wrapper_2 .cs_about_title,
+.cs_work_wrapper_2 .cs_feature_title,
 .cs_work_wrapper_2 .cs_work_title {
-  background-color: red;
   flex: none;
   width: min(100%, 80px);
   padding: 8px 0;
 }
 @media (max-width: 1199px) {
+  .cs_about_wrapper_2,
+  .cs_feature_wrapper_3,
   .cs_work_wrapper_2 {
     flex-wrap: wrap;
   }
+  .cs_about_wrapper_2 .cs_about_title,
+  .cs_about_wrapper_2 .cs_feature_title,
+  .cs_about_wrapper_2 .cs_work_title,
+  .cs_feature_wrapper_3 .cs_about_title,
+  .cs_feature_wrapper_3 .cs_feature_title,
+  .cs_feature_wrapper_3 .cs_work_title,
+  .cs_work_wrapper_2 .cs_about_title,
+  .cs_work_wrapper_2 .cs_feature_title,
   .cs_work_wrapper_2 .cs_work_title {
     width: 100%;
   }
@@ -5148,13 +5167,9 @@ hr {
 
 .cs_work_style_2 {
   flex-wrap: wrap;
-  background-color: rosybrown;
   gap: 32px;
 }
 
-.cs_textbox_style_2 {
-  background-color: rebeccapurple;
-}
 @media (min-width: 992px) {
   .cs_textbox_style_2 {
     width: 450px;
@@ -5170,6 +5185,43 @@ hr {
   .cs_textbox_style_2 .cs_textbox {
     padding: 10px;
   }
+}
+
+.cs_feature_wrapper_3 .cs_feature_list {
+  color: var(--black);
+}
+.cs_feature_wrapper_3 .cs_feature_list li {
+  position: relative;
+  padding-left: 55px;
+}
+.cs_feature_wrapper_3 .cs_feature_list li:not(:last-child) {
+  margin-bottom: 40px;
+}
+.cs_feature_wrapper_3 .cs_feature_list .cs_feature_subtitle {
+  margin-bottom: 12px;
+}
+.cs_feature_wrapper_3 .cs_feature_list .cs_feature_description {
+  margin-bottom: 0;
+}
+.cs_feature_wrapper_3 .cs_icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 32px;
+  width: 32px;
+}
+.cs_feature_wrapper_3 .cs_icon::before {
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: var(--linear-gradient);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.3;
+  border-radius: 50%;
 }
 
 /*=======================================================
