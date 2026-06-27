@@ -119,3 +119,148 @@
     }
   }
 }
+
+// Service Details Projects
+.cs_project_style_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 320px;
+  padding: 40px 40px 32px;
+  border-radius: 16px;
+  color: var(--white);
+  background-color: var(--bg-grey);
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    background: var(--linear-gradient);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    filter: blur(60px);
+  }
+  &:hover {
+    &::after {
+      opacity: 0.2;
+      visibility: visible;
+    }
+
+    .cs_btn_sm.cs_type_1 {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .cs_bg_image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    transition: opacity 0.4s ease;
+  }
+
+  .cs_bg_image_overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(34, 34, 34, 0.7) 0%,
+      rgba(34, 34, 34, 0) 50%,
+      rgba(34, 34, 34, 0.7) 100%
+    );
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+  }
+
+  .cs_btn_sm.cs_type_1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    .cs_btn_txt {
+      padding: 0 4px;
+    }
+    .cs_icon_arrow {
+      height: 20px;
+      width: 20px;
+    }
+    &::after {
+      content: none;
+    }
+  }
+
+  .cs_project_info {
+    // position: relative;
+    z-index: 1;
+    flex: 1 0 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    .cs_title {
+      max-width: 400px;
+    }
+  }
+
+  // Hover: carve the notch out of the image and reveal the button
+  // @media (min-width: 768px) {
+  //   &:hover {
+  //     // box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
+  //     .cs_bg_image {
+  //       -webkit-mask-image:
+  //         url(../img/project_card_notch.svg), linear-gradient(#000, #000);
+  //       mask-image:
+  //         url(../img/project_card_notch.svg), linear-gradient(#000, #000);
+  //       -webkit-mask-size:
+  //         164px 72px,
+  //         100% 100%;
+  //       mask-size:
+  //         164px 72px,
+  //         100% 100%;
+  //       -webkit-mask-position:
+  //         top right,
+  //         center;
+  //       mask-position:
+  //         top right,
+  //         center;
+  //       -webkit-mask-repeat: no-repeat, no-repeat;
+  //       mask-repeat: no-repeat, no-repeat;
+  //       -webkit-mask-composite: xor;
+  //       mask-composite: exclude;
+  //     }
+  //     .cs_project_btn {
+  //       opacity: 1;
+  //       transform: translateY(0);
+  //       pointer-events: auto;
+  //     }
+  //   }
+  // }
+
+  // No hover on touch / narrow screens: show button statically, no notch
+  // @media (max-width: 767px) {
+  //   padding: 28px 24px 24px;
+  //   .cs_project_btn {
+  //     top: 24px;
+  //     right: 24px;
+  //     opacity: 1;
+  //     transform: none;
+  //     pointer-events: auto;
+  //   }
+  // }
+}
+//
