@@ -133,6 +133,8 @@
   background-color: var(--bg-grey);
   position: relative;
   z-index: 1;
+
+  transition: all 0.4s ease;
   &::after {
     content: "";
     background: var(--linear-gradient);
@@ -148,11 +150,22 @@
     filter: blur(60px);
   }
   &:hover {
+    background-color: transparent;
+    .cs_bg_image,
+    .cs_bg_image_overlay {
+      mask-image: url(../img/project_video_mask_shape.svg);
+      mask-repeat: no-repeat;
+      mask-position:
+        top right,
+        center;
+      mask-size: cover;
+      mask-composite: exclude;
+      // aspect-ratio: 611 / 320;
+    }
     &::after {
       opacity: 0.2;
       visibility: visible;
     }
-
     .cs_btn_sm.cs_type_1 {
       opacity: 1;
       visibility: visible;
@@ -187,6 +200,7 @@
     top: 0;
     right: 0;
     z-index: 2;
+    padding: 12px 14px;
     background-color: transparent;
     opacity: 0;
     visibility: hidden;
@@ -216,51 +230,5 @@
       max-width: 400px;
     }
   }
-
-  // Hover: carve the notch out of the image and reveal the button
-  // @media (min-width: 768px) {
-  //   &:hover {
-  //     // box-shadow: 0 0 32px 0 rgba(64, 22, 56, 0.16);
-  //     .cs_bg_image {
-  //       -webkit-mask-image:
-  //         url(../img/project_card_notch.svg), linear-gradient(#000, #000);
-  //       mask-image:
-  //         url(../img/project_card_notch.svg), linear-gradient(#000, #000);
-  //       -webkit-mask-size:
-  //         164px 72px,
-  //         100% 100%;
-  //       mask-size:
-  //         164px 72px,
-  //         100% 100%;
-  //       -webkit-mask-position:
-  //         top right,
-  //         center;
-  //       mask-position:
-  //         top right,
-  //         center;
-  //       -webkit-mask-repeat: no-repeat, no-repeat;
-  //       mask-repeat: no-repeat, no-repeat;
-  //       -webkit-mask-composite: xor;
-  //       mask-composite: exclude;
-  //     }
-  //     .cs_project_btn {
-  //       opacity: 1;
-  //       transform: translateY(0);
-  //       pointer-events: auto;
-  //     }
-  //   }
-  // }
-
-  // No hover on touch / narrow screens: show button statically, no notch
-  // @media (max-width: 767px) {
-  //   padding: 28px 24px 24px;
-  //   .cs_project_btn {
-  //     top: 24px;
-  //     right: 24px;
-  //     opacity: 1;
-  //     transform: none;
-  //     pointer-events: auto;
-  //   }
-  // }
 }
 //

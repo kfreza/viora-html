@@ -4182,6 +4182,7 @@ hr {
   background-color: var(--bg-grey);
   position: relative;
   z-index: 1;
+  transition: all 0.4s ease;
 }
 .cs_project_style_2::after {
   content: "";
@@ -4196,6 +4197,22 @@ hr {
   visibility: hidden;
   transition: all 0.4s ease;
   filter: blur(60px);
+}
+.cs_project_style_2:hover {
+  background-color: transparent;
+}
+.cs_project_style_2:hover .cs_bg_image,
+.cs_project_style_2:hover .cs_bg_image_overlay {
+  -webkit-mask-image: url(../img/project_video_mask_shape.svg);
+          mask-image: url(../img/project_video_mask_shape.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: top right, center;
+          mask-position: top right, center;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 .cs_project_style_2:hover::after {
   opacity: 0.2;
@@ -4226,6 +4243,7 @@ hr {
   top: 0;
   right: 0;
   z-index: 2;
+  padding: 12px 14px;
   background-color: transparent;
   opacity: 0;
   visibility: hidden;
