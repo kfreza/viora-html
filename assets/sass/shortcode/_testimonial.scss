@@ -76,12 +76,20 @@
   }
 }
 
-//
+// Testimonial Style 2
 
+.cs_testimonial_section_2{
+  .cs_heading_style_2{
+    text-align: center;
+  }
+}
 .cs_testimonial_wrapper_2 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .cs_testimonial_style_2 {
