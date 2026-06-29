@@ -78,10 +78,13 @@
 .cs_work_style_2 {
   flex-wrap: wrap;
   gap: 32px;
+  @media (max-width: 991px) {
+    gap: 16px;
+  }
 }
 .cs_textbox_style_2 {
   @media (min-width: 992px) {
-    width: 450px;
+    width: min(450px, 100%);
   }
   .cs_number {
     width: 74px;
@@ -91,7 +94,20 @@
   }
   @media (max-width: 1199px) {
     .cs_textbox {
-      padding: 10px;
+      padding: 10px 0;
+    }
+  }
+  @media (max-width: 991px) {
+    .cs_number {
+      width: 40px;
+      height: 67px;
+    }
+  }
+  @media (max-width: 575px) {
+    .cs_textbox {
+      .cs_fs_24{
+        font-size: 20px;
+      }
     }
   }
 }
