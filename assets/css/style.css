@@ -4350,10 +4350,20 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px;
 }
 .cs_project_style_2 .cs_project_info .cs_title {
   max-width: 400px;
+}
+@media (max-width: 991px) {
+  .cs_project_style_2 .cs_project_info {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 767px) {
+  .cs_project_style_2 {
+    padding: 40px 24px 24px;
+  }
 }
 
 /*===============================================
