@@ -3019,6 +3019,22 @@ hr {
 /*=======================================================
   Hero
 =========================================================*/
+.breadcrumb {
+  --bs-breadcrumb-item-padding-x: 6px;
+}
+
+.breadcrumb-item {
+  color: var(--black);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: var(--text-grey-light);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-grey);
+}
+
 .cs_hero_section_1 {
   padding: 232px 0 334px;
 }
@@ -3060,6 +3076,65 @@ hr {
   .cs_page_header_section_2 {
     padding: 128px 0 60px;
   }
+}
+
+.cs_page_header_section_3 .container {
+  max-width: 1384px;
+}
+.cs_page_header_section_3 {
+  padding-top: 114px;
+}
+.cs_page_header_section_3 .cs_page_header_bg {
+  min-height: 698px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-mask-image: url(../img/service_details_page_header_mask.svg);
+          mask-image: url(../img/service_details_page_header_mask.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: bottom left;
+          mask-position: bottom left;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.cs_page_header_section_3 .cs_bg_image_overlay {
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0) 50%, rgba(34, 34, 34, 0.7) 100%);
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+}
+.cs_page_header_section_3 .cs_page_header_info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 80px;
+}
+.cs_page_header_section_3 .cs_page_header_info .cs_title {
+  letter-spacing: -3.04px;
+}
+.cs_page_header_section_3 .cs_page_header_info .cs_description {
+  align-self: flex-end;
+  max-width: 711px;
+}
+
+.cs_breadcrumb_style_1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 16px 20px;
+  border-radius: 8px;
+}
+.cs_breadcrumb_style_1 .breadcrumb-item a {
+  transition: opacity 0.3s ease;
+}
+.cs_breadcrumb_style_1 .breadcrumb-item a:hover {
+  opacity: 0.7;
 }
 
 /*=======================================================
