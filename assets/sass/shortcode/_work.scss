@@ -46,7 +46,7 @@
   }
 }
 
-//
+// Service Details About, Feature, Work Common Design
 .cs_about_wrapper_2,
 .cs_feature_wrapper_3,
 .cs_work_wrapper_2 {
@@ -55,7 +55,6 @@
   display: flex;
   gap: 20px 80px;
   align-items: flex-start;
-
   .cs_about_title,
   .cs_feature_title,
   .cs_work_title {
@@ -63,10 +62,8 @@
     width: min(100%, 80px);
     padding: 8px 0;
   }
-
   @media (max-width: 1199px) {
     flex-wrap: wrap;
-
     .cs_about_title,
     .cs_feature_title,
     .cs_work_title {
@@ -74,7 +71,7 @@
     }
   }
 }
-
+// Service Details Work Style
 .cs_work_style_2 {
   flex-wrap: wrap;
   gap: 32px;
@@ -111,7 +108,6 @@
     }
   }
 }
-
 // Service Details Feature
 .cs_feature_wrapper_3 {
   .cs_feature_list {
