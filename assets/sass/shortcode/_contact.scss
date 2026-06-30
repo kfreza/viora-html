@@ -88,27 +88,37 @@
  ============================================*/
 .cs_map {
   position: relative;
-  height: 654px;
-  @media (max-width: 767px) {
-    height: 580px;
-  }
-  @media (max-width: 575px) {
-    height: 480px;
-  }
-  @media (max-width: 480px) {
-    height: 380px;
-  }
+  height: 434px;
+  // @media (max-width: 767px) {
+  //   height: 580px;
+  // }
+  // @media (max-width: 575px) {
+  //   height: 480px;
+  // }
+  // @media (max-width: 480px) {
+  //   height: 380px;
+  // }
 
   .cs_map_overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 41, 53, 0.35);
+    background: var(--radial-gradient);
+    opacity: 0.1;
     z-index: 1;
     pointer-events: none;
+    border-radius: 16px;
+    transition: all 0.4s ease;
+  }
+
+  &:hover {
+    .cs_map_overlay {
+      opacity: 0;
+    }
   }
 }
 .cs_map iframe {
   height: 100%;
   width: 100%;
   border: none;
+  border-radius: 16px;
 }
