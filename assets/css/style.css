@@ -5349,14 +5349,17 @@ hr {
 /*=======================================================
   FAQ
 =========================================================*/
-.cs_faq_section_1 .cs_heading_style_2 {
+.cs_faq_section_1 .cs_heading_style_2,
+.cs_faq_section_2 .cs_heading_style_2 {
   max-width: 360px;
 }
 @media (max-width: 991px) {
-  .cs_faq_section_1 .cs_heading_style_2 {
+  .cs_faq_section_1 .cs_heading_style_2,
+  .cs_faq_section_2 .cs_heading_style_2 {
     max-width: 100%;
   }
-  .cs_faq_section_1 .cs_heading_style_2 .cs_description {
+  .cs_faq_section_1 .cs_heading_style_2 .cs_description,
+  .cs_faq_section_2 .cs_heading_style_2 .cs_description {
     width: 100%;
   }
 }
@@ -5437,6 +5440,29 @@ hr {
 }
 .cs_accordian.active .cs_accordian_toggle {
   transform: rotate(-90deg);
+}
+
+.cs_faq_section_2 .cs_accordian {
+  border: none;
+  border-radius: 12px;
+  background-color: var(--bg-grey);
+}
+.cs_faq_section_2 .cs_accordian .cs_accordian_head {
+  padding: 24px;
+}
+.cs_faq_section_2 .cs_accordian .cs_accordian_toggle {
+  width: 24px;
+  height: 24px;
+  color: var(--text-grey-light);
+}
+.cs_faq_section_2 .cs_accordian .cs_accordian_body {
+  padding: 0 72px 24px 24px;
+}
+.cs_faq_section_2 .cs_accordian.active .cs_accordian_head {
+  padding-bottom: 10px;
+}
+.cs_faq_section_2 .cs_accordian.active .cs_accordian_toggle {
+  transform: rotate(-180deg);
 }
 
 /*=======================================================
