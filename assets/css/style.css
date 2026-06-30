@@ -3022,6 +3022,11 @@ hr {
 .breadcrumb {
   --bs-breadcrumb-item-padding-x: 6px;
 }
+@media (max-width: 575px) {
+  .breadcrumb {
+    --bs-breadcrumb-item-padding-x: 4px;
+  }
+}
 
 .breadcrumb-item {
   color: var(--black);
@@ -3084,6 +3089,16 @@ hr {
 .cs_page_header_section_3 {
   padding-top: 114px;
 }
+@media (max-width: 1199px) {
+  .cs_page_header_section_3 {
+    padding-top: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_page_header_section_3 {
+    padding-top: 92px;
+  }
+}
 .cs_page_header_section_3 .cs_page_header_bg {
   min-height: 698px;
   position: relative;
@@ -3097,6 +3112,14 @@ hr {
           mask-position: bottom left;
   -webkit-mask-size: cover;
           mask-size: cover;
+}
+@media (max-width: 767px) {
+  .cs_page_header_section_3 .cs_page_header_bg {
+    max-width: 358px;
+    min-height: 358px;
+    -webkit-mask-image: url(../img/service_details_page_header_mask_mb.svg);
+            mask-image: url(../img/service_details_page_header_mask_mb.svg);
+  }
 }
 .cs_page_header_section_3 .cs_bg_image_overlay {
   background: linear-gradient(180deg, rgba(34, 34, 34, 0.7) 0%, rgba(34, 34, 34, 0) 50%, rgba(34, 34, 34, 0.7) 100%);
@@ -3112,12 +3135,44 @@ hr {
   justify-content: space-between;
   padding: 60px 80px;
 }
+@media (max-width: 1199px) {
+  .cs_page_header_section_3 .cs_page_header_info {
+    padding: 40px 40px 80px;
+  }
+}
+@media (max-width: 767px) {
+  .cs_page_header_section_3 .cs_page_header_info {
+    padding: 40px 24px 80px;
+    flex-direction: initial;
+  }
+}
+@media (max-width: 575px) {
+  .cs_page_header_section_3 .cs_page_header_info {
+    padding: 40px 24px 60px;
+  }
+}
 .cs_page_header_section_3 .cs_page_header_info .cs_title {
   letter-spacing: -3.04px;
+}
+@media (max-width: 767px) {
+  .cs_page_header_section_3 .cs_page_header_info .cs_title {
+    letter-spacing: -1.6px;
+    align-self: flex-end;
+  }
+}
+@media (max-width: 575px) {
+  .cs_page_header_section_3 .cs_page_header_info .cs_fs_76 {
+    font-size: 40px;
+  }
 }
 .cs_page_header_section_3 .cs_page_header_info .cs_description {
   align-self: flex-end;
   max-width: 711px;
+}
+@media (max-width: 767px) {
+  .cs_page_header_section_3 .cs_page_header_info .cs_description {
+    display: none;
+  }
 }
 
 .cs_breadcrumb_style_1 {
@@ -3135,6 +3190,12 @@ hr {
 }
 .cs_breadcrumb_style_1 .breadcrumb-item a:hover {
   opacity: 0.7;
+}
+@media (max-width: 575px) {
+  .cs_breadcrumb_style_1 {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
 }
 
 /*=======================================================

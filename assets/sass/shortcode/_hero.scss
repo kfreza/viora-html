@@ -4,6 +4,9 @@
 // BS Breadcumb Customize
 .breadcrumb {
   --bs-breadcrumb-item-padding-x: 6px;
+  @media (max-width: 575px) {
+    --bs-breadcrumb-item-padding-x: 4px;
+  }
 }
 .breadcrumb-item {
   color: var(--black);
@@ -61,30 +64,27 @@
     max-width: 1384px;
   }
   padding-top: 114px;
-  // @media (max-width: 1199px) {
-  //   padding-top: 110px;
-  // }
-  // @media (max-width: 767px) {
-  //   padding-top: 90px;
-  // }
+  @media (max-width: 1199px) {
+    padding-top: 100px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 92px;
+  }
   .cs_page_header_bg {
     min-height: 698px;
     position: relative;
-    // aspect-ratio: 1360 / 698;
     border-radius: 20px;
     overflow: hidden;
-    // @media (max-width: 767px) {
-    //   aspect-ratio: auto;
-    //   min-height: 460px;
-    // }
-
     mask-image: url(../img/service_details_page_header_mask.svg);
     mask-repeat: no-repeat;
     mask-position: bottom left;
     mask-size: cover;
-    
+    @media (max-width: 767px) {
+      max-width: 358px;
+      min-height: 358px;
+      mask-image: url(../img/service_details_page_header_mask_mb.svg);
+    }
   }
-
   .cs_bg_image_overlay {
     background: linear-gradient(
       180deg,
@@ -96,7 +96,6 @@
     inset: 0;
     border-radius: 20px;
   }
-
   .cs_page_header_info {
     position: absolute;
     inset: 0;
@@ -104,22 +103,34 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 60px 80px;
-    // @media (max-width: 1199px) {
-    //   padding: 40px 40px 40px;
-    // }
-    // @media (max-width: 767px) {
-    //   padding: 32px 24px 96px;
-    // }
+    @media (max-width: 1199px) {
+      padding: 40px 40px 80px;
+    }
+    @media (max-width: 767px) {
+      padding: 40px 24px 80px;
+      flex-direction: initial;
+    }
+    @media (max-width: 575px) {
+      padding: 40px 24px 60px;
+    }
     .cs_title {
       letter-spacing: -3.04px;
+      @media (max-width: 767px) {
+        letter-spacing: -1.6px;
+        align-self: flex-end;
+      }
+    }
+    @media (max-width: 575px) {
+      .cs_fs_76 {
+        font-size: 40px;
+      }
     }
     .cs_description {
       align-self: flex-end;
       max-width: 711px;
-      // @media (max-width: 767px) {
-      //   align-self: flex-start;
-      //   max-width: 100%;
-      // }
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
   }
 }
@@ -140,13 +151,8 @@
       }
     }
   }
-  // @media (max-width: 1199px) {
-  //   font-size: 14px;
-  // }
-  // @media (max-width: 991px) {
-  //   width: auto;
-  //   height: auto;
-  //   min-height: 0;
-  //   padding: 12px 20px;
-  // }
+  @media (max-width: 575px) {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
 }
