@@ -79,8 +79,8 @@
     mask-repeat: no-repeat;
     mask-position: bottom left;
     mask-size: cover;
-    @media (max-width: 767px) {
-      max-width: 358px;
+    @media (max-width: 575px) {
+      // max-width: 358px;
       min-height: 358px;
       mask-image: url(../img/service_details_page_header_mask_mb.svg);
     }
@@ -108,14 +108,14 @@
     }
     @media (max-width: 767px) {
       padding: 40px 24px 80px;
-      flex-direction: initial;
     }
     @media (max-width: 575px) {
       padding: 40px 24px 60px;
+      flex-direction: initial;
     }
     .cs_title {
       letter-spacing: -3.04px;
-      @media (max-width: 767px) {
+      @media (max-width: 575px) {
         letter-spacing: -1.6px;
         align-self: flex-end;
       }
@@ -128,7 +128,7 @@
     .cs_description {
       align-self: flex-end;
       max-width: 711px;
-      @media (max-width: 767px) {
+      @media (max-width: 575px) {
         display: none;
       }
     }
