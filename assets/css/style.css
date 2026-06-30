@@ -5494,7 +5494,7 @@ hr {
 }
 .cs_feature_wrapper_3 .cs_feature_list li {
   position: relative;
-  padding-left: 55px;
+  padding-left: 56px;
 }
 .cs_feature_wrapper_3 .cs_feature_list li:not(:last-child) {
   margin-bottom: 40px;
@@ -5504,6 +5504,22 @@ hr {
 }
 .cs_feature_wrapper_3 .cs_feature_list .cs_feature_description {
   margin-bottom: 0;
+}
+@media (max-width: 1199px) {
+  .cs_feature_wrapper_3 .cs_feature_list li {
+    padding-left: 52px;
+  }
+  .cs_feature_wrapper_3 .cs_feature_list li:not(:last-child) {
+    margin-bottom: 32px;
+  }
+  .cs_feature_wrapper_3 .cs_feature_list .cs_feature_subtitle {
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_feature_wrapper_3 .cs_feature_list li:not(:last-child) {
+    margin-bottom: 24px;
+  }
 }
 .cs_feature_wrapper_3 .cs_icon {
   position: absolute;

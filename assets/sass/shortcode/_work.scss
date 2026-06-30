@@ -105,7 +105,7 @@
   }
   @media (max-width: 575px) {
     .cs_textbox {
-      .cs_fs_24{
+      .cs_fs_24 {
         font-size: 20px;
       }
     }
@@ -118,7 +118,7 @@
     color: var(--black);
     li {
       position: relative;
-      padding-left: 55px;
+      padding-left: 56px;
       &:not(:last-child) {
         margin-bottom: 40px;
       }
@@ -128,6 +128,24 @@
     }
     .cs_feature_description {
       margin-bottom: 0;
+    }
+    @media (max-width: 1199px) {
+      li {
+        padding-left: 52px;
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+      }
+      .cs_feature_subtitle {
+        margin-bottom: 8px;
+      }
+    }
+    @media (max-width: 991px) {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
     }
   }
 
