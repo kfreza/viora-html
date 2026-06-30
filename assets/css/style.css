@@ -3233,6 +3233,11 @@ hr {
 }
 @media (max-width: 991px) {
   .cs_cta_style_4 .cs_content_wrapper {
+    padding: 50px;
+  }
+}
+@media (max-width: 575px) {
+  .cs_cta_style_4 .cs_content_wrapper {
     padding: 24px;
   }
 }
@@ -3307,7 +3312,7 @@ hr {
 }
 @media (max-width: 991px) {
   .cs_cta_style_4 .cs_thumbnail {
-    width: 312px;
+    width: min(312px, 100%);
     top: initial;
     transform: translateY(0);
     bottom: 0;

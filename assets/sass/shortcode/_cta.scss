@@ -88,6 +88,9 @@
     min-height: 538px;
     overflow: hidden;
     @media (max-width: 991px) {
+      padding: 50px;
+    }
+    @media (max-width: 575px) {
       padding: 24px;
     }
   }
@@ -159,7 +162,7 @@
     }
 
     @media (max-width: 991px) {
-      width: 312px;
+      width: min(312px, 100%);
       top: initial;
       transform: translateY(0);
       bottom: 0;
