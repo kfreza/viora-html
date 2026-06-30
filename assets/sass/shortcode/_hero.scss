@@ -80,7 +80,6 @@
     mask-position: bottom left;
     mask-size: cover;
     @media (max-width: 575px) {
-      // max-width: 358px;
       min-height: 358px;
       mask-image: url(../img/service_details_page_header_mask_mb.svg);
     }
