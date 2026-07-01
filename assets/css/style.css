@@ -3215,13 +3215,17 @@ hr {
 
 .cs_page_header_section_4 {
   padding: 182px 0 293px;
+  border-radius: 0 0 20px 20px;
+}
+.cs_page_header_section_4 .cs_heading_style_1 {
+  gap: 32px;
 }
 .cs_page_header_section_4 .cs_heading_column_2 {
   align-self: flex-end;
 }
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .cs_page_header_section_4 {
-    padding: 128px 0 334px;
+    padding: 128px 0 551px;
   }
 }
 
@@ -4297,6 +4301,11 @@ hr {
   }
   .cs_contact_form_section_1 .cs_contact_form .cs_btn_lg {
     padding: 16px 17px;
+  }
+}
+@media (max-width: 991px) {
+  .cs_contact_form_section_1 {
+    margin-top: -490px;
   }
 }
 

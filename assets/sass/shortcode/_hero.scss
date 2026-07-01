@@ -159,12 +159,14 @@
 //
 .cs_page_header_section_4 {
   padding: 182px 0 293px;
-
+  border-radius: 0 0 20px 20px;
+  .cs_heading_style_1 {
+    gap: 32px;
+  }
   .cs_heading_column_2 {
     align-self: flex-end;
   }
-
-  @media (max-width: 1199px) {
-    padding: 128px 0 334px;
+  @media (max-width: 991px) {
+    padding: 128px 0 551px;
   }
 }
