@@ -13,7 +13,6 @@
 }
 .breadcrumb-item + .breadcrumb-item::before {
   color: var(--text-grey-light);
-  // content: var(--bs-breadcrumb-divider, "/");
 }
 .breadcrumb-item.active {
   color: var(--text-grey);
@@ -25,7 +24,6 @@
   .container {
     max-width: 1344px;
   }
-
   @media (max-width: 1199px) {
     padding: 128px 0 334px;
   }
@@ -156,7 +154,7 @@
   }
 }
 
-//
+//Page Header 4 — Contact page
 .cs_page_header_section_4 {
   padding: 182px 0 293px;
   border-radius: 0 0 20px 20px;

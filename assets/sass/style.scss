@@ -11,33 +11,24 @@
 08. Video Modal
 09. Header
 10. Footer
-11. Sidebar
-12. Hero
-13. CTA
-14. Testimonial
-15. Team
-16. Card
-17. Service
-18. Contact
-19. Post
-20. Feature
-21. Pricing
-22. Video
-23. Gradient
-24. Timetable
-25. Button
-26. Heading
-27. Rating
-28. Iconbox
-29. FAQ
-30. Course
-31. Product
-32. Tab
-33. About
-34. Work
-35. Form
-36. Animation Effects
-37. Image Gallery
+11. Hero
+12. CTA
+13. Testimonial
+14. Team
+15. Card
+16. Service
+17. Contact
+18. Post
+19. Feature
+20. Pricing
+21. Video
+22. Button
+23. Heading
+24. Iconbox
+25. FAQ
+26. About
+27. Work
+28. Animation Effects
 --------------------------------------------------------------*/
 @import "default/fonts";
 @import "default/variable";
@@ -49,7 +40,6 @@
 @import "common/video-modal";
 @import "common/header";
 @import "common/footer";
-@import "common/sidebar";
 @import "shortcode/hero";
 @import "shortcode/cta";
 @import "shortcode/testimonial";
@@ -61,18 +51,10 @@
 @import "shortcode/feature";
 @import "shortcode/pricing";
 @import "shortcode/video";
-@import "shortcode/gradiant";
-@import "shortcode/timetable";
 @import "shortcode/button";
 @import "shortcode/heading";
-@import "shortcode/rating";
 @import "shortcode/iconbox";
 @import "shortcode/faq";
-
-@import "shortcode/product";
-@import "shortcode/tab";
 @import "shortcode/about";
 @import "shortcode/work";
-@import "shortcode/form";
 @import "shortcode/animation";
-@import "shortcode/gallery";

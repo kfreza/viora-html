@@ -1,12 +1,10 @@
 /*=======================================================
   Service
 =========================================================*/
-
 //Homepage & Others
 .cs_services_section_1 {
   margin-top: -254px;
 }
-
 .cs_service_card_wrapper_1,
 .cs_service_card_wrapper_2 {
   transition: all 0.4s ease;
@@ -43,7 +41,6 @@
     }
   }
 }
-
 .cs_service_card_style_1,
 .cs_service_card_style_2 {
   display: flex;
@@ -96,7 +93,6 @@
     transition: all 0.4s ease;
   }
 }
-
 // Service Page
 .cs_service_card_grid {
   display: grid;
@@ -115,7 +111,6 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 .cs_service_card_wrapper_2 {
   &::after {
     filter: blur(60px);
@@ -145,15 +140,7 @@
     .cs_service_card_style_2 {
       background-color: var(--white);
       mask-size: calc(100% + 1px);
-      // mask-size: auto;
-      // mask-position: right 0;
       mask-position: 0 0;
-      // @media (max-width: 1399px) {
-      //   mask-size: 100%;
-      // }
-      // @media (max-width: 1199px) {
-      //   mask-size: calc(100% + 52px);
-      // }
       @media (max-width: 991px) {
         mask-size: calc(100% + 109px);
         mask-position: -108px 0px;
@@ -169,7 +156,6 @@
     margin: 0 auto;
   }
 }
-
 .cs_service_card_style_2 {
   gap: 15px;
   border-radius: 20px;
@@ -177,9 +163,7 @@
   min-height: 400px;
   mask-image: url(../img/service_layer_mask_2.svg);
   mask-size: calc(100% + 47px);
-  // mask-position: right -47px;
   mask-position: 0 -47px;
-
   .cs_card_thumb {
     width: 100%;
     display: flex;
@@ -202,8 +186,5 @@
   }
   @media (max-width: 767px) {
     mask-size: calc(100% + 199px);
-    // mask-position: -150px 0px;
   }
 }
-
-//

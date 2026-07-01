@@ -4,17 +4,14 @@
 .cs_work_style_1,
 .cs_work_style_2 {
   display: flex;
-  // align-items: center;
   justify-content: space-between;
   gap: 20px;
-
   @media (max-width: 991px) {
     flex-wrap: wrap;
   }
 }
 .cs_textbox_style_1,
 .cs_textbox_style_2 {
-  // width: min(100%, 370px);
   display: flex;
   gap: 0 24px;
   @media (min-width: 992px) {
@@ -45,7 +42,6 @@
     line-clamp: 3;
   }
 }
-
 // Service Details About, Feature, Work Common Design
 .cs_about_wrapper_2,
 .cs_feature_wrapper_3,
@@ -144,7 +140,6 @@
       }
     }
   }
-
   .cs_icon {
     position: absolute;
     left: 0;

@@ -21,7 +21,6 @@
     }
   }
 }
-
 .cs_team_wrapper_1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -37,7 +36,6 @@
     gap: 20px;
   }
 }
-
 .cs_team_style_1 {
   .cs_team_thumb {
     border-radius: 16px;
@@ -76,7 +74,6 @@
       }
     }
   }
-
   .cs_thumb_img {
     width: 100%;
     height: auto;
@@ -88,7 +85,6 @@
     mask-repeat: no-repeat;
     mask-position: right;
   }
-
   .cs_social_btns,
   .cs_social_share {
     position: absolute;
@@ -96,7 +92,6 @@
     right: 0;
     gap: 0;
     padding: 2px 6px;
-
     a {
       height: 26px;
       width: 26px;
@@ -116,7 +111,6 @@
       padding: 6px;
     }
   }
-
   .cs_title {
     transition: background 0.4s ease;
     &:hover {
@@ -130,7 +124,6 @@
     margin-top: auto;
     text-transform: uppercase;
   }
-
   @media (max-width: 1399px) {
     .cs_social_btns {
       padding: 0;

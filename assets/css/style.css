@@ -11,33 +11,24 @@
 08. Video Modal
 09. Header
 10. Footer
-11. Sidebar
-12. Hero
-13. CTA
-14. Testimonial
-15. Team
-16. Card
-17. Service
-18. Contact
-19. Post
-20. Feature
-21. Pricing
-22. Video
-23. Gradient
-24. Timetable
-25. Button
-26. Heading
-27. Rating
-28. Iconbox
-29. FAQ
-30. Course
-31. Product
-32. Tab
-33. About
-34. Work
-35. Form
-36. Animation Effects
-37. Image Gallery
+11. Hero
+12. CTA
+13. Testimonial
+14. Team
+15. Card
+16. Service
+17. Contact
+18. Post
+19. Feature
+20. Pricing
+21. Video
+22. Button
+23. Heading
+24. Iconbox
+25. FAQ
+26. About
+27. Work
+28. Animation Effects
 --------------------------------------------------------------*/
 /*===========================================================
   Google Fonts
@@ -235,7 +226,6 @@ label {
   margin-bottom: 5px;
 }
 
-/* All Font Awesome Icons */
 /*===========================================================
  04. Preloader
 =============================================================*/
@@ -2006,6 +1996,7 @@ hr {
   background-color: var(--bg-grey);
   transition: all 0.4s ease;
 }
+
 .cs_brands_style_1 {
   display: flex;
   height: 31px;
@@ -2267,14 +2258,6 @@ hr {
     display: none;
   }
 }
-.cs_site_header.cs_style_1 {
-  /*=======================================================
-  Top Header
-  =========================================================*/
-  /*=======================================================
-  Main Header
-  =========================================================*/
-}
 .cs_site_header {
   /*=======================================================
     Minimum Width 1200px
@@ -2380,8 +2363,8 @@ hr {
 }
 .cs_site_header {
   /*=======================================================
-    Maximum 1199PX
-  =========================================================*/
+  Maximum 1199PX
+  =======================================================*/
 }
 @media screen and (max-width: 1199px) {
   .cs_site_header .cs_nav .cs_nav_list_wrap {
@@ -2663,218 +2646,6 @@ hr {
     flex-direction: column;
     align-items: flex-start;
   }
-}
-
-/*=======================================================
-  Blog Sidebar
-=========================================================*/
-@media (max-width: 991px) {
-  .cs_blog_sidebar_style_1 {
-    padding-left: 0px;
-    padding-top: 60px;
-  }
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_item:not(:last-child) {
-  margin-bottom: 40px;
-}
-.cs_blog_sidebar_style_1 .widget_search,
-.cs_blog_sidebar_style_1 .widget_recent_posts,
-.cs_blog_sidebar_style_1 .widget_tag_cloud {
-  background-color: var(--bg-primary);
-  padding: 30px 30px 45px;
-  border-radius: 4px;
-}
-@media (max-width: 767px) {
-  .cs_blog_sidebar_style_1 .widget_search,
-  .cs_blog_sidebar_style_1 .widget_recent_posts,
-  .cs_blog_sidebar_style_1 .widget_tag_cloud {
-    padding: 20px 20px 30px;
-  }
-}
-.cs_blog_sidebar_style_1 .widget_search {
-  padding: 22px 30px;
-}
-@media (max-width: 767px) {
-  .cs_blog_sidebar_style_1 .widget_search {
-    padding: 20px;
-  }
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search input {
-  display: block;
-  width: 100%;
-  outline: none;
-  padding: 14px 70px 15px 20px;
-  border: 1px solid var(--white-color);
-  border-radius: 4px;
-  background-color: var(--white-color);
-  transition: all 0.3sease;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search input::-moz-placeholder {
-  color: var(--heading-color);
-  font-weight: 500;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search input::placeholder {
-  color: var(--heading-color);
-  font-weight: 500;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search input:focus {
-  border-color: var(--accent-color);
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search_btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  outline: none;
-  padding: 15px 23px 16px;
-  color: var(--white-color);
-  background-color: var(--accent-color);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search_btn:hover {
-  background-color: var(--white-color);
-  color: var(--accent-color);
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_search_btn svg {
-  width: 18px;
-  height: 18px;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_widget_title {
-  line-height: 1.0833em;
-  padding-bottom: 15px;
-  position: relative;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_widget_title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 2px;
-  width: 58px;
-  background-color: var(--accent-color);
-  transition: all 0.3s ease;
-}
-.cs_blog_sidebar_style_1 .cs_sidebar_item:hover .cs_sidebar_widget_title::before {
-  width: 100%;
-}
-.cs_blog_sidebar_style_1 .cs_recent_posts li:not(:last-child) {
-  margin-bottom: 24px;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item {
-  display: flex;
-  align-items: center;
-  gap: 0 20px;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_thumb {
-  height: 110px;
-  width: 110px;
-  flex: none;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_thumb img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_thumb:hover .cs_recent_post_thumb_in {
-  transform: scale(1.06);
-}
-@media (max-width: 767px) {
-  .cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_thumb {
-    height: 100px;
-    width: 100px;
-  }
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_thumb_in {
-  transition: all 0.4s ease;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 18px 0;
-}
-@media (max-width: 767px) {
-  .cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_info {
-    gap: 10px 0;
-  }
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px 10px;
-  width: min(100%, 165px);
-}
-@media (max-width: 1199px) {
-  .cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_meta {
-    width: 100%;
-  }
-}
-@media (max-width: 767px) {
-  .cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_meta {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_date,
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_comment {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_iconbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  width: 20px;
-  filter: brightness(0) saturate(100%) invert(45%) sepia(100%) saturate(6402%) hue-rotate(243deg) brightness(97%) contrast(108%);
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_iconbox img {
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_title {
-  width: min(100%, 200px);
-}
-.cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_title a {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-@media (max-width: 1199px) {
-  .cs_blog_sidebar_style_1 .cs_recent_post_item .cs_recent_post_title {
-    width: 100%;
-  }
-}
-.cs_blog_sidebar_style_1 .tagcloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 10px;
-}
-.cs_blog_sidebar_style_1 .tag-cloud-link {
-  border: 1px solid var(--white-color);
-  border-radius: 3px;
-  background-color: var(--white-color);
-  padding: 9px 15px 10px;
-  display: inline-block;
-  color: var(--heading-color);
-  font-weight: 500;
-}
-.cs_blog_sidebar_style_1 .tag-cloud-link:hover {
-  color: var(--white-color);
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
 }
 
 /*=======================================================
@@ -3401,6 +3172,7 @@ hr {
 .cs_testimonial_style_2 .cs_author_title {
   line-height: 1.2em;
 }
+
 /*=======================================================
   Team
 =========================================================*/
@@ -4931,12 +4703,6 @@ hr {
 }
 
 /*=======================================================
-  Gradients
-=========================================================*/
-/*=======================================================
-  Timetable
-=========================================================*/
-/*=======================================================
   Components
 =========================================================*/
 .cs_btn_lg,
@@ -5446,9 +5212,6 @@ hr {
 }
 
 /*=======================================================
-  Product
-=========================================================*/
-/*=======================================================
   About
 =========================================================*/
 .cs_about_style_1 {
@@ -5678,9 +5441,6 @@ hr {
   border-radius: 50%;
 }
 
-/*=======================================================
-  Form
-=========================================================*/
 /*==========================================================
  Animation Keyframes
 ============================================================*/
@@ -5717,7 +5477,4 @@ hr {
   100% {
     background-position: 0% 50%;
   }
-}
-/*=======================================================
-  Gallery
-=========================================================*//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

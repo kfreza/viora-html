@@ -32,12 +32,6 @@
   cursor: pointer;
 }
 
-// .draggable {
-//   cursor:
-//     url(../img/drag.png) 16 9,
-//     ew-resize !important;
-// }
-
 // Default For Backup (Not To Break Design)
 .slick-slide > div {
   display: flex;
@@ -167,10 +161,6 @@
     color: var(--black);
     background-color: var(--bg-grey);
     transition: all 0.4s ease;
-    &:hover {
-      // background-color: var(--radial-gradient);
-      // color: var(--radial-gradient);
-    }
   }
 }
 // End of Slider Arrows

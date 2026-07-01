@@ -25,7 +25,6 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 .cs_pricing_style_1,
 .cs_pricing_style_2 {
   padding: 32px;
@@ -70,77 +69,35 @@
       border-radius: 16px;
     }
   }
-
   &:nth-child(3) {
     border-radius: 0 16px 16px 0;
     @media (max-width: 991px) {
       border-radius: 16px;
     }
   }
-
-  // &.cs_active {
-  //   background-color: transparent;
-  //   .cs_plan_title,
-  //   .monthlyPrice,
-  //   .cs_pricing_list {
-  //     color: var(--white);
-  //   }
-  //   .cs_description {
-  //     color: var(--line-grey);
-  //   }
-  //   .cs_btn_lg {
-  //     background-color: var(--white);
-  //     color: var(--black);
-  //   }
-  // }
-
-  // &:hover {
-  //   border-radius: 16px;
-  //   background-color: transparent;
-  //   .cs_plan_title,
-  //   .monthlyPrice,
-  //   .cs_pricing_list {
-  //     color: var(--white);
-  //   }
-  //   .cs_description {
-  //     color: var(--line-grey);
-  //   }
-  //   .cs_btn_lg {
-  //     background-color: var(--white);
-  //     color: var(--black);
-  //   }
-  // }
-
   .cs_pricing_table {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
-
   .cs_plan_heading {
     display: flex;
     gap: 16px;
     align-items: center;
   }
-
   .cs_price {
     display: flex;
     align-items: center;
     gap: 0 5px;
   }
-
   .monthlyPrice {
     color: var(--black);
     letter-spacing: -1.6px;
   }
-
   .monthlyText {
-    // margin-top: -20px;
     align-self: flex-end;
-    // align-self: last baseline;
   }
-
   .cs_pricing_list {
     color: var(--black);
     li {
@@ -158,7 +115,6 @@
       }
     }
   }
-
   .cs_icon {
     position: absolute;
     left: 0;
@@ -188,7 +144,6 @@
       height: auto;
     }
   }
-
   .cs_pricing_btn {
     margin-top: auto;
     .cs_btn_lg {
@@ -203,36 +158,15 @@
   @media (max-width: 1399px) {
     gap: 24px;
   }
-  // @media (max-width: 1199px) {
-  //   padding: 16px;
-  // }
-  // @media (max-width: 991px) {
-  //   grid-template-columns: repeat(1, 1fr);
-  // }
 }
 .cs_pricing_style_2 {
   padding: 40px 32px 32px !important;
   background-color: var(--bg-grey) !important;
   border-radius: 16px !important;
   position: relative;
-
   @media (max-width: 1399px) {
     padding: 32px 24px 24px !important;
   }
-  //
-  // @media (max-width: 1199px) {
-  //   &:not(:last-child) {
-  //     padding-right: 32px;
-  //   }
-  // }
-  //
-  // @media (max-width: 767px) {
-  //   padding: 16px;
-  //   &:not(:last-child) {
-  //     padding-right: 16px;
-  //   }
-  // }
-
   &::after {
     content: "";
     background: var(--radial-gradient);
@@ -247,7 +181,6 @@
     transition: all 0.4s ease;
     filter: blur(40px);
   }
-
   &:first-child {
     .cs_plan_title,
     .monthlyPrice,
@@ -262,37 +195,24 @@
       color: var(--white);
     }
   }
-
   .cs_plan_title {
     transition: background 0.4s ease;
   }
-
   .cs_price {
     margin-top: auto;
   }
-
   .cs_pricing_list {
-    // color: var(--black);
     li {
-      // position: relative;
-      // padding-left: 32px;
-      // margin-bottom: 12px;
       &:last-child {
-        // margin-bottom: 56px;
         @media (max-width: 1399px) {
           margin-bottom: 32px;
         }
       }
-      span {
-        // display: flex;
-      }
     }
   }
-
   .cs_pricing_btn {
     margin-top: 0;
   }
-
   &:hover,
   &.cs_active {
     background-color: var(--white) !important;
@@ -312,17 +232,11 @@
 
 //Comparison Table
 .cs_comparison_style_1 {
-  // @media (max-width: 991px) {
   overflow-x: auto;
-  // }
   .cs_comparison_table {
     padding: 16px 0;
     min-width: 1240px;
-    // @media (max-width: 991px) {
-    //   min-width: 760px;
-    // }
   }
-
   .cs_comparison_head {
     display: flex;
     align-items: flex-end;
@@ -330,12 +244,10 @@
     padding: 0 8px 40px;
     gap: 0 15px;
   }
-
   .cs_comparison_feature {
     width: 380px;
     line-height: 1.48;
   }
-
   .cs_comparison_plan {
     width: 260px;
     display: flex;
@@ -344,7 +256,6 @@
     text-align: center;
     gap: 8px 0;
   }
-
   .cs_comparison_row {
     display: flex;
     align-items: center;
@@ -353,7 +264,6 @@
     gap: 0 15px;
     border-bottom: 1px solid var(--line-grey);
   }
-
   .cs_comparison_cell {
     width: 260px;
     display: flex;
@@ -361,13 +271,11 @@
     justify-content: center;
     gap: 6px;
   }
-
   .cs_check_circle,
   .cs_x_circle {
     width: 24px;
     height: 24px;
   }
-
   .cs_comparison_text {
     color: var(--black);
     line-height: 1.48;
