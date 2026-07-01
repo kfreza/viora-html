@@ -4170,6 +4170,11 @@ hr {
   border-radius: 20px;
   filter: blur(49px);
 }
+@media (max-width: 575px) {
+  .cs_contact_form_section_1 .cs_contact_form_style_2 {
+    padding: 24px;
+  }
+}
 .cs_contact_form_section_1 .cs_contact_info {
   display: flex;
   flex-direction: column;
@@ -4186,6 +4191,17 @@ hr {
 .cs_contact_form_section_1 .cs_contact_info .cs_contact_info_details a:hover {
   color: var(--black);
 }
+@media (max-width: 991px) {
+  .cs_contact_form_section_1 .cs_contact_info {
+    padding-right: 0;
+  }
+  .cs_contact_form_section_1 .cs_contact_info .cs_contact_info_details {
+    padding-top: 24px;
+  }
+  .cs_contact_form_section_1 .cs_contact_info .cs_contact_info_details .cs_gap_y_40 {
+    gap: 30px 0;
+  }
+}
 .cs_contact_form_section_1 .cs_social_btns.cs_style_2 {
   margin-top: 40px;
 }
@@ -4194,6 +4210,11 @@ hr {
 }
 .cs_contact_form_section_1 .cs_social_btns.cs_style_2 a img {
   filter: brightness(0) invert(1);
+}
+@media (max-width: 991px) {
+  .cs_contact_form_section_1 .cs_social_btns.cs_style_2 {
+    margin-top: 30px;
+  }
 }
 .cs_contact_form_section_1 .cs_contact_form {
   display: flex;
@@ -4213,11 +4234,13 @@ hr {
   margin-bottom: 32px;
 }
 .cs_contact_form_section_1 .cs_contact_form .cs_form_field {
-  padding: 12px 0;
+  padding: 16px 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--line-grey);
   outline: none;
+  font-size: 16px;
+  line-height: 1.48em;
   transition: border-color 0.3s ease;
 }
 .cs_contact_form_section_1 .cs_contact_form .cs_form_field::-moz-placeholder {
@@ -4258,6 +4281,23 @@ hr {
 .cs_contact_form_section_1 .cs_contact_form .cs_btn_lg {
   border: none;
   outline: none;
+  padding: 19px 24px;
+}
+@media (max-width: 991px) {
+  .cs_contact_form_section_1 .cs_contact_form {
+    padding: 8px 16px 16px;
+    margin-left: 0;
+  }
+  .cs_contact_form_section_1 .cs_contact_form .cs_form_field_wrap {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .cs_contact_form_section_1 .cs_contact_form textarea.cs_form_field {
+    min-height: 98px;
+  }
+  .cs_contact_form_section_1 .cs_contact_form .cs_btn_lg {
+    padding: 16px 17px;
+  }
 }
 
 /*===========================================
