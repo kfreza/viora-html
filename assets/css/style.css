@@ -5586,6 +5586,11 @@ hr {
 .cs_faq_section_2 .cs_accordian .cs_accordian_head {
   padding: 24px;
 }
+@media (max-width: 991px) {
+  .cs_faq_section_2 .cs_accordian .cs_accordian_head {
+    padding: 12px 16px;
+  }
+}
 .cs_faq_section_2 .cs_accordian .cs_accordian_toggle {
   width: 24px;
   height: 24px;
@@ -5593,6 +5598,11 @@ hr {
 }
 .cs_faq_section_2 .cs_accordian .cs_accordian_body {
   padding: 0 72px 24px 24px;
+}
+@media (max-width: 991px) {
+  .cs_faq_section_2 .cs_accordian .cs_accordian_body {
+    padding: 0 56px 12px 16px;
+  }
 }
 .cs_faq_section_2 .cs_accordian.active .cs_accordian_head {
   padding-bottom: 10px;
