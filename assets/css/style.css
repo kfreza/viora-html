@@ -3941,72 +3941,16 @@ hr {
 /*=======================================================
   Contact Page
 =========================================================*/
-.cs_reply_form .cs_form_field {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  padding: 14px 17px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  outline: none;
-  background-color: #f8f8f8;
-  resize: none;
-  transition: all 0.3s ease;
-}
-.cs_reply_form textarea {
-  resize: none;
-}
-.cs_reply_form .cs_btn_style_1 {
-  margin-top: 6px;
-  border-radius: 4px;
-  padding: 17px 25px 17px 30px;
-}
-@media (max-width: 767px) {
-  .cs_reply_form .cs_btn_style_1 {
-    margin-top: 0px;
-  }
-}
-
-.cs_contact_form_section_0 {
-  background: #f7f8fd;
-}
-
-.cs_contact_form_style_1 .cs_input_label {
-  margin-bottom: 9px;
-}
-.cs_contact_form_style_1 .cs_form_field {
-  padding: 16px 19px;
-  outline: none;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-.cs_contact_form_style_1 select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 100%;
-}
-.cs_contact_form_style_1 .cs_form_field_wrapper {
-  position: relative;
-}
-.cs_contact_form_style_1 .cs_form_field_wrapper i {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 20px;
-  color: var(--accent-color);
-}
-
 .cs_contact_form_section_1 {
   margin-top: -213px;
 }
-.cs_contact_form_section_1 .cs_contact_form_style_2 {
+.cs_contact_form_section_1 .cs_contact_form_style_1 {
   position: relative;
   padding: 40px;
   border-radius: 20px;
   background: var(--white);
 }
-.cs_contact_form_section_1 .cs_contact_form_style_2::before {
+.cs_contact_form_section_1 .cs_contact_form_style_1::before {
   content: "";
   background: var(--linear-gradient);
   height: 100%;
@@ -4020,7 +3964,7 @@ hr {
   filter: blur(49px);
 }
 @media (max-width: 575px) {
-  .cs_contact_form_section_1 .cs_contact_form_style_2 {
+  .cs_contact_form_section_1 .cs_contact_form_style_1 {
     padding: 24px;
   }
 }
@@ -4995,42 +4939,6 @@ hr {
 /*=======================================================
   Components
 =========================================================*/
-.cs_rating_percentage,
-.cs_rating {
-  overflow: hidden;
-}
-.cs_rating_percentage::before,
-.cs_rating::before {
-  content: "\f005\f005\f005\f005\f005";
-  font-family: "Font Awesome 7 Free";
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.cs_rating {
-  width: 120px;
-  flex: none;
-  height: 24px;
-  position: relative;
-  color: var(--rating-color);
-  font-size: 16px;
-  letter-spacing: 7px;
-}
-.cs_rating::before {
-  font-weight: 400;
-}
-
-.cs_rating_percentage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-}
-.cs_rating_percentage::before {
-  font-weight: 900;
-}
-
 .cs_btn_lg,
 .cs_btn_md,
 .cs_btn_sm {
@@ -5537,9 +5445,6 @@ hr {
   transform: rotate(-180deg);
 }
 
-/*=======================================================
-    Courses
-=========================================================*/
 /*=======================================================
   Product
 =========================================================*/

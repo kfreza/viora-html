@@ -2,41 +2,6 @@
   Components
 =========================================================*/
 
-// Rating Component
-.cs_rating_percentage,
-.cs_rating {
-  overflow: hidden;
-  &::before {
-    content: "\f005\f005\f005\f005\f005";
-    font-family: "Font Awesome 7 Free";
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-.cs_rating {
-  width: 120px;
-  flex: none;
-  height: 24px;
-  position: relative;
-  color: var(--rating-color);
-  font-size: 16px;
-  letter-spacing: 7px;
-  &::before {
-    font-weight: 400;
-  }
-}
-.cs_rating_percentage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  &::before {
-    font-weight: 900;
-  }
-}
-// End of Rating Component
-
 // Button Component
 .cs_btn_lg,
 .cs_btn_md,
@@ -102,11 +67,6 @@
     // }
   }
 }
-
-// .cs_btn_arrow {
-//   display: inline-block;
-//   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-// }
 
 .cs_btn_md {
   padding: 17px 20px;
