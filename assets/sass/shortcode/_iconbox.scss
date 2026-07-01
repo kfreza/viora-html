@@ -188,7 +188,8 @@
       position: absolute;
       inset: 0;
       height: 100%;
-      width: 100%;transform: translate(0, 0);
+      width: 100%;
+      transform: translate(0, 0);
       background: var(--radial-gradient);
       border-radius: 16px;
       filter: blur(8px);
