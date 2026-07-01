@@ -3213,6 +3213,18 @@ hr {
   }
 }
 
+.cs_page_header_section_4 {
+  padding: 182px 0 293px;
+}
+.cs_page_header_section_4 .cs_heading_column_2 {
+  align-self: flex-end;
+}
+@media (max-width: 1199px) {
+  .cs_page_header_section_4 {
+    padding: 128px 0 334px;
+  }
+}
+
 /*=======================================================
   CTA Style 1
 =========================================================*/
@@ -4136,6 +4148,9 @@ hr {
   color: var(--accent-color);
 }
 
+.cs_contact_form_section_1 {
+  margin-top: -213px;
+}
 .cs_contact_form_section_1 .cs_contact_form_style_2 {
   position: relative;
   padding: 40px;

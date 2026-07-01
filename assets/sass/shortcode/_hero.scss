@@ -155,3 +155,16 @@
     font-size: 12px;
   }
 }
+
+//
+.cs_page_header_section_4 {
+  padding: 182px 0 293px;
+
+  .cs_heading_column_2 {
+    align-self: flex-end;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 128px 0 334px;
+  }
+}
