@@ -11,24 +11,19 @@
   | TABLE OF CONTENTS:
   |--------------------------------------------------------------------------
   |
-  | 1. Preloader
-  | 2. Mobile Menu
-  | 3. Sticky Header
-  | 4. Dynamic Background
-  | 5. Slick Slider
-  | 6. Modal Video
-  | 7. Light Gallery
-  | 8. Isotop
-  | 9. Dynamic contact form
-  | 10. Tabs
-  | 11. Counter Animation
-  | 12. Review
-  | 13. Accordian
-  | 14. Language Select
-  | 15. Social Toggle Button
-  | 16. Heart toggle
-  | 17. Project Cards
-  | 18. Team Share Toggle
+  | 01. Preloader
+  | 02. Mobile Menu
+  | 03. Sticky Header
+  | 04. Dynamic Background
+  | 05. Slick Slider
+  | 06. Modal Video
+  | 07. Counter Animation (Odometer)
+  | 08. Accordian
+  | 09. Dynamic contact form ---
+  | 10. Project Cards (Hover Active & Remove)
+  | 11. Tilt Card (Team Tilt)
+  | 12. Team Share Toggle
+  | 13. WOW JS
   |
   */
 
@@ -49,13 +44,8 @@
     dynamicBackground();
     slickInit();
     modalVideo();
-    tabs();
     counterInit();
-    review();
     accordian();
-    languageSwitch();
-    socialButtonToggle();
-    elementToggle();
     initProjectCards();
     teamTiltCards();
     teamShareToggle();
@@ -70,22 +60,20 @@
   });
 
   /*--------------------------------------------------------------
-  1. Preloader
+  01. Preloader
   --------------------------------------------------------------*/
   var startTime = new Date().getTime();
 
   function preloader() {
     var endTime = new Date().getTime();
     var duration = (endTime - startTime) / 1000;
-
     console.log("Loading Time: " + duration + " Seconds");
-
     $(".cs_preloader_in").fadeOut();
     $(".cs_preloader").delay(150).fadeOut("slow");
   }
 
   /*--------------------------------------------------------------
-  2. Mobile Menu
+  02. Mobile Menu
   --------------------------------------------------------------*/
   function mainNav() {
     $(".cs_nav").append('<span class="cs_menu_toggle"><span></span></span>');
@@ -104,18 +92,6 @@
     });
   }
 
-  /*=============================================================
-   03. Sticky Header
-  ===============================================================*/
-  // function stickyHeader() {
-  //   var scroll = $(window).scrollTop();
-  //   if (scroll >= 10) {
-  //     $(".cs_sticky_header").addClass("cs_sticky_active");
-  //   } else {
-  //     $(".cs_sticky_header").removeClass("cs_sticky_active");
-  //   }
-  // }
-
   /*--------------------------------------------------------------
   03. Gescout Sticky Header
   --------------------------------------------------------------*/
@@ -129,7 +105,6 @@
       var windowTop = $window.scrollTop();
 
       if (windowTop >= headerHeight) {
-        // console.log($window)
         $header.addClass("cs_gescout_sticky");
       } else {
         $header.removeClass("cs_gescout_sticky");
@@ -148,7 +123,7 @@
   }
 
   /*--------------------------------------------------------------
-  4. Dynamic Background
+  04. Dynamic Background
   --------------------------------------------------------------*/
   function dynamicBackground() {
     $("[data-src]").each(function () {
@@ -160,7 +135,7 @@
   }
 
   /*--------------------------------------------------------------
-  5. Slick Slider
+  05. Slick Slider
   --------------------------------------------------------------*/
   function slickInit() {
     if ($.exists(".cs_slider")) {
@@ -265,7 +240,7 @@
   }
 
   /*--------------------------------------------------------------
-  6. Modal Video
+  06. Modal Video
   --------------------------------------------------------------*/
   function modalVideo() {
     if ($.exists(".cs_video_open")) {
@@ -305,8 +280,59 @@
     }
   }
 
+  /*=====================================================================
+  07. Counter Animation
+  =======================================================================*/
+  function counterInit() {
+    if (!$.exists(".odometer")) return;
+
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const el = $(entry.target);
+            el.html(el.data("count-to"));
+            observer.unobserve(entry.target); // run only once
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      },
+    );
+
+    $(".odometer").each(function () {
+      observer.observe(this);
+    });
+  }
+
+  /*====================================================================
+    08. Accordian
+  ======================================================================*/
+  function accordian() {
+    $(".cs_accordian").children(".cs_accordian_body").hide();
+    $(".cs_accordian.active").children(".cs_accordian_body").show();
+    $(".cs_accordian_head").on("click", function () {
+      $(this)
+        .parent(".cs_accordian")
+        .siblings()
+        .children(".cs_accordian_body")
+        .slideUp(250);
+      $(this).siblings().slideDown(250);
+      $(this)
+        .parent()
+        .parent()
+        .siblings()
+        .find(".cs_accordian_body")
+        .slideUp(250);
+      /* Accordian Active Class */
+      $(this).parents(".cs_accordian").addClass("active");
+      $(this).parent(".cs_accordian").siblings().removeClass("active");
+    });
+  }
+
   /*--------------------------------------------------------------
-  9. Dynamic contact form
+  09. Dynamic contact form
   --------------------------------------------------------------*/
   if ($.exists("#cs_form")) {
     const form = document.getElementById("cs_form");
@@ -352,213 +378,8 @@
     });
   }
 
-  /*--------------------------------------------------------------
-  10. Tabs
-  --------------------------------------------------------------*/
-  function tabs() {
-    $(".cs_tabs .cs_tab_links a").on("click", function (e) {
-      var currentAttrValue = $(this).attr("href");
-      $(".cs_tabs " + currentAttrValue)
-        .fadeIn(400)
-        .siblings()
-        .hide();
-      console.log(currentAttrValue);
-      $(this).closest(".cs_tab_links").find("li").removeClass("active");
-      $(this).parents("li").addClass("active");
-      e.preventDefault();
-    });
-  }
-
   /*=====================================================================
-  11. Counter Animation
-  =======================================================================*/
-  function counterInit() {
-    if (!$.exists(".odometer")) return;
-
-    const observer = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            const el = $(entry.target);
-            el.html(el.data("count-to"));
-            observer.unobserve(entry.target); // run only once
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-      },
-    );
-
-    $(".odometer").each(function () {
-      observer.observe(this);
-    });
-  }
-
-  /*=====================================================================
-    12. Review
-  =======================================================================*/
-  function review() {
-    $(".cs_rating").each(function () {
-      var review = $(this).data("rating");
-      var reviewVal = review * 20 + "%";
-      $(this).find(".cs_rating_percentage").css("width", reviewVal);
-    });
-  }
-
-  /*====================================================================
-    13. Accordian
-  ======================================================================*/
-  function accordian() {
-    $(".cs_accordian").children(".cs_accordian_body").hide();
-    $(".cs_accordian.active").children(".cs_accordian_body").show();
-    $(".cs_accordian_head").on("click", function () {
-      $(this)
-        .parent(".cs_accordian")
-        .siblings()
-        .children(".cs_accordian_body")
-        .slideUp(250);
-      $(this).siblings().slideDown(250);
-      $(this)
-        .parent()
-        .parent()
-        .siblings()
-        .find(".cs_accordian_body")
-        .slideUp(250);
-      /* Accordian Active Class */
-      $(this).parents(".cs_accordian").addClass("active");
-      $(this).parent(".cs_accordian").siblings().removeClass("active");
-    });
-  }
-
-  /*======================================================================
-  14. Language Select
-========================================================================*/
-  function languageSwitch() {
-    const languageItem = $(".cs_language_select");
-
-    // Toggle dropdown
-    languageItem.on("click", ".cs_language_switcher", function (e) {
-      e.stopPropagation();
-      $(this).siblings(".cs_language_dropdown").slideToggle(250);
-    });
-
-    // Select language (event delegation safe)
-    languageItem.on("click", ".cs_language_dropdown button", function (e) {
-      e.stopPropagation();
-
-      const parent = $(this).closest(".cs_language_select");
-      const switcherBtn = parent.find(".cs_language_switcher button");
-
-      const selectedLang = $(this).data("lang");
-      const selectedFlagClass = $(this).find(".flag-btn").attr("class");
-      const selectedText = $(this).find(".cs_flag_title").text();
-
-      // Update data-lang
-      switcherBtn.attr("data-lang", selectedLang);
-
-      // Update flag
-      switcherBtn.find(".flag-btn").attr("class", selectedFlagClass);
-
-      // Update text (same class exists in both)
-      switcherBtn.find(".cs_flag_title").text(selectedText);
-
-      // Close dropdown
-      parent.find(".cs_language_dropdown").slideUp(200);
-    });
-
-    // Outside click close
-    $(document).on("click", function () {
-      $(".cs_language_dropdown").slideUp(200);
-    });
-  }
-
-  /*======================================================================
-  15. Social Toggle Button
-========================================================================*/
-  function socialButtonToggle() {
-    if ($.exists(".cs_social_toggle")) {
-      const $toggleBtn = $(".cs_social_toggle");
-
-      // Icon Update Function
-      function updateIcon($btn) {
-        const $icon = $btn.find("i");
-        if ($btn.hasClass("active")) {
-          $icon.removeClass("fa-plus").addClass("fa-arrow-right-long");
-        } else {
-          $icon.removeClass("fa-arrow-right-long").addClass("fa-plus");
-        }
-      }
-
-      // Load Check
-      $toggleBtn.each(function () {
-        updateIcon($(this));
-      });
-
-      // Click Event
-      $toggleBtn.on("click", function () {
-        const $this = $(this);
-        const $parent = $this.closest(".cs_social_links");
-
-        // --- NEW LOGIC START ---
-        $toggleBtn.not($this).removeClass("active");
-        $(".cs_social_links").not($parent).removeClass("active");
-
-        $toggleBtn.not($this).each(function () {
-          updateIcon($(this));
-        });
-        // --- NEW LOGIC END ---
-
-        // Current Element Toggle
-        $this.toggleClass("active");
-        $parent.toggleClass("active");
-
-        // Current Icon Update
-        updateIcon($this);
-      });
-    }
-  }
-
-  /*=====================================================================
-      16. Heart toggle
-    =======================================================================*/
-  function elementToggle() {
-    // 1. Heart Toggler (Existing)
-    $(".cs_heart_toggler i").on("click", function () {
-      $(this).toggleClass("fa-solid");
-    });
-
-    // 2. Category Widget Toggle (Optimized)
-    $(".cs_sidebar_widget_title").on("click", function () {
-      const $this = $(this);
-
-      // Toggle Active Class & Content
-      $this
-        .toggleClass("active")
-        .siblings(".cs_sidebar_widget_content")
-        .slideToggle()
-        .parent(".cs_sidebar_widget")
-        .toggleClass("active");
-
-      // Icon Change Logic (Conflict-free)
-      const icon = $this.find("i");
-
-      // Check for Plus/Minus (Nested Widget)
-      if (icon.hasClass("fa-plus") || icon.hasClass("fa-minus")) {
-        icon.toggleClass("fa-plus fa-minus");
-      }
-
-      // Note: Chevron rotate-er logic CSS die handle kora bhalo (ja tumi already korcho)
-    });
-
-    // 3. Dashboard Nav (Existing)
-    $(".cs_dashboard_nav li").on("click", function () {
-      $(this).addClass("active").siblings().slideToggle().removeClass("active");
-    });
-  }
-
-  /*=====================================================================
-      Hover Active & Remove
+  10. Hover Active & Remove
     =======================================================================*/
 
   function initProjectCards() {
@@ -578,7 +399,7 @@
     });
   }
   /*=====================================================================
-      Tilt Card
+  11. Tilt Card
     =======================================================================*/
 
   function teamTiltCards() {
@@ -603,7 +424,7 @@
   }
 
   /*--------------------------------------------------------------
-  18. Team Share Toggle
+  12. Team Share Toggle
   --------------------------------------------------------------*/
   function teamShareToggle() {
     if (!$.exists(".cs_share_icon")) return;
